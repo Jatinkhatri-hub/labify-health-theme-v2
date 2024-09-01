@@ -145,7 +145,7 @@
   }
 
   .footer__terms_and_social__wrapper {
-    height: 100%;
+    height: 100px;
     justify-content: space-between;
   }
 }
