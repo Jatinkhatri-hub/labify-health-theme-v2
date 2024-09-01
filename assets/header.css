@@ -46,7 +46,9 @@
   padding: 0;
 }
 
-
+.open {
+  width: 80%;
+}
 
 
 .nav-bar__cart-open-btn svg {
