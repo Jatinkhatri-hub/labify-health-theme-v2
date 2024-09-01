@@ -5,7 +5,7 @@
   background-color: rgb(var(--color-background));
   left: 0;
   right: 0;
-  height: 60px;
+  height: 62px;
   padding: 0 25px;
   width: 100%;
   transition: top 0.3s;
@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 62px;
 }
 
 .nav-drawer__open-btn svg rect {
