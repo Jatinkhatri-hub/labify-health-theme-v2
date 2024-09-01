@@ -92,6 +92,7 @@
   color: rgb(var(--color-foreground));
   text-decoration: none;
   text-transform: none;
+  font-weight: 400;
 }
 
 .footer__terms_and_social__wrapper {
