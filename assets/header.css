@@ -92,5 +92,9 @@
     height: 95px;
   }
 
-  .nav
+  .nav-bar__items {
+    height: 80px;
+  }
+
+  .nav-dr
 }
