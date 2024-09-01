@@ -52,10 +52,10 @@
         {% when 'terms_and_social' %}
           <div class="footer__terms_and_social__wrapper">
             <a href="{{ block.settings.text_url }}"> {{ block.settings.text }} </a>
+            {%- if block.settings.show_social and has_social_icons -%}
+              {%- render 'social-icons', class: 'footer__list-social' -%}
+            {% endif %}
           </div>
-          {%- if block.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons', class: 'footer__list-social' -%}
-          {% endif %}
       {% endcase %}
     {% endfor %}
   </div>
