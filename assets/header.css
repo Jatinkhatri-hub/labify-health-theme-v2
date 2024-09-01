@@ -71,7 +71,8 @@
 .nav-bar__menu-item a {
   text-decoration: none;
   color: rgb(var(--color-foreground));
-  font
+  font-weight: 400;
+  font-size: ;
 }
 
 
