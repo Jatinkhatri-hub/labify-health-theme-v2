@@ -30,6 +30,9 @@
 
 .footer__email {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px
 }
 
 .footer__contact svg {
