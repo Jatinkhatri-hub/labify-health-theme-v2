@@ -33,7 +33,7 @@
           <div class="footer__brand-info">
             <img src="{{ block.settings.brand_logo |  img_url: 'medium' }}" class="footer__brand-logo">
             {% if block.settings.contact_no != blank %}
-            <div class="footer__contact"><span>{%  render 'icon-phone' %}</span> {{ block.settings.contact_no }} </div>
+            <div class="footer__contact"><span>{%  render 'icon-phone' %}</span> <h6></h6> {{ block.settings.contact_no }} </div>
             {% endif %}
             {% if block.settings.email != blank %}
               <div class="footer__email"><span>{% render 'icon-email' %}</span> {{ block.settings.email }}</div>
