@@ -135,7 +135,10 @@
     font-size: 19px;
   }
 
-  .footer-menu__list
+  .footer-menu__list-container {
+    flex-direction: row;
+    
+  }
 }
 
 
