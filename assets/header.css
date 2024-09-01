@@ -70,7 +70,8 @@
 
 .nav-bar__menu-item a {
   text-decoration: none;
-  
+  color: rgb(var(--color-foreground));
+  font
 }
 
 
