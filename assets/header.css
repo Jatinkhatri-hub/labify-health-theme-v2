@@ -37,6 +37,7 @@
   left: 0;
   flex-direction: column;
   justify-content: center;
+  transition: width .5s;
   
 }
 
