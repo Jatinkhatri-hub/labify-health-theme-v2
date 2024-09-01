@@ -39,6 +39,7 @@
               <div><span>{% render 'icon-email' %}</span> {{ block.settings.email }}</div>
             {% endif %}
           </div>
+        {% when '' %}
       {% endcase %}
     {% endfor %}
   </div>
