@@ -55,10 +55,17 @@
             "contact_no": "000",
             "email": "Email"
           }
+        },
+        "footer_menu_TqGfLH": {
+          "type": "footer_menu",
+          "settings": {
+            "footer_menu": "labify-health-main"
+          }
         }
       },
       "block_order": [
-        "brand_information_LyXdwp"
+        "brand_information_LyXdwp",
+        "footer_menu_TqGfLH"
       ],
       "settings": {
         "color_scheme": "scheme-a7c81a03-c105-41b5-ad58-8f947823c79e"
