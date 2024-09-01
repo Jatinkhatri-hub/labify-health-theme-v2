@@ -23,7 +23,9 @@
 
 .footer__contact {
   display: flex;
-  align-items: c;
+  align-items: center;
+  justify-content: center;
+  gap: 10px
 }
 
 .footer__contact svg {
