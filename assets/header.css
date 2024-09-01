@@ -96,5 +96,9 @@
     height: 80px;
   }
 
-  .nav-dr
+  .nav-drawer__open-btn {
+    display: none;
+  }
+
+  .na
 }
