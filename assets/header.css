@@ -90,12 +90,13 @@
   
   .nav-bar__container {
     height: 95px;
+    padding: 0;
   }
 
   .nav-bar__items {
     height: 95px;
     justify-content: space-around;
-    padding: 0;
+
   }
 
   .nav-bar__brand-logo {
