@@ -100,7 +100,10 @@
   align-items: center;
 }
 
-.footer__terms_and_social__wrapper 
+.footer__terms_and_social__wrapper a {
+  text-decoration: underline;
+  f
+}
 
 
 
