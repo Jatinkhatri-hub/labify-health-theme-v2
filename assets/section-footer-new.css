@@ -137,7 +137,9 @@
 
   .footer-menu__list-container {
     flex-direction: row;
-    border-radius: ;
+    border-radius: 50px;
+    height: 60px;
+    padding: 
   }
 }
 
