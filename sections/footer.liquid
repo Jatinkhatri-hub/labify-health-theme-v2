@@ -44,11 +44,12 @@
             <ul class="footer-menu__list-container">
               {% for link in block.settings.footer_menu.links %}
                 <li class="footer-menu__link">
-                  <a href="{{ link.url }}"> {} </a>
+                  <a href="{{ link.url }}"> {{ link.title }} </a>
                 </li>
               {% endfor %}
             </ul>
           </div>
+        {% when 'ter' %}
       {% endcase %}
     {% endfor %}
   </div>
