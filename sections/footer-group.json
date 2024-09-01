@@ -52,7 +52,7 @@
           "type": "brand_information",
           "settings": {
             "brand_logo": "shopify:\/\/shop_images\/LabifyHealth.png",
-            "contact_no": "000",
+            "contact_no": "1-234-456-098",
             "email": "Email"
           }
         },
@@ -68,7 +68,7 @@
         "footer_menu_TqGfLH"
       ],
       "settings": {
-        "color_scheme": "scheme-a7c81a03-c105-41b5-ad58-8f947823c79e"
+        "color_scheme": "scheme-c9f7f11c-c6b7-48cd-b4dd-b7226f147ed8"
       }
     }
   },
