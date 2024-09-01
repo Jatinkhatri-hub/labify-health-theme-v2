@@ -64,7 +64,9 @@
   fill: rgb(var(--color-foreground));
 }
 
-.nav
+.nav-bar__menu-item {
+  list-style-type: none;
+}
 
 
 .nav-bar__cart-open-btn svg {
