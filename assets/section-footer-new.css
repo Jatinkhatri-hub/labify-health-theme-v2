@@ -5,4 +5,10 @@
   justify-content: center;
 }
 
-.footer__brand
+.footer__brand-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer
