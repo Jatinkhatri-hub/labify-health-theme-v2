@@ -32,3 +32,9 @@
   color: rgb(var(--color-foreground));
 }
 
+.footer__email h6 {
+  font-size: 19px;
+  color: rgb(var(--color-foreground));
+  font-family: "Lato Regular";
+}
+
