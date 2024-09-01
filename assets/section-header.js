@@ -27,7 +27,7 @@ addEventListener('DOMContentLoaded', () => {
       var scrollTop = window.pageXOffset || document.documentElement.scrollTop;
       
       if (scrollTop > lastScrollTop) {
-        navBar.style.top = '-80px';
+        navBar.style.top = '-95px';
       } else {
         navBar.style.top = '0';
       }
