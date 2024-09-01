@@ -29,7 +29,10 @@
   <div class="footer__container">
     {% for block in section.blocks %} 
       {% case block.type %}
-        
+        {% when 'brand_information' %}
+          <div>
+            
+          </div>
       {% endcase %}
     {% endfor %}
   </div>
