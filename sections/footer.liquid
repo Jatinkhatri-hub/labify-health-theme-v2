@@ -31,7 +31,7 @@
       {% case block.type %}
         {% when 'brand_information' %}
           <div class="footer__brand-info">
-            <img src="">
+            <img src="{{ block.settings.brand_logo | img }}">
           </div>
       {% endcase %}
     {% endfor %}
