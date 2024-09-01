@@ -38,7 +38,8 @@
   flex-direction: column;
   justify-content: center;
   transition: width .5s;
-  
+  overflow: hidden;
+  display: flex;
 }
 
 
