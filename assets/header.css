@@ -103,6 +103,6 @@
   .nav-bar__menu {
     position: relative;
     flex-direction: row;
-    
+    align-items: ;
   }
 }
