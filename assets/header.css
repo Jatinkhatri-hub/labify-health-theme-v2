@@ -94,7 +94,8 @@
 
   .nav-bar__items {
     height: 95px;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    padding: 0;
   }
 
   .nav-bar__brand-logo {
