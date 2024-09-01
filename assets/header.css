@@ -60,7 +60,9 @@
   margin: 20px;
 }
 
-.nav-d
+.nav-drawer__close-btn svg path {
+  fill: rgb(var(--color-foreground));
+}
 
 
 .nav-bar__cart-open-btn svg {
