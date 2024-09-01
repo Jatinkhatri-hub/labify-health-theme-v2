@@ -42,6 +42,11 @@
   display: flex;
 }
 
+.close {
+  padding: 0;
+}
+
+
 
 
 .nav-bar__cart-open-btn svg {
