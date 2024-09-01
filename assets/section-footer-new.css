@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: rgb(var(--color-foreground)));
+  background-color: rgb(var(--color-background));
 }
 
 .footer__brand-info {
