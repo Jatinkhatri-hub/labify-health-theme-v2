@@ -41,12 +41,19 @@
   color: rgb(var(--color-foreground));
 }
 
+.footer__contact span {
+  display: flex;
+  align-items: center;
+}
+
 .footer__contact h6 {
   font-size: 19px;
   color: rgb(var(--color-foreground));
   font-family: "Lato Regular";
   margin: 0;
 }
+
+.ema
 
 .footer__email svg {
   width: 19px;
