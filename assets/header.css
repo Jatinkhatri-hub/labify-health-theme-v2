@@ -1,4 +1,6 @@
 
 .nav-bar__container {
-  font-family: 'Aviner';
+  font-family: 'Avenir Regular';
+  position: fixed;
+  
 }
