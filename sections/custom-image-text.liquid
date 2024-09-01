@@ -1,0 +1,68 @@
+<div class="custom-network">
+  <section class="section">
+    <div class="network-title">
+       {% if section.settings.text_title != blank %}
+            <h3 class="top_text">{{ section.settings.text_title }}</h3>
+        {% endif %}
+    </div>
+<div class="networklogo">
+  {% if section.settings.logo1_link != blank %}
+    <a href="{{ section.settings.logo1_link }}">
+  {% endif %}
+  
+  {% if section.settings.logo1 != blank %}
+    <img src="{{ section.settings.logo1 | img_url: 'master' }}" alt="Logo">
+  {% endif %}
+  
+  {% if section.settings.logo1_link != blank %}
+    </a>
+  {% endif %}
+</div>
+    <div class="networkInner">
+    <div class="Leftnetworkpart">
+      {% if section.settings.textbold != blank %}
+           {{ section.settings.textbold }}
+        {% endif %}
+      {% if section.settings.details != blank %}
+        <p class="bottombtext">{{ section.settings.details }}</p>
+      {% endif %}
+  </div>
+  </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Network",
+  "class": "shopify-section--imgtext network",
+  "settings": [
+      {
+      "type": "text",
+      "id": "text_title",
+      "label": "title"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo1",
+      "label": "logo"
+    },
+          {
+      "type": "url",
+      "id": "logo1_link",
+      "label": "Link for Logo"
+    },
+    {
+      "type": "html",
+      "id": "textbold",
+      "label": "Details"
+    }
+  ],
+  
+  "presets": [
+    {
+      "name": "logo-with-text",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

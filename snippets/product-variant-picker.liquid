@@ -1,0 +1,135 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - update_url: {Boolean} whether or not to update url when changing variants. If false, the url isn't updated. Default: true (optional).
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+  {%- unless product.has_only_default_variant -%}
+                <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                  {% assign title_variant =  product.selected_or_first_available_variant.title | split: ' / ' %}
+                  {%- for option in product.options_with_values -%}
+                    {%  assign index = forloop.index %}
+                    {% if option.name == "offers" %}
+                       <fieldset class="offers js product-form__input {% comment %} {% unless forloop.first %}hidden{% endunless %}{% endcomment %}">
+                          <legend  class="form__label visually-hidden">{{ option.name }}:</legend>
+                          <div class="offer-boxs">
+                          {%- for value in option.values -%}
+                            <div class="offer-single-box">
+                              <div class="offer-single-box-content">
+                                <input type="radio" class="{{ valueIndex }}" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                                      name="{{ option.name }}"
+                                      value="{{ value | escape }}"
+                                      form="{{ product_form_id }}"
+                                      {% if option.selected_value == value %}checked{% endif %}
+                                >
+                                  {%  assign currentTitle = '' %}
+                                  {% for titleFariant in title_variant %}
+                                   {% if  index != 1  and index == forloop.index %}
+                                     {%  assign currentTitle = currentTitle | append: value  %}
+                                   {%  else  %}
+                                     {%  assign currentTitle = currentTitle | append: titleFariant   %}
+                                   {%  endif %} 
+                                    {%  unless forloop.last %}
+                                      {%  assign currentTitle = currentTitle | append: ' / '   %}
+                                    {%  endunless %}
+                                  {%- endfor -%} 
+                               
+                                <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                                    {{ value }}
+                                    {% if  index != 1 %}
+                                      {% for variant in product.variants %}
+                                       {%  if currentTitle == variant.title %}
+                                            <span id="price-{{ variant.id }}" class="price-{{ currentTitle }}">{{ variant.price | money }}</span>
+                                      {%  endif %} 
+                                    {%  endfor %}
+                                   {%  endif %} 
+                                </label>
+                              </div>
+                            </div>
+                          {%- endfor -%}
+                         </div>
+                        </fieldset>
+                      {% else %}
+                      <fieldset class=" {% if option.name == "offers" %}visually-hidden {% endif %} js product-form__input {% comment %} {% unless forloop.first %}hidden{% endunless %}{% endcomment %}">
+                        <legend class="form__label">{{ option.name }}:</legend>
+                        {%- for value in option.values -%}
+                          {% assign valueIndex = forloop.index %}
+                          <input type="radio" class="{{ valueIndex }}" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                                name="{{ option.name }}"
+                                value="{{ value | escape }}"
+                                form="{{ product_form_id }}"
+                                {% if option.selected_value == value %}checked{% endif %}
+                          >
+                         
+                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                            {{ value }}
+                          </label>
+                        {%- endfor -%}
+                      </fieldset>
+                      {% endif %}
+                        
+                     
+                  {%- endfor -%}
+                  <script type="application/json">
+                    {{ product.variants | json }}
+                  </script>
+                </variant-radios>
+            {%- endunless -%}
+
+<noscript class="product-form__noscript-wrapper-{{ section.id }}">
+  <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+    <label class="form__label" for="Variants-{{ section.id }}">
+      {{- 'products.product.product_variants' | t -}}
+    </label>
+    <div class="select">
+      <select
+        name="id"
+        id="Variants-{{ section.id }}"
+        class="select__select"
+        form="{{ product_form_id }}"
+      >
+        {%- for variant in product.variants -%}
+          <option
+            {% if variant == product.selected_or_first_available_variant %}
+              selected="selected"
+            {% endif %}
+            {% if variant.available == false %}
+              disabled
+            {% endif %}
+            value="{{ variant.id }}"
+          >
+            {%- liquid
+              echo variant.title
+              echo variant.price | money | strip_html | prepend: ' - '
+              if variant.available == false
+                echo 'products.product.sold_out' | t | prepend: ' - '
+              endif
+              if variant.quantity_rule.increment > 1
+                echo 'products.product.quantity.multiples_of' | t: quantity: variant.quantity_rule.increment | prepend: ' - '
+              endif
+              if variant.quantity_rule.min > 1
+                echo 'products.product.quantity.minimum_of' | t: quantity: variant.quantity_rule.min | prepend: ' - '
+              endif
+              if variant.quantity_rule.max != null
+                echo 'products.product.quantity.maximum_of' | t: quantity: variant.quantity_rule.max | prepend: ' - '
+              endif
+              # TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter
+              # theme-check-disable
+              assign cart_quantity = cart | item_count_for_variant: variant.id
+              # theme-check-enable
+              if cart_quantity > 0
+                echo 'products.product.quantity.in_cart_html' | t: quantity: cart_quantity | prepend: ' - '
+              endif
+            -%}
+          </option>
+        {%- endfor -%}
+      </select>
+      {% render 'icon-caret' %}
+    </div>
+  </div>
+</noscript>
