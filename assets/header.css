@@ -104,6 +104,6 @@
     position: relative;
     flex-direction: row;
     align-items: center;
-    max
+    gap: 3rem;
   }
 }
