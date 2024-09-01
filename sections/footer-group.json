@@ -1,1 +1,59 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"e42b25a8-c330-4795-8cbd-ed3ba29c3245":{"type":"announcement-bar","blocks":{"sections--21458262327608__e42b25a8-c330-4795-8cbd-ed3ba29c3245-announcement-1":{"type":"announcement","settings":{"text":"10% OFF - WHEN YOU JOIN OUR MAILING LIST","link":""}},"f2aef3bd-0eb1-4d35-9010-060944ed93f4":{"type":"announcement","disabled":true,"settings":{"text":"","link":""}}},"block_order":["sections--21458262327608__e42b25a8-c330-4795-8cbd-ed3ba29c3245-announcement-1","f2aef3bd-0eb1-4d35-9010-060944ed93f4"],"disabled":true,"settings":{"color_scheme":"","show_line_separator":true,"show_social":false,"auto_rotate":false,"change_slides_speed":5,"enable_country_selector":false,"enable_language_selector":false}},"footer":{"type":"footer","blocks":{"bde4ece1-20c7-4fad-af75-4be9a44b02ce":{"type":"footer-left","settings":{"footer_heading":"LABIFY HEALTH","mail_heading":"EMAIL:","email_id":"support@labifyhealth.com","phone_heading":"","phone_number":""}},"e9db03cf-f581-4b38-9a64-07d5ab278e40":{"type":"link_list","disabled":true,"settings":{"heading":"","menu":"footer-center"}},"4a996b5e-ba9f-40b2-9289-0ddcd071d635":{"type":"link_list","settings":{"heading":"","menu":"footer"}}},"block_order":["bde4ece1-20c7-4fad-af75-4be9a44b02ce","e9db03cf-f581-4b38-9a64-07d5ab278e40","4a996b5e-ba9f-40b2-9289-0ddcd071d635"],"settings":{"color_scheme":"background-1","newsletter_enable":true,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":false,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true,"show_policy":false,"margin_top":40,"padding_top":36,"padding_bottom":36}}},"order":["e42b25a8-c330-4795-8cbd-ed3ba29c3245","footer"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "e42b25a8-c330-4795-8cbd-ed3ba29c3245": {
+      "type": "announcement-bar",
+      "blocks": {
+        "sections--21458262327608__e42b25a8-c330-4795-8cbd-ed3ba29c3245-announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "10% OFF - WHEN YOU JOIN OUR MAILING LIST",
+            "link": ""
+          }
+        },
+        "f2aef3bd-0eb1-4d35-9010-060944ed93f4": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "sections--21458262327608__e42b25a8-c330-4795-8cbd-ed3ba29c3245-announcement-1",
+        "f2aef3bd-0eb1-4d35-9010-060944ed93f4"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "color_scheme": "scheme-a7c81a03-c105-41b5-ad58-8f947823c79e"
+      }
+    }
+  },
+  "order": [
+    "e42b25a8-c330-4795-8cbd-ed3ba29c3245",
+    "footer"
+  ]
+}
