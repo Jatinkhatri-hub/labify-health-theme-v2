@@ -26,3 +26,7 @@
 .nav-bar__brand-logo {
   width: 150px;
 }
+
+.nav-bar__cart-open-btn svg path {
+  fill: rgb(var(--color-foreground));
+}
