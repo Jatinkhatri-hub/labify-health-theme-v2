@@ -1,5 +1,5 @@
 .footer {
-  background: rgb;
+  background: rgb(var(--color-background));
 }
 
 .footer__container {
