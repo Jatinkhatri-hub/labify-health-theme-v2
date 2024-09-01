@@ -82,6 +82,7 @@
 .footer-menu__link a {
   font-family: 'Avenir Regular';
   font-size: 17px;
+  color: rgb(var(--color-foreground));
   
 }
 
