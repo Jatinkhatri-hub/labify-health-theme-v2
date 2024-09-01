@@ -120,7 +120,11 @@
   }
 
   .footer__brand-info {
-    
+    align-items: baseline;
+  }
+
+  .footer__brand-logo {
+    width: ;
   }
 }
 
