@@ -146,7 +146,7 @@
 
   .footer__terms_and_social__wrapper {
     justify-content: baseline;
-    
+    gap: 65px;
   }
 }
 
