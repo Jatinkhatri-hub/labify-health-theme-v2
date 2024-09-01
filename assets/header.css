@@ -2,5 +2,6 @@
 .nav-bar__container {
   font-family: 'Avenir Regular';
   position: fixed;
-  background-color: rgb();
+  background-color: rgb(var(--color-background));
+  
 }
