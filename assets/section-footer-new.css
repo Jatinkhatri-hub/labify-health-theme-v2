@@ -22,7 +22,9 @@
 }
 
 .footer__contact h6 {
-  font-size: ;
+  font-size: 19px;
+  color: rgb(var(--color-foreground));
+  
 }
 
 .footer__email svg {
