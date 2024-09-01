@@ -35,8 +35,9 @@
             {% if block.settings.contact_no != blank %}
             <div><span>{%  render 'icon-phone' %}</span> {{ block.settings.contact_no }} </div>
             {% endif %}
-            
-            <div><span>{% render 'icon-email' %}</span> {{ block.settings.email }}</div>
+            {% if block.settings.email != blank %}
+              <div><span>{% render 'icon-email' %}</span> {{ block.settings.email }}</div>
+            {% endif %}
           </div>
       {% endcase %}
     {% endfor %}
