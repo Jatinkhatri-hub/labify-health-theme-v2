@@ -51,6 +51,7 @@
         "brand_information_LyXdwp": {
           "type": "brand_information",
           "settings": {
+            "brand_logo": "shopify:\/\/shop_images\/LabifyHealth.png",
             "contact_no": "000",
             "email": "Email"
           }
