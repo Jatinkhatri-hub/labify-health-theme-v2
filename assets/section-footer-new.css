@@ -21,7 +21,12 @@
   color: rgb(var(--color-foreground));
 }
 
+.footer__contact h6 {
+  font-size: ;
+}
+
 .footer__email svg {
   width: 19px;
   color: rgb(var(--color-foreground));
 }
+
