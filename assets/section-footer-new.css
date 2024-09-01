@@ -70,5 +70,6 @@
   color: rgb(var(--color-foreground));
   font-family: "Lato Regular";
   margin: 0;
+  font-weight: 400;
 }
 
