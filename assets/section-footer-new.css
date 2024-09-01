@@ -149,7 +149,9 @@
     gap: 65px;
   }
 
-  .footer__terms_and_social__wrapper
+  .footer__terms_and_social__wrapper a {
+    font-size: 19px;
+  }
 }
 
 
