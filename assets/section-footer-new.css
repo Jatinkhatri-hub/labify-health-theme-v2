@@ -96,8 +96,11 @@
 
 .footer__terms_and_social__wrapper {
   display: flex;
-  justify-content: ;
+  justify-content: center;
+  align-items: center;
 }
+
+.footer__terms_and_social__wrapper 
 
 
 
