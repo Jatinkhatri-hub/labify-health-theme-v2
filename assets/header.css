@@ -64,6 +64,8 @@
   fill: rgb(var(--color-foreground));
 }
 
+.nav
+
 
 .nav-bar__cart-open-btn svg {
   width: 18.7px;
