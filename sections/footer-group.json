@@ -47,6 +47,18 @@
     },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "brand_information_LyXdwp": {
+          "type": "brand_information",
+          "settings": {
+            "contact_no": "000",
+            "email": "Email"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_LyXdwp"
+      ],
       "settings": {
         "color_scheme": "scheme-a7c81a03-c105-41b5-ad58-8f947823c79e"
       }
