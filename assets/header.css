@@ -20,5 +20,5 @@
 }
 
 .nav-drawer__open-btn svg rect {
-  fill: rgb
+  fill: rgb(var(--color-foreground))
 }
