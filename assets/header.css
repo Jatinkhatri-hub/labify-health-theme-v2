@@ -3,5 +3,7 @@
   font-family: 'Avenir Regular';
   position: fixed;
   background-color: rgb(var(--color-background));
-  
+  left: 0;
+  right: 0;
+  border-radius: ;
 }
