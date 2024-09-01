@@ -61,11 +61,20 @@
           "settings": {
             "footer_menu": "labify-health-main"
           }
+        },
+        "terms_and_social_jhfGWD": {
+          "type": "terms_and_social",
+          "settings": {
+            "text": "Term and Condition",
+            "text_url": "shopify:\/\/policies\/terms-of-service",
+            "show_social": true
+          }
         }
       },
       "block_order": [
         "brand_information_LyXdwp",
-        "footer_menu_TqGfLH"
+        "footer_menu_TqGfLH",
+        "terms_and_social_jhfGWD"
       ],
       "settings": {
         "color_scheme": "scheme-c9f7f11c-c6b7-48cd-b4dd-b7226f147ed8"
