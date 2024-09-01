@@ -45,6 +45,7 @@
   font-size: 19px;
   color: rgb(var(--color-foreground));
   font-family: "Lato Regular";
+  margin: 0;
 }
 
 .footer__email svg {
