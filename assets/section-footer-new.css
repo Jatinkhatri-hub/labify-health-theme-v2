@@ -53,7 +53,10 @@
   margin: 0;
 }
 
-.ema
+.footer__email span {
+  display: flex;
+  justify-content: center;
+}
 
 .footer__email svg {
   width: 19px;
