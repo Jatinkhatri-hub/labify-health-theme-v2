@@ -102,7 +102,9 @@
 
 .footer__terms_and_social__wrapper a {
   text-decoration: underline;
-  f
+  font-size: 17px;
+  font-weight: 400;
+  
 }
 
 
