@@ -17,7 +17,7 @@
       <div class="nav-drawer__close-btn"> {% render 'icon-close' %} </div>
       {% for link in section.settings.navigation.links %}
         <li class="nav-bar__menu-item">
-          <a href=""></a>
+          <a href="{{ link.url }}">{{ link.title }}</a>
         </li>
       {% endfor %}
     </ul>
