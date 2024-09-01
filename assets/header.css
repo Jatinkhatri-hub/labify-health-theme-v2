@@ -53,7 +53,9 @@
 
 .nav-drawer__close-btn {
   width: 18px;
-  height: 1;
+  height: 18px;
+  position: absolute;
+  
 }
 
 
