@@ -21,6 +21,11 @@
   width: 200px;
 }
 
+.footer__contact {
+  display: flex;
+  
+}
+
 .footer__contact svg {
   width: 17px;
   height: 17px;
