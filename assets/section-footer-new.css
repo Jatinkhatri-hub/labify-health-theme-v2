@@ -28,6 +28,10 @@
   gap: 10px
 }
 
+.footer__email {
+  display: flex;
+}
+
 .footer__contact svg {
   width: 17px;
   height: 17px;
