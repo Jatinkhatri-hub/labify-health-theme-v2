@@ -27,6 +27,10 @@
   width: 150px;
 }
 
+.nav-bar__cart-open-btn svg {
+  width: 1;
+}
+
 .nav-bar__cart-open-btn svg path {
   fill: rgb(var(--color-foreground));
 }
