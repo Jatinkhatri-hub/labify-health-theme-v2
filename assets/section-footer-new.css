@@ -73,5 +73,10 @@
   font-weight: 400;
 }
 
-.footer-menu
+.footer-menu__list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 
