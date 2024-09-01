@@ -42,7 +42,9 @@
         {% when 'footer_menu' %}
           <div class="footer__menu-wrapper">
             <ul class="footer-menu__list-container">
-              
+              {% for link in block.settings.footer_menu.links %}
+                
+              {% endfor %}
             </ul>
           </div>
       {% endcase %}
