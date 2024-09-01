@@ -56,7 +56,11 @@
   height: 18px;
   position: absolute;
   top: 0;
+  right: 0;
+  margin: 20px;
 }
+
+.nav-d
 
 
 .nav-bar__cart-open-btn svg {
