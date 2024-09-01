@@ -14,5 +14,7 @@
 
 .nav-bar__items {
   display: flex;
-  aling
+  align-items: center;
+  justify-content: space-between;
+  he
 }
