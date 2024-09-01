@@ -32,7 +32,8 @@
         {% when 'brand_information' %}
           <div class="footer__brand-info">
             <img src="{{ block.settings.brand_logo |  img_url: 'medium' }}" class="footer__brand-logo">
-            <div><span>{%  render 'icon-phone' %}</span> {} </div>
+            <div><span>{%  render 'icon-phone' %}</span> {{ block.settings.contact_no }} </div>
+            <div><span>{</span></div>
           </div>
       {% endcase %}
     {% endfor %}
