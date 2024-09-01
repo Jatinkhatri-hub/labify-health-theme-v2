@@ -15,7 +15,7 @@
     </a>
     <ul class="nav-bar__menu close">
       <div class="nav-drawer__close-btn"> {% render 'icon-close' %} </div>
-      
+      {% for link in section.settings.navigation.links %}{% endfor %}
     </ul>
 
     <a href="{{ routes.cart_url }}"
