@@ -36,7 +36,7 @@
             <div class="footer__contact"><span>{%  render 'icon-phone' %}</span> <h6> {{ block.settings.contact_no }}</h6> </div>
             {% endif %}
             {% if block.settings.email != blank %}
-              <div class="footer__email"><span>{% render 'icon-email' %}</span> {{ block.settings.email }}</div>
+              <div class="footer__email"><span>{% render 'icon-email' %}</span> <h6> {{ block.settings.email }} </h6></div>
             {% endif %}
           </div>
         {% when 'footer_menu' %}
