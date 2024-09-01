@@ -96,6 +96,10 @@
     height: 80px;
   }
 
+  .nav-bar__brand-logo {
+    width: 235px;
+  }
+
   .nav-drawer__open-btn {
     display: none;
   }
@@ -111,5 +115,7 @@
     width: auto;
   }
 
-  .nav
+  .nav-drawer__close-btn {
+    display: none;
+  }
 }
