@@ -18,7 +18,7 @@
 .footer__contact svg {
   width: 17px;
   height: 17px;
-  color: rgb(var(--color-foreground))
+  color: rgb(var(--color-foreground));
 }
 
 .footer__email svg {
