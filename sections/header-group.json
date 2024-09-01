@@ -42,7 +42,7 @@
         "brand_logo": "shopify:\/\/shop_images\/LabifyHealth.png",
         "navigation": "labify-health-main",
         "color_scheme": "scheme-a7c81a03-c105-41b5-ad58-8f947823c79e",
-        "header_position": "always"
+        "header_position": "scroll_up"
       }
     },
     "custom_liquid_E7WGUK": {
