@@ -23,7 +23,7 @@
 
 .footer__contact {
   display: flex;
-  
+  align-items: c;
 }
 
 .footer__contact svg {
