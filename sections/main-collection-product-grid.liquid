@@ -16,6 +16,8 @@
 
 {%- endstyle -%}
 
+{}
+
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }} custom-section review-section">
   <div class="page-width color-{{ section.settings.color_scheme }} review-section">
     
@@ -27,7 +29,11 @@
     "name": "t:sections.main-collection-product-grid.name",
     "class": "section",
     "settings": [
-      
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      },
       {
         "type": "color_scheme",
         "id": "section_color_scheme",
