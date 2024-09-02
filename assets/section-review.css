@@ -18,7 +18,7 @@
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid #D0E6CE;
-  background: #f2fdec;
+  background: rgb(var(--color-foreground));
   padding: 25px 20px;
 }
 
