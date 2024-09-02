@@ -89,10 +89,11 @@
   width: 100%;
   padding: 11px 40px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .product-card__btn:hover {
   background-color: white;
   border-color: #174338;
-  
+
 }
