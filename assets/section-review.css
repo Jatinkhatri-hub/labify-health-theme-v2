@@ -6,4 +6,8 @@
   color: rgb(var(--color-foreground));
 }
 
-.review
+.review__card-wrapper {
+  display: flex;
+  flex-direction: column;
+  
+}
