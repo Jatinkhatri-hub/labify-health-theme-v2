@@ -3,5 +3,5 @@
   text-align: center;
   font-size: 28px;
   text-transform: uppercase;
-  color: 
+  color: rgb(var(--color-foreground));
 }
