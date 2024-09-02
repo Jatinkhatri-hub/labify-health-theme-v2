@@ -18,6 +18,13 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }} custom-section">
   <div class="page-width color-{{ section.settings.color_scheme }}">
     <h2 class="review__heading">{{ section.settings.heading }}</h2>
+    <div class="review__card-wrapper">
+      <div class="review__card-header">
+        <div class="review__card-name-and-star">
+          <h1></h1>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -27,9 +34,10 @@
     "name": "Section Review",
     "settings": [
       {
-        "type": "richtext",
+        "type": "inline_richtext",
         "id": "heading",
-        "label": "Heading"
+        "label": "Heading",
+        "default": "Heading"
       },
       {
         "type": "color_scheme",
@@ -60,6 +68,20 @@
         "unit": "px",
         "label": "t:sections.all.padding.padding_bottom",
         "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "review_card",
+        "name": "Review Card",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name",
+            "default": "Name"
+          }
+        ]
       }
     ]
   }
