@@ -70,5 +70,6 @@
 .product-card__btn {
   display: flex;
   align-items: center;
-  justify-content: ;
+  justify-content: center;
+  border: ;
 }
