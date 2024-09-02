@@ -32,7 +32,9 @@
   justify-content: space-around;
 }
 
-.product-card__star-wrapper
+.product-card__review-wrapper {
+  flex-direction: ;
+}
 
 .product-card__star-wrapper {
   display: flex;
