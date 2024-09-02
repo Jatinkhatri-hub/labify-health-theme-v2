@@ -14,5 +14,9 @@
   width: 155px;
   height: 145px;
   border-radius: 6px;
-  over
+  overflow: hidden;
+}
+
+.product-card__img {
+  di
 }
