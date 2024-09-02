@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: baseline;
   align-items: baseline;
+  width: 2;
 }
 
 .review__card-header {
@@ -29,5 +30,5 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  
+
 }
