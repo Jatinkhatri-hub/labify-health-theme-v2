@@ -1,3 +1,5 @@
+
+
 .review__heading {
   margin: 0 auto;
   text-align: center;
@@ -18,7 +20,7 @@
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid #D0E6CE;
-  background: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
   padding: 25px 20px;
 }
 
