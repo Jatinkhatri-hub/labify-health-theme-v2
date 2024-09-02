@@ -59,5 +59,6 @@
 }
 
 .product-card__price {
-  font-family: "Avenir ";
+  font-family: "Avenir Bold";
+  font-size: 16px;
 }
