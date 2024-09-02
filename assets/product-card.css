@@ -92,5 +92,7 @@
 }
 
 .product-card__btn:hover {
-  background-color: ;
+  background-color: white;
+  border-color: #174338;
+  
 }
