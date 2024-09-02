@@ -4,6 +4,7 @@
   font-size: 28px;
   text-transform: uppercase;
   color: rgb(var(--color-foreground));
+  font-
 }
 
 .review__card-wrapper {
@@ -40,7 +41,7 @@
   line-height: inherit;
   font-family: "Avenir Bold";
   font-weight: 800;
-  
+
 }
 
 .review__card-verified-badge {
