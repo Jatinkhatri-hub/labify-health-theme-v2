@@ -17,6 +17,7 @@
   overflow: hidden;
   border: 1px solid #D0E6CE;
   background: #f2fdec;
+  padding: 25px 20px;
 }
 
 .review__card-header {
