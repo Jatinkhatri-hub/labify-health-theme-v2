@@ -36,6 +36,7 @@
   font-size: 18px;
   color: black;
   margin: 0;
+  line-height: inherit;
 }
 
 .review__card-verified-badge {
