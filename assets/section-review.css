@@ -5,7 +5,7 @@
   text-transform: uppercase;
   color: rgb(var(--color-foreground));
   font-family: 'Avenir Bold';
-  
+
 }
 
 .review__card-wrapper {
@@ -55,6 +55,7 @@
 .review__card-verified-badge span {
   font-size: 17px;
   color: black;
+  font-family: 'Avenir Regular';
 }
 
 .review__card-review {
