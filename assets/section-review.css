@@ -32,7 +32,7 @@
 
 .review__card-user-name {
   font-size: 18px;
-  color:
+  color: black;
 }
 
 .review__card-verified-badge {
@@ -44,6 +44,7 @@
 
 .review__card-verified-badge span {
   font-size: 17px;
+  color: black;
 }
 
 .review__card-review {
