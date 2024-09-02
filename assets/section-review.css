@@ -11,5 +11,8 @@
   flex-direction: column;
   justify-content: baseline;
   align-items: baseline;
+}
+
+.review__card-header {
   
 }
