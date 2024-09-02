@@ -50,15 +50,19 @@
 .product-card__review-text {
   font-size: 9px;
   font-family: "Avenir Regular";
+  color: black;
 }
 
 .product-card__title {
   font-size: 16px;
   font-family: "Avenir Bold";
   text-align: start;
+  color: black;
 }
 
 .product-card__price {
   font-family: "Avenir Bold";
   font-size: 16px;
+  text-align: start;
+  color: ;
 }
