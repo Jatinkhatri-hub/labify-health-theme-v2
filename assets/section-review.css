@@ -4,7 +4,8 @@
   font-size: 28px;
   text-transform: uppercase;
   color: rgb(var(--color-foreground));
-  font-
+  font-family: 'Avenir Bold';
+  
 }
 
 .review__card-wrapper {
