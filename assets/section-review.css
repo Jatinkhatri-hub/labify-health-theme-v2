@@ -14,5 +14,7 @@
 }
 
 .review__card-header {
-  display: ;
+  display: flex;
+  align-items: end;
+  jus
 }
