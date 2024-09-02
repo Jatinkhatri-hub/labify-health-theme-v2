@@ -43,4 +43,6 @@
   display: flex;
 }
 
-.product-card__star-wr
+.product-card__star-wrapper svg path {
+  fill: 
+}
