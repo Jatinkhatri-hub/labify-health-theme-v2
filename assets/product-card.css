@@ -26,5 +26,8 @@
 .product-card__info {
   width: 155px;
   height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
   
 }
