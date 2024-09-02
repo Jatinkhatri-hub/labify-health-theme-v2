@@ -16,7 +16,7 @@
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid #D0E6CE;
-  background: #f2f;
+  background: #f2fdec;
 }
 
 .review__card-header {
@@ -35,5 +35,5 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-
 }
+
