@@ -30,6 +30,7 @@
 .review__card-name-and-star {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 
 .review__card-user-name {
