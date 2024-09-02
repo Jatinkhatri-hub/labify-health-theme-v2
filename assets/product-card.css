@@ -32,6 +32,8 @@
   justify-content: space-around;
 }
 
+.product-card__star-wrapper
+
 .product-card__star-wrapper {
-  display: ;
+  display: flex;
 }
