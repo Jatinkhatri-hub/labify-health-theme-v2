@@ -18,13 +18,25 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }} custom-section">
   <div class="page-width color-{{ section.settings.color_scheme }}">
     <h2 class="review__heading">{{ section.settings.heading }}</h2>
-    <div class="review__card-wrapper">
-      <div class="review__card-header">
-        <div class="review__card-name-and-star">
-          <h1 class="review__card-user-name">{{ block.settings }}</h1>
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when "review_card" %}
+          <div class="review__card-wrapper">
+           <div class="review__card-header">
+            <div class="review__card-name-and-star">
+              <h1 class="review__card-user-name">{{ block.settings.name }}</h1>
+              <div class="review__card-star-wrapper">
+                {%  render 'icon-star' %}
+                {%  render 'icon-star' %}
+                {%  render 'icon-star' %}
+                {%  render 'icon-star' %}
+                {%  render 'icon-star' %}
+              </div>
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
         </div>
-      </div>
-    </div>
   </div>
 </div>
 
