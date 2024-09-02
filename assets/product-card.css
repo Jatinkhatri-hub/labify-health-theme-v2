@@ -7,4 +7,9 @@
   height: 285px;
 }
 
-.product-card__img
+.product-card__img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
