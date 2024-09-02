@@ -25,6 +25,8 @@
             <div class="review__card-header">
               <div class="review__card-name-and-star">
                 <h1 class="review__card-user-name">{{ block.settings.name }}</h1>
+                <div class="review__card-verified-badge">{% render 'icon-tick-2' %} <span>Verified Customer</span></div>
+                </div>
                 <div class="review__card-star-wrapper">
                   {%  render 'icon-star' %}
                   {%  render 'icon-star' %}
@@ -32,8 +34,6 @@
                   {%  render 'icon-star' %}
                   {%  render 'icon-star' %}
                 </div>
-              </div>
-              <div class="review__card-verified-badge">{% render 'icon-tick-2' %} <span>Verified Customer</span></div>
             </div>
             <p class="review__card-review">{{ block.settings.review }}</p>
           </div>
