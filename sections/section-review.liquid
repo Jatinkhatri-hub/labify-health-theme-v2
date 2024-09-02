@@ -25,7 +25,7 @@
   }
 
   @font-face {
-    font-family: 'Avenir Regular';
+    font-family: 'Avenir Light';
     src: url('{{'avenir-light.woff2' |  asset_url}}');
   }
 
@@ -35,7 +35,7 @@
   
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }} custom-section">
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }} custom-section review-section">
   <div class="page-width color-{{ section.settings.color_scheme }}">
     <h2 class="review__heading">{{ section.settings.heading }}</h2>
     {% for block in section.blocks %}
