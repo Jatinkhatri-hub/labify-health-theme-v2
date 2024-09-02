@@ -22,7 +22,7 @@
 
 .review__card-header {
   display: flex;
-  align-items: end;
+  align-items: baseline;
   justify-content: start;
   flex-direction: column-reverse;
 }
