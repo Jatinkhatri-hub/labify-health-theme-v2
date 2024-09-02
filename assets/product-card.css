@@ -33,7 +33,9 @@
 }
 
 .product-card__review-wrapper {
-  flex-direction: ;
+  display: flex;
+  flex-direction: row;
+  
 }
 
 .product-card__star-wrapper {
