@@ -13,7 +13,9 @@
   align-items: baseline;
   width: 325px;
   height: 275px;
-  border-radius: ;
+  border-radius: 15px;
+  overflow: hidden;
+  border
 }
 
 .review__card-header {
