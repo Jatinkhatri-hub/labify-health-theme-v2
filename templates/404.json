@@ -14,9 +14,32 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "section_review_FB8Xbj": {
+      "type": "section-review",
+      "blocks": {
+        "review_card_PqfQq4": {
+          "type": "review_card",
+          "settings": {
+            "name": "Name",
+            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
+          }
+        }
+      },
+      "block_order": [
+        "review_card_PqfQq4"
+      ],
+      "settings": {
+        "heading": "Heading",
+        "section_color_scheme": "scheme-a89ce067-ee00-4082-8b81-daddf743ab17",
+        "color_scheme": "scheme-a89ce067-ee00-4082-8b81-daddf743ab17",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "section_review_FB8Xbj"
   ]
 }
