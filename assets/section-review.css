@@ -41,6 +41,10 @@
   gap: 5px;
 }
 
+.review__card-verified-badge span {
+  font-size: 17px;
+}
+
 .review__card-review {
   
 }
