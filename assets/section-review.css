@@ -39,7 +39,8 @@
   margin: 0;
   line-height: inherit;
   font-family: "Avenir Bold";
-  font-weight: 9;
+  font-weight: 800;
+  
 }
 
 .review__card-verified-badge {
