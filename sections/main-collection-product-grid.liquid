@@ -100,7 +100,7 @@
                 <ul class="filter-box__dropdown-menu">
                   {%- for filter_value in filter.values -%}
                     <li class="dropdown-menu__item">
-                      <label class="" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                      <label class="dropdown-menu__item-label" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
                         <input
                           type="checkbox"
                           name="{{ filter_value.param_name }}"
