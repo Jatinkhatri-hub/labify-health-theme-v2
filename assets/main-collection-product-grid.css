@@ -28,7 +28,8 @@
 
 .filter-box__dropdown-menu-wrapper {
   background-color: #F5F5F5;
-  border-radius: ;
+  border-radius: 20px;
+  
 }
 
 .filter-box__dropdown-menu {
