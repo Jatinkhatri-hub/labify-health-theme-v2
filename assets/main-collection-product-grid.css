@@ -8,7 +8,6 @@
 .selected-filters-dropdown {
   width: 150px;
   height: 45px;
-  border: 1px solid #4a4a4a;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,6 +26,7 @@
   font-family: 'Avenir Medium';
   width: 150px;
   height: 45px;
+  border: 1px solid #4a4a4a;
 }
 
 .main-grid__filter-wrapper form {
