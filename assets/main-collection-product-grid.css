@@ -21,9 +21,10 @@
   border: none;
   color: #29282C;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-family: ;
 }
 
 .main-grid__filter-wrapper form {
