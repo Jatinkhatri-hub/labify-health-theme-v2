@@ -15,7 +15,9 @@
 }
 
 .selected-filters-dropdown svg {
-  top
+  position: absolute;
+  top: 0;
+  b
 }
 
 .dropdown-toggle {
