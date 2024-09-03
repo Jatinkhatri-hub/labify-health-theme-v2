@@ -36,7 +36,7 @@
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }} custom-section review-section">
   <div class="page-width color-{{ section.settings.color_scheme }} review-section">
-    <div></div>
+    <div>
     <form>
       {%- for filter in collection.filters -%}
         <details>
@@ -222,6 +222,7 @@
         {%- endfor -%}
       </div>
     </form>
+    </div>
 
       {% for product in collection.products %} 
         {% render 'product-card', product: product %}
