@@ -249,6 +249,9 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const filterForm = document.getElementById('filter-form');
+    const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
+  const dropdownToggle = document.querySelector('.selected-filters-dropdown .dropdown-toggle');
+
 
     // Attach event listeners to all filter inputs
     filterForm.querySelectorAll('input').forEach(function (input) {
