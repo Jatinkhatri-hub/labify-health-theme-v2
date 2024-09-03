@@ -115,6 +115,11 @@
   
   .product-card__wrapper {
     width: 280px;
-    height: ;
+    height: 525px;
+
+  }
+
+  .product-card__img-wrapper {
+    width: 282px;
   }
 }
