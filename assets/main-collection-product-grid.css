@@ -1,4 +1,6 @@
 .main-grid__filter-wrapper {
   display: flex;
-  
+  justify-content: start;
+  align-items: center;
 }
+
