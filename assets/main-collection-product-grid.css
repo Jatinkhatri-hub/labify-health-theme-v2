@@ -30,6 +30,34 @@
   border: 1px solid #4a4a4a;
 }
 
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  display: block;
+}
+
+.button-like {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.button-like.active {
+  background-color: #0056b3;
+}
+
 .main-grid__filter-wrapper form {
   display: flex;
   justify-content: center;
