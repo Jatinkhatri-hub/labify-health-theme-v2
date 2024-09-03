@@ -76,5 +76,7 @@
 
 .main-collection-product-grid {
   display: flex;
-  jus
+  justify-content: center;
+  align-items: center;
+  
 }
