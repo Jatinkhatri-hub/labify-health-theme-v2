@@ -18,7 +18,8 @@
 .dropdown-toggle {
   padding: 12px 14px;
   background-color: white;
-  border
+  border: none;
+  
 }
 
 .main-grid__filter-wrapper form {
