@@ -223,7 +223,7 @@
     </form>
 
       {% for product in collection.products %} 
-        
+        {% render 'product-card', product: product %}
       {% endfor %}
 
 
