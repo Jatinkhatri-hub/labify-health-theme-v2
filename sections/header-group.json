@@ -39,7 +39,10 @@
     "header": {
       "type": "header",
       "settings": {
-        "color_scheme": "background-1"
+        "brand_logo": "shopify:\/\/shop_images\/LabifyHealth.png",
+        "navigation": "mega-menu-new",
+        "color_scheme": "scheme-3d4d3db2-20bb-4410-8eff-dcfbc2389e44",
+        "header_position": "always"
       }
     },
     "custom_liquid_E7WGUK": {
