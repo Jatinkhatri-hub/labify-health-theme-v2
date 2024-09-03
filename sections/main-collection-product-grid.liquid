@@ -37,26 +37,7 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }} custom-section review-section">
   <div class="page-width color-{{ section.settings.color_scheme }} review-section">
 
-  <div class="product-card__wrapper">
-    <div class="product-card__img-wrapper">
-      <img src="{{ product.featured_image |  img_url: 'medium' }}" class="product-card__img">
-    </div>
-    <div class="product-card__info">
-      <div class="product-card__review-wrapper">
-        <div class="product-card__star-wrapper">
-          {% render 'icon-star' %}
-          {% render 'icon-star' %}
-          {% render 'icon-star' %}
-          {% render 'icon-star' %}
-          {% render 'icon-star' %}
-        </div>
-        <span class="product-card__review-text">+1000 happy costumers</span>
-      </div>
-      <h6 class="product-card__title">{{ product.title }}</h6>
-      <h6 class="product-card__price">{{ product.price |  money_with_currency }}</h6>
-      <button class="product-card__btn">Shop Now</button>
-    </div>
-  </div>
+  {% comment %}  {% endcomment %}
 
   
     
