@@ -43,7 +43,7 @@
           <summary>
             <div class="main-grid__filter-box">
               <span>{{ filter.label }}</span>
-
+              {% render 'icon-dropdown' %}
               {% comment %} {%- if filter.active_values.size > 0 -%}
                 <span>({{ filter.active_values.size }})</span>
               {%- endif -%} {% endcomment %}
