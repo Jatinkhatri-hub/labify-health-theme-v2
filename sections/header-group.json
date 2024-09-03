@@ -40,7 +40,7 @@
       "type": "header",
       "settings": {
         "brand_logo": "shopify:\/\/shop_images\/LabifyHealth.png",
-        "navigation": "mega-menu-new",
+        "navigation": "labify-health-main",
         "color_scheme": "scheme-3d4d3db2-20bb-4410-8eff-dcfbc2389e44",
         "header_position": "always"
       }

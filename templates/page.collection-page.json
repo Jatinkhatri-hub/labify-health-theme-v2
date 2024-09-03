@@ -16,9 +16,53 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hero_banner_HrRn6N": {
+      "type": "hero-banner",
+      "blocks": {
+        "heading_Bn76HN": {
+          "type": "heading",
+          "settings": {
+            "line1_text": "TRUE HEALTH,",
+            "line1_color": "#a8d58e",
+            "line2_text": "SIMPLIFIED",
+            "line2_color": "#ffffff"
+          }
+        },
+        "paragraph_L9rMtc": {
+          "type": "paragraph",
+          "settings": {
+            "para_text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "para_color": "#ffffff"
+          }
+        },
+        "button_Nxa7mf": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP NOW",
+            "button_text_color": "#296108",
+            "button_bg_color": "#a8d58e",
+            "button_link": "",
+            "button_border_color": "#a8d58e",
+            "point_1": "Flexible Subscription Model",
+            "point_2": "Personalised Results",
+            "point_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Bn76HN",
+        "paragraph_L9rMtc",
+        "button_Nxa7mf"
+      ],
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/labify-banner_720.png",
+        "background_image_mobile": "shopify:\/\/shop_images\/labify-banner-mobile.png"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hero_banner_HrRn6N"
   ]
 }
