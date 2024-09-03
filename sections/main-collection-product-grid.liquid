@@ -199,7 +199,7 @@
         </details>
       {%- endfor -%}
 
-      <details class="selected__filter-box">
+      {% comment %} <details class="selected__filter-box">
         <summary>
           <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}">All</a>
         </summary>
@@ -227,7 +227,7 @@
           </div>
           {%- endif -%}
         {%- endfor -%}
-      </details> 
+      </details>  {% endcomment %}
     </form>
     </div>
 
