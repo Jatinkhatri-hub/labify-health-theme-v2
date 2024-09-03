@@ -136,7 +136,7 @@
 
   .product-card__info {
     width: 280px;
-    height: ;
+    height: 260px;
   }
   .product-card__star-wrapper svg {
     width: 15px;
@@ -157,6 +157,8 @@
     color: #1b1b1b;
     text-align: start;
     display: block;
+    overflow: hidden;
+    whi
   }
 
   .product-card__price {
