@@ -5,6 +5,7 @@
   flex-direction: column;
   width: 155px;
   height: 285px;
+  gap: 10px;
 }
 
 .product-card__img-wrapper {
