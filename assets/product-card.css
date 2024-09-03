@@ -158,7 +158,8 @@
     text-align: start;
     display: block;
     overflow: hidden;
-    whi
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .product-card__price {
