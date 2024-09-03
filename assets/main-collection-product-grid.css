@@ -44,7 +44,7 @@
   border-radius: 20px;
   overflow: hidden;
   width: 215px;
-  bottom: 0;
+  bottom: 125%;
 }
 
 .dropdown-item {
@@ -67,7 +67,7 @@
 .button-like.active {
   background-color: #174338;
   color: white;
-  
+
 }
 
 .main-grid__filter-wrapper form {
