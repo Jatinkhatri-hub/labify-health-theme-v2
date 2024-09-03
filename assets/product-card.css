@@ -65,6 +65,7 @@
   font-family: "Avenir Regular";
   color: black;
   margin: 0;
+  line-height: normal;
 }
 
 .product-card__title {
