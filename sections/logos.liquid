@@ -1,0 +1,211 @@
+{{ 'https://unpkg.com/swiper/swiper-bundle.min.css' | stylesheet_tag }}
+<div class="logos-div-text-mobile">{{ section.settings.logos_text_mobile }}</div>
+<div class="logos-div swiper-container mySwiper mySwiper-{{ section.id }}">
+  <div class="swiper-wrapper">
+    
+    <div class="swiper-slide logos-div-text">{{ section.settings.logos_text }}</div>
+    {% for block in section.blocks %}
+    <div class="swiper-slide logo">
+      <img src="{{ block.settings.logo_image | img_url: 'medium' }}" alt="{{ block.settings.logo_alt_text }}">
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+ @font-face{
+  font-family: 'Avenir Regular';
+  src: url('{{ 'Avenir-Regular' |  asset_url }}');
+    }
+
+    .logos-div{
+        margin: 0;
+        padding: 0;
+        height: 81px;
+        width: 100%;
+        background-color: #001403;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 176px;
+        overflow: hidden;
+    }
+    .swiper-container, .swiper-wrapper {
+    height: 81px;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .swiper-slide {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .logos-div-text{
+        margin: 0;
+        padding: 0;
+        margin-left: 119px;
+        width: auto;
+        min-width: 100px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 19.52px;
+        font-family: 'Avenir Regular';
+    }
+    .logos-div-text-mobile{
+      display: none;
+    }
+    .logos{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 81px;
+        display: flex;
+        align-items: center;
+        gap: 176px;
+        overflow: hidden;
+        border: none;
+    }
+    .logo{
+        margin: 0;
+        padding: 0;
+        height: fit-content;
+        width: fit-content;
+        height: 100%;
+    }
+    .logo img{
+        margin: 0;
+        padding: 0;
+        height: 31px;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* MEDIA queries... */
+    @media(min-width : 319px) and (max-width : 700px){
+      .logos-div{
+        height: 55.5px;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .logos-div-text-mobile{
+        margin: 0;
+        padding: 0;
+        height: 55.5px;
+        font-size: 13px;
+        font-weight: 900;
+        line-height: 15.86px;
+        color: #ffffff;
+        background-color: #001403;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+      }
+      .logos-div-text{
+        display: none;
+      }
+      .logo img{
+        height: 24px !important;
+      }
+      .logos{
+        justify-content: center;
+        gap: 19px;
+        overflow: hidden;
+      }
+    }
+</style>
+
+{{ 'https://unpkg.com/swiper/swiper-bundle.min.js' | script_tag }}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiperId = "{{ section.id }}"
+
+    var swiper = new Swiper(`.mySwiper-${swiperId}`, {
+      loop: true,
+      slidesPerView: 6.5,
+      spaceBetween: 60,
+      slidesPerGroup: 4,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+      319: { 
+        slidesPerView: 4,
+        spaceBetween: 5, 
+      },
+      701: { 
+        slidesPerView: 6.5,
+        spaceBetween: 60,
+      }
+    },
+    });
+  });
+</script>
+
+
+
+{% schema %}
+    {
+      "name": "Logos",
+      "settings": [
+        {
+          "type": "text",
+          "id": "logos_text_mobile",
+          "label": "Logos Section Text (mobile)",
+          "default": "AS SEEN ON"
+        },
+        {
+          "type": "text",
+          "id": "logos_text",
+          "label": "Logos Section Text",
+          "default": "AS SEEN ON"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "logo",
+          "name": "Logo",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "logo_image",
+              "label": "Logo Image"
+            },
+            {
+              "type": "text",
+              "id": "logo_alt_text",
+              "label": "Alt Text",
+              "default": "Logo"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Logos",
+          "category": "Custom"
+        }
+      ]
+    }
+    {% endschema %}
+    
