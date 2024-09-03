@@ -1,0 +1,351 @@
+<div class="hero-banner" style="background-image: url({{ section.settings.background_image | img_url: 'master' }}); background-size: cover; background-position: center;">
+    <div class="banner-div">
+        <div class="banner-content">
+
+            <div class="banner-content-rating">
+                <div class="rating-stars">
+                    {%  render 'rating-star' %}
+                    {%  render 'rating-star' %}
+                    {%  render 'rating-star' %}
+                    {%  render 'rating-star' %}
+                    {%  render 'rating-star' %}
+                </div>
+                <p class="rating-text">10000+ Happy Customers</p>
+            </div>
+
+            {% for block in section.blocks %}
+                {% if block.type == 'heading' %}
+                    <div class="banner-heading">
+                        <h2 class="heading-line line1" style="color: {{ block.settings.line1_color }};">{{ block.settings.line1_text }}</h2>
+                        <h2 class="heading-line line2" style="color: {{ block.settings.line2_color }};">{{ block.settings.line2_text }}</h2>
+                    </div>
+                {% elsif block.type == 'paragraph' %}
+                    <div class="banner-para">
+                        <p class="banner-para-content" style="color: {{ block.settings.para_color }};">{{ block.settings.para_text }}</p>
+                    </div>
+                {% elsif block.type == 'button' %}
+                    <a href="{{ block.settings.button_link }}">
+                    <button class="banner-button" style="color: {{ block.settings.button_text_color }}; background-color: {{ block.settings.button_bg_color }}; border-color: {{ block.settings.button_border_color }};">
+                        {{ block.settings.button_text }}
+                    </button>
+                    </a>
+                    <div class="banner-points">
+                        <div class="banner-point">
+                            <div class="banner-point-svg">
+                                {%  render 'truck' %} 
+                            </div>
+                            <p style="color: {{ block.settings.point_color }};">{{ block.settings.point_1 }}</p>
+                        </div>
+                        <div class="banner-point">
+                            <div class="banner-point-svg">
+                                 {% render 'shield' %}
+                            </div>
+                            <p style="color: {{ block.settings.point_color }};">{{ block.settings.point_2 }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+<style>
+   @font-face{
+  font-family: 'Avenir Regular';
+  src: url('{{ 'Avenir-Regular' |  asset_url }}');
+    }
+
+    @font-face{
+  font-family: 'Neulis Neue Regular';
+  src: url('{{ 'Neulis-Neue-Regular' |  asset_url }}');
+    }
+
+
+    .hero-banner {
+        height: 528px;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .banner-div {
+        height: 100%;
+        width: 50%;
+        padding-left: 120px;
+        display: flex;
+        align-items: center;
+    }
+
+    .banner-content {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+    
+    .banner-content-rating{
+        margin: 0;
+        margin-left: 2px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    /* .banner-stars{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        
+    }
+    .rating-star{
+        margin: 0;
+        padding: 0;
+        height: 21.62px;
+        width: 21.62px;
+        color: #F6B100;
+    } */
+    .rating-text{
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21.86px;
+        color: #ffffff;
+        font-family: 'Avenir Regular';
+    }
+
+    .banner-heading {
+        margin: 0;
+        padding: 0;
+    }
+
+    .heading-line {
+        margin: 0;
+        padding: 0;
+        font-size: 52px;
+        line-height: 63.44px;
+        font-weight: 900;
+        font-family: 'Avenir Regular';
+    }
+
+    .banner-para {
+        width: 359px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .banner-para-content {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        line-height: 25.28px;
+        font-weight: 400;
+        font-family: 'Avenir Regular';
+    }
+
+    .banner-button {
+        margin: 0;
+        width: 314px;
+        height: 56px;
+        border-radius: 80px;
+        border: 2px solid ;
+        font-size: 18px;
+        line-height: 24.59px;
+        font-weight: 900;
+        text-align: center;
+        font-family: 'Avenir Regular';
+    }
+
+    .banner-points {
+        margin: 0;
+        margin-left: 12px;
+        margin-top: -8px;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 9px;
+    }
+    .banner-point{
+        display: flex;
+        gap: 7px;
+        align-items: flex-end;
+    }
+    .banner-point p{
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 12px;
+        color: #ffffff;
+        font-family: 'Neulis Neue Regular';
+    }
+
+
+    /* MEDIA QUERRIES... */
+
+    @media(min-width : 319px) and (max-width : 700px){
+        .hero-banner {
+            height: 100vh;
+            width: 100vw;
+            padding-top: 108px;
+            background-image: url({{ section.settings.background_image_mobile | img_url: 'master' }}) !important; 
+            display : flex;
+            flex-direction: column;
+            align-items: center;  
+        }
+        .banner-div {
+            height: fit-content;
+            width: fit-content;
+            display: block;
+            /* align-items: center;
+            justify-content: center; */
+            padding-left: 0; 
+        }
+
+    .banner-content {
+        height: fit-content;
+        width: 327px;
+        
+    }
+
+        .heading-line{
+            font-size: 34px;
+            line-height: 41.48px;
+        }
+        .banner-para{
+            width: 327px;
+        }
+        .banner-para-content{
+            width: 325px;
+        }
+
+    }
+</style>
+
+{% schema %}
+{
+    "name": "Hero Banner",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Background Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_image_mobile",
+            "label": "Background Image (Mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "heading",
+            "name": "Banner Heading",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "line1_text",
+                    "label": "Line 1 Text",
+                    "default": "TRUE HEALTH,"
+                },
+                {
+                    "type": "color",
+                    "id": "line1_color",
+                    "label": "Line 1 Color",
+                    "default": "#a8d58e"
+                },
+                {
+                    "type": "text",
+                    "id": "line2_text",
+                    "label": "Line 2 Text",
+                    "default": "SIMPLIFIED"
+                },
+                {
+                    "type": "color",
+                    "id": "line2_color",
+                    "label": "Line 2 Color",
+                    "default": "#ffffff"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "name": "Banner Paragraph",
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "para_text",
+                    "label": "Paragraph Text",
+                    "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                },
+                {
+                    "type": "color",
+                    "id": "para_color",
+                    "label": "Paragraph Color",
+                    "default": "#ffffff"
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "name": "Banner Button",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text",
+                    "default": "SHOP NOW"
+                },
+                {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default": "#296108"
+                },
+                {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button Background Color",
+                    "default": "#a8d58e"
+                },
+                {
+                   "type": "url",
+                   "id": "button_link",
+                   "label": "button link"
+                },
+                    {
+            "type": "color",
+            "id": "button_border_color",
+            "label": "Button Border Color",
+            "default": "#a8d58e"
+                },
+                {
+                    "type": "text",
+                    "id": "point_1",
+                    "label": "point 1",
+                    "default": "Flexible Subscription Model"
+                },
+                {
+                    "type": "text",
+                    "id": "point_2",
+                    "label": "point 2",
+                    "default": "Personalised Results"
+                },
+                {
+                    "type": "color",
+                    "id": "point_color",
+                    "label": "point color",
+                    "default": "#ffffff"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero Banner",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}
