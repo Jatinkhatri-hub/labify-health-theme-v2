@@ -94,7 +94,7 @@
               {%- when 'list' -%}
                 <ul class="filter-box__dropdown-menu">
                   {%- for filter_value in filter.values -%}
-                    <li>
+                    <li class="dropdown-menu__item">
                       <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
                         <input
                           type="checkbox"
