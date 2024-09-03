@@ -130,6 +130,11 @@
     height: 265px;
   }
 
-  .product
+  .product-card__star-wrapper svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .
 
 }
