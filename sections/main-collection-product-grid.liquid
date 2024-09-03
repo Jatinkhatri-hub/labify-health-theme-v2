@@ -285,27 +285,23 @@
         .catch(error => console.error('Error applying filters:', error));
     }
 
-  
-  // Update dropdown with selected filter options
+      // Update dropdown with selected filter options
   function updateSelectedFilters() {
     const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
     dropdownMenu.innerHTML = '';
 
     selectedOptions.forEach(option => {
-      const labelName = option.closest('label').previousElementSibling ? option.closest('label').previousElementSibling.textContent : ''; // Get the label name
-      const optionLabel = option.nextElementSibling ? option.nextElementSibling.textContent : option.value; // Get the label text of the selected option
+      const label = option.nextElementSibling ? option.nextElementSibling.textContent : option.value;
 
       const button = document.createElement('button');
       button.className = 'button-like';
-      button.innerHTML = `<strong>${labelName}:</strong> ${optionLabel}`; // Add label name and option text to the button
-      button.dataset.name = option.name;
-      button.dataset.value = option.value;
+      button.textContent = label;
+      button.dataset.name = option.name; // Capture the name of the filter
+      button.dataset.value = option.value; // Capture the value of the selected option
 
       // Add event listener to filter products when clicked
       button.addEventListener('click', function () {
         applySelectedFilter(button.dataset.name, button.dataset.value);
-        // Update dropdown toggle text
-        dropdownToggle.innerHTML = `<strong>${labelName}:</strong> ${optionLabel} {% render 'icon-dropdown-arrow' %}`;
         // Highlight the active button
         dropdownMenu.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
@@ -314,16 +310,6 @@
 
       dropdownMenu.appendChild(button);
     });
-
-    // Update dropdown toggle text with the first selected option
-    if (selectedOptions.length > 0) {
-      const firstSelectedOption = selectedOptions[0];
-      const firstLabelName = firstSelectedOption.closest('label').previousElementSibling ? firstSelectedOption.closest('label').previousElementSibling.textContent : '';
-      const firstOptionLabel = firstSelectedOption.nextElementSibling ? firstSelectedOption.nextElementSibling.textContent : firstSelectedOption.value;
-      dropdownToggle.innerHTML = `<strong>${firstLabelName}:</strong> ${firstOptionLabel} {% render 'icon-dropdown-arrow' %}`;
-    } else {
-      dropdownToggle.textContent = 'Selected Filters {% render \'icon-dropdown-arrow\' %}'; // Default text if no option is selected
-    }
   }
 
   // Function to apply the selected filter from the dropdown
