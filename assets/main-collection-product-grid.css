@@ -40,5 +40,9 @@
 .dropdown-menu__item-label {
   display: flex;
   align-items: center;
-    gap: 4px;
+  gap: 4px;
+}
+
+.dropdown-menu__item-label input {
+  
 }
