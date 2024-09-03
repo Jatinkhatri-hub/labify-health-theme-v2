@@ -79,6 +79,10 @@
   line-height: normal;
 }
 
+.product-card__description {
+  display: none;
+}
+
 .product-card__price {
   font-family: "Avenir Bold";
   font-size: 16px;
