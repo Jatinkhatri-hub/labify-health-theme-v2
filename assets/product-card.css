@@ -121,5 +121,7 @@
 
   .product-card__img-wrapper {
     width: 282px;
+    height: 265px;
+    border-radius: 15px;
   }
 }
