@@ -229,12 +229,12 @@
         {%- endfor -%}
       </details>  {% endcomment %}
     </form>
-    <div class="selected-filters-dropdown">
+    {% comment %} <div class="selected-filters-dropdown">
       <button class="dropdown-toggle">Selected Filters {% render 'icon-dropdown-arrow' %} </button>
       <div class="dropdown-menu">
 
       </div>
-    </div>
+    </div> {% endcomment %}
     </div>
     <div class="main-collection-product-grid"> 
       {% for product in collection.products %} 
