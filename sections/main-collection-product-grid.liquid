@@ -194,7 +194,7 @@
         </details>
       {%- endfor -%}
 
-      <div>
+      {% comment %} <div>
         <p>
           <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}">Clear all</a>
         </p>
@@ -220,7 +220,7 @@
             {%- endfor -%}
           {%- endif -%}
         {%- endfor -%}
-      </div>
+      </div> {% endcomment %}
     </form>
     </div>
 
