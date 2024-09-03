@@ -56,13 +56,57 @@
         "button_Nxa7mf"
       ],
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/labify-banner_720.png",
+        "background_image": "shopify:\/\/shop_images\/fabify1_720.png",
         "background_image_mobile": "shopify:\/\/shop_images\/labify-banner-mobile.png"
+      }
+    },
+    "logos_pnrQxG": {
+      "type": "logos",
+      "blocks": {
+        "logo_LkgnaQ": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_y4FwHK": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_UNwcCm": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_GBeibK": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        }
+      },
+      "block_order": [
+        "logo_LkgnaQ",
+        "logo_y4FwHK",
+        "logo_UNwcCm",
+        "logo_GBeibK"
+      ],
+      "settings": {
+        "logos_text_mobile": "AS SEEN ON",
+        "logos_text": "AS SEEN ON"
       }
     }
   },
   "order": [
     "main",
-    "hero_banner_HrRn6N"
+    "hero_banner_HrRn6N",
+    "logos_pnrQxG"
   ]
 }
