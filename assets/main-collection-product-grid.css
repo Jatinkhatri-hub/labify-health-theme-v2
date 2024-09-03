@@ -25,6 +25,8 @@
   align-items: center;
   cursor: pointer;
   font-family: 'Avenir Medium';
+  width: 150px;
+  height: 45px;
 }
 
 .main-grid__filter-wrapper form {
