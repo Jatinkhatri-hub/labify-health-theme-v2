@@ -12,12 +12,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 14px;
+
 }
 
 .dropdown-toggle {
-  padding: 10px 20px;
-  wi
+  padding: 12px 14px;
+  
 }
 
 .main-grid__filter-wrapper form {
