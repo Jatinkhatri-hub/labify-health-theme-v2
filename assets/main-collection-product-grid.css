@@ -30,4 +30,6 @@
   padding: 0;
 }
 
-.filter
+.dropdown-menu__item {
+  list-style-type: none;
+}
