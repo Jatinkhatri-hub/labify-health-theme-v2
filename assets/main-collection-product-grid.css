@@ -14,7 +14,9 @@
   padding: 12px 14px;
 }
 
-.main-grid__filter-box svg
+.main-grid__filter-box svg rect {
+  fill: #29282C;
+}
 
 .main-grid__filter-box span {
   font-family: 'Avenir Regular';
