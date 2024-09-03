@@ -3,8 +3,9 @@
   justify-content: start;
   align-items: center;
   width: 100%;
-  
 }
+
+.main-grid__filter-wrapper 
 
 .main-grid__filter-box {
   width: 150px;
