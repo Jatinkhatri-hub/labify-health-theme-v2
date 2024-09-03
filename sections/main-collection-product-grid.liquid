@@ -248,39 +248,39 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const filterForm = document.getElementById('filter-form');
+  //   const filterForm = document.getElementById('filter-form');
 
-    // Attach event listeners to all filter inputs
-    filterForm.querySelectorAll('input').forEach(function (input) {
-      input.addEventListener('change', function () {
-        applyFilters();
-      });
-    });
+  //   // Attach event listeners to all filter inputs
+  //   filterForm.querySelectorAll('input').forEach(function (input) {
+  //     input.addEventListener('change', function () {
+  //       applyFilters();
+  //     });
+  //   });
 
-    function applyFilters() {
-      const formData = new FormData(filterForm);
+  //   function applyFilters() {
+  //     const formData = new FormData(filterForm);
 
-      // Fetch the collection with the applied filters using AJAX
-      fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
-        method: 'GET',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest',
-        },
-      })
-        .then(response => response.text())
-        .then(html => {
-          // Replace the collection product grid with the new filtered content
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-          const newContent = doc.querySelector('.main-collection-product-grid'); // Adjust selector based on your theme
-          const currentContent = document.querySelector('.main-collection-product-grid'); // Adjust selector based on your theme
+  //     // Fetch the collection with the applied filters using AJAX
+  //     fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+  //       method: 'GET',
+  //       headers: {
+  //         'X-Requested-With': 'XMLHttpRequest',
+  //       },
+  //     })
+  //       .then(response => response.text())
+  //       .then(html => {
+  //         // Replace the collection product grid with the new filtered content
+  //         const parser = new DOMParser();
+  //         const doc = parser.parseFromString(html, 'text/html');
+  //         const newContent = doc.querySelector('.main-collection-product-grid'); // Adjust selector based on your theme
+  //         const currentContent = document.querySelector('.main-collection-product-grid'); // Adjust selector based on your theme
           
-          if (newContent && currentContent) {
-            currentContent.innerHTML = newContent.innerHTML;
-          }
-        })
-        .catch(error => console.error('Error applying filters:', error));
-    }
+  //         if (newContent && currentContent) {
+  //           currentContent.innerHTML = newContent.innerHTML;
+  //         }
+  //       })
+  //       .catch(error => console.error('Error applying filters:', error));
+  //   }
   });
 </script>
 
