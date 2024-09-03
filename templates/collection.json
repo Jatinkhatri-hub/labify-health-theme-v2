@@ -18,49 +18,6 @@
         "color_scheme": "background-1"
       }
     },
-    "hero_banner_fkLWUa": {
-      "type": "hero-banner",
-      "blocks": {
-        "heading_bc8RBB": {
-          "type": "heading",
-          "settings": {
-            "line1_text": "TRUE HEALTH,",
-            "line1_color": "#a8d58e",
-            "line2_text": "SIMPLIFIED",
-            "line2_color": "#ffffff"
-          }
-        },
-        "paragraph_LLm6WX": {
-          "type": "paragraph",
-          "settings": {
-            "para_text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "para_color": "#ffffff"
-          }
-        },
-        "button_ETBRLn": {
-          "type": "button",
-          "settings": {
-            "button_text": "SHOP NOW",
-            "button_text_color": "#296108",
-            "button_bg_color": "#a8d58e",
-            "button_link": "",
-            "button_border_color": "#a8d58e",
-            "point_1": "Flexible Subscription Model",
-            "point_2": "Personalised Results",
-            "point_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "heading_bc8RBB",
-        "paragraph_LLm6WX",
-        "button_ETBRLn"
-      ],
-      "settings": {
-        "background_image": "shopify:\/\/shop_images\/fabify1_720.png",
-        "background_image_mobile": "shopify:\/\/shop_images\/labify-banner-mobile.png"
-      }
-    },
     "2a7933a7-f53b-40f7-b982-308201a70cc1": {
       "type": "rich-text",
       "blocks": {
@@ -75,7 +32,6 @@
       "block_order": [
         "template--21458261836088__2a7933a7-f53b-40f7-b982-308201a70cc1-heading-1"
       ],
-      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -85,106 +41,17 @@
         "padding_bottom": 0
       }
     },
-    "logos_9aLjUq": {
-      "type": "logos",
-      "blocks": {
-        "logo_CiBXe3": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_jhxL4i": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_iXhUhx": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_RehF9D": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_jg4rLT": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_fAjXJR": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        }
-      },
-      "block_order": [
-        "logo_CiBXe3",
-        "logo_jhxL4i",
-        "logo_iXhUhx",
-        "logo_RehF9D",
-        "logo_jg4rLT",
-        "logo_fAjXJR"
-      ],
-      "disabled": true,
-      "settings": {
-        "logos_text_mobile": "AS SEEN ON",
-        "logos_text": "AS SEEN ON"
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "product": "cardiac-precision-panel",
-        "section_color_scheme": "",
-        "color_scheme": "",
         "padding_top": 72,
         "padding_bottom": 84
-      }
-    },
-    "section_review_kdxFXm": {
-      "type": "section-review",
-      "blocks": {
-        "review_card_DapqQa": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        }
-      },
-      "block_order": [
-        "review_card_DapqQa"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "Heading",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
   "order": [
     "banner",
-    "hero_banner_fkLWUa",
     "2a7933a7-f53b-40f7-b982-308201a70cc1",
-    "logos_9aLjUq",
-    "product-grid",
-    "section_review_kdxFXm"
+    "product-grid"
   ]
 }
