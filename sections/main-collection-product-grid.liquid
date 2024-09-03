@@ -44,9 +44,9 @@
             <div>
               <span>{{ filter.label }}</span>
 
-              {%- if filter.active_values.size > 0 -%}
+              {% comment %} {%- if filter.active_values.size > 0 -%}
                 <span>({{ filter.active_values.size }})</span>
-              {%- endif -%}
+              {%- endif -%} {% endcomment %}
             </div>
           </summary>
 
