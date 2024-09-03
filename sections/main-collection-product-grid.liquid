@@ -131,7 +131,7 @@
                             align-items: center;
                             background: conic-gradient({{ conic_gradient }}); transform: rotateZ({{ rotation }});
                           ">
-</span>
+                            </span>
                             {%- when 'image' -%}
                               {{
                                 filter_value.display.value | image_url: width: 25 | image_tag: alt: filter_value.display.value.alt
