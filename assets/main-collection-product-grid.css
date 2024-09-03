@@ -20,7 +20,10 @@
   background-color: white;
   border: none;
   color: #29282C;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .main-grid__filter-wrapper form {
