@@ -44,9 +44,6 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "product": "cardiac-precision-panel",
-        "section_color_scheme": "",
-        "color_scheme": "",
         "padding_top": 72,
         "padding_bottom": 84
       }
