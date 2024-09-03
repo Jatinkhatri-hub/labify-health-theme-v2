@@ -120,12 +120,13 @@
   }
 
   .product-card__img-wrapper {
-    width: 282px;
+    width: 280px;
     height: 265px;
     border-radius: 15px;
   }
 
   .product-card__img {
-    width: ;
+    width: 280px;
+    height: ;
   }
 }
