@@ -32,7 +32,7 @@
   padding: 20px;
   margin-top: 20px;
   position: absolute;
-  z-index: ;
+  z-index: 10;
 }
 
 .filter-box__dropdown-menu {
