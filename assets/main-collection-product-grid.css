@@ -9,7 +9,7 @@
   height: 45px;
   border: 1px solid #4a4a4a;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   padding: 12px 14px;
 }
