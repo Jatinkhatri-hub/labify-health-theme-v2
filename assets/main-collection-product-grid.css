@@ -26,4 +26,6 @@
   font-weight: 600;
 }
 
-.
+.filter-box__dropdown-menu {
+  padding: 0;
+}
