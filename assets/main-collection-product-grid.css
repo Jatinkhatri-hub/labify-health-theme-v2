@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  position: relative;
 }
 
 .dropdown-toggle {
@@ -49,12 +49,14 @@
 
 .button-like {
   display: inline-block;
-  padding: 8px 16px;
-  background-color: #007bf;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 5px;
+    padding: 8px 16px;
+    background-color: white;
+    border: 2px solid #174338;
+    cursor: pointer;
+    margin-bottom: 5px;
+    color: #174338;
+    font-family: 'Avenir Medium';
+    border-radius: 20px;
 }
 
 .button-like.active {
