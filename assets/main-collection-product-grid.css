@@ -15,7 +15,10 @@
   padding: 12px 14px;
 }
 
-
+.dropdown-toggle {
+  padding: 10px 20px;
+  wi
+}
 
 .main-grid__filter-wrapper form {
   display: flex;
