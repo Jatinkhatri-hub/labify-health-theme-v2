@@ -199,10 +199,10 @@
         </details>
       {%- endfor -%}
 
-      <div class="selected__filter-box">
-        <p>
+      <details class="selected__filter-box">
+        <summary>
           <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}">All</a>
-        </p>
+        </summary>
 
         {%- for filter in collection.filters -%}
           {%- if filter.type == "price_range" -%}
@@ -226,7 +226,7 @@
             {%- endfor -%}
           {%- endif -%}
         {%- endfor -%}
-      </div> 
+      </details> 
     </form>
     </div>
 
