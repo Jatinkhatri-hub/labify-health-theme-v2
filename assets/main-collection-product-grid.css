@@ -5,6 +5,16 @@
   gap: 25px;
 }
 
+.selected-filters-dropdown {
+  width: 150px;
+  height: 45px;
+  border: 1px solid #4a4a4a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+}
+
 
 
 .main-grid__filter-wrapper form {
