@@ -285,7 +285,7 @@
         .catch(error => console.error('Error applying filters:', error));
     }
 
-     // Update dropdown with selected filter options
+      // Update dropdown with selected filter options
   function updateSelectedFilters() {
     const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
     dropdownMenu.innerHTML = '';
@@ -296,11 +296,12 @@
       const button = document.createElement('button');
       button.className = 'button-like';
       button.textContent = label;
-      button.dataset.value = option.value;
+      button.dataset.name = option.name; // Capture the name of the filter
+      button.dataset.value = option.value; // Capture the value of the selected option
 
       // Add event listener to filter products when clicked
       button.addEventListener('click', function () {
-        applySelectedFilter(button.dataset.value);
+        applySelectedFilter(button.dataset.name, button.dataset.value);
         // Highlight the active button
         dropdownMenu.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
@@ -312,9 +313,16 @@
   }
 
   // Function to apply the selected filter from the dropdown
-  function applySelectedFilter(selectedValue) {
+  function applySelectedFilter(filterName, filterValue) {
     const formData = new FormData();
-    formData.append('filter_option', selectedValue);
+    formData.append(filterName, filterValue); // Append the filter name and value
+
+    // Include all other currently selected filters in the request
+    filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked').forEach(input => {
+      if (input.name !== filterName) { // Skip the already selected filter from the dropdown
+        formData.append(input.name, input.value);
+      }
+    });
 
     // Fetch filtered results using AJAX
     fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
@@ -347,7 +355,6 @@
   dropdownToggle.addEventListener('click', function () {
     dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
   });
-
   });
 </script>
 
