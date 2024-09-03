@@ -50,7 +50,7 @@
             </div>
           </summary>
 
-          <div class="filter-box__dropdown-menu">
+          <div class="filter-box__dropdown-menu-wrapper">
             {% comment %} <div>
               <p>{{ filter.active_values.size }} selected</p>
               {%- if filter.active_values.size > 0 -%}
@@ -92,7 +92,7 @@
                   <input type="submit" value="Apply">
                 </div>
               {%- when 'list' -%}
-                <ul>
+                <ul class="">
                   {%- for filter_value in filter.values -%}
                     <li>
                       <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
