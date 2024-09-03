@@ -5,7 +5,13 @@
 }
 
 .main-grid__filter-box {
-  
+  width: 150px;
+  height: 45px;
+  border: 1px solid #4a4a4a;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 12px 14px;
 }
 
 .main-grid__filter-box span {
