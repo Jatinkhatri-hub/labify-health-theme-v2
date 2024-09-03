@@ -20,7 +20,7 @@
 }
 
 .main-grid__filter-box span {
-  font-family: 'Avenir Regular';
+  font-family: 'Avenir Medium';
   font-size: 16px;
   color: #29282C;
   font-weight: 600;
@@ -32,4 +32,5 @@
 
 .dropdown-menu__item {
   list-style-type: none;
+  font-family: '';
 }
