@@ -75,6 +75,7 @@
   text-align: start;
   color: black;
   margin: 0;
+  line-height: normal;
 }
 
 .product-card__price {
