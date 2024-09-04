@@ -40,7 +40,7 @@
 {% comment %} {% assign product = section.settings.product %} {% endcomment %}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }} custom-section review-section">
-  <div class="page-width color-{{ section.settings.color_scheme }} review-section">
+  <div class="page-width color-{{ section.settings.color_scheme }} review-section filter-page-width">
     <div class="main-grid__filter-wrapper">
     <form id="filter-form">
       {%- for filter in collection.filters -%}
