@@ -173,6 +173,9 @@
     width: 100%;
   }
   
+  .main-grid__filter-box {
+    width: 100%;
+  }
 
   .selected-filters-dropdown {
     display: none;
