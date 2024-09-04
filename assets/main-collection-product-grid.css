@@ -169,7 +169,9 @@
     align-items: flex-start;
   }
 
-  #filter-
+  #filter-form {
+    background-color: #4a4a4a;
+  }
 
   .main-grid__filter-wrapper {
     width: 380px;
