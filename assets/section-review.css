@@ -99,5 +99,8 @@
     font-size: 19px;
   }
 
-  .review__card-verified-badge svg 
+  .review__card-verified-badge svg {
+    width: 13px;
+    height: 13px;
+  }
 }
