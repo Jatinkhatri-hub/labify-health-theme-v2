@@ -11,7 +11,9 @@
   transition: top 0.3s;
 }
 
-.nav-bar
+.nav-bar__container.relative-position {
+  position: relative;
+}
 
 
 .nav-bar__items {
