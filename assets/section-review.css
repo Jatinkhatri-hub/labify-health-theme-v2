@@ -87,8 +87,11 @@
   }
 
   .review__card-star-wrapper svg {
-    
+    width: 23px;
+    height: 23px;
   }
+
+  .review
 
   .review__card-user-name {
     font-size: 19px;
