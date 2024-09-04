@@ -192,7 +192,12 @@
     display: none;
   }
 
+
   .filter-box__dropdown-menu-wrapper {
     position: relative;
+  }
+
+  .filter-box__dropdown-menu {
+    padding: 0 0 0 100px;
   }
 }
