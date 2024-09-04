@@ -171,6 +171,7 @@
 
   #filter-form {
     background-color: #F5F5F5;
+    border-radius: 0 ;
   }
 
   .main-grid__filter-wrapper {
