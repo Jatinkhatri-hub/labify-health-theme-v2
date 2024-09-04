@@ -243,4 +243,8 @@
   .collection-grid-and-filter {
     width: 870px;
   }
+  
+  .main-collection-product-grid {
+    grid-template-columns: repeat(3);
+  }
 }
