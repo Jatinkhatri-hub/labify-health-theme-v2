@@ -160,7 +160,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 0;
-    height: 70px;
+    line-height: normal;
   }
 
   .product-card__price {
