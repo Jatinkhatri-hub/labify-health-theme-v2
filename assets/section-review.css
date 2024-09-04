@@ -78,6 +78,6 @@
   }
 
   .review__card-header {
-    
+    flex-direction: row;
   }
 }
