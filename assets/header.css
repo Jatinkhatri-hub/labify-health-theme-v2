@@ -11,6 +11,8 @@
   transition: top 0.3s;
 }
 
+.nav-bar
+
 
 .nav-bar__items {
   display: flex;
