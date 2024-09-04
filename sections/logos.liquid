@@ -5,7 +5,7 @@
     
     <div class="swiper-slide swiper-slide-{{ section.id }} logos-div-text">{{ section.settings.logos_text }}</div>
     {% for block in section.blocks %}
-    <div class="swiper-slide logo">
+    <div class="swiper-slide swiper-slide-{{ section.id }} logo">
       <img src="{{ block.settings.logo_image | img_url: 'medium' }}" alt="{{ block.settings.logo_alt_text }}">
     </div>
     {% endfor %}
