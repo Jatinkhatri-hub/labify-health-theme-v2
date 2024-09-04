@@ -1,7 +1,7 @@
 {{ 'https://unpkg.com/swiper/swiper-bundle.min.css' | stylesheet_tag }}
 <div class="logos-div-text-mobile">{{ section.settings.logos_text_mobile }}</div>
 <div class="logos-div swiper-container mySwiper mySwiper-{{ section.id }}">
-  <div class="swiper-wrapper">
+  <div class="swiper-wrapper swiper-wrapper-{{ section.id }}">
     
     <div class="swiper-slide swiper-slide-{{ section.id }} logos-div-text">{{ section.settings.logos_text }}</div>
     {% for block in section.blocks %}
@@ -30,7 +30,7 @@
         gap: 176px;
         overflow: hidden;
     }
-    .swiper-container, .swiper-wrapper {
+    .swiper-container, .swiper-wrapper-{{ section.id }} {
     height: 81px;
     border: none;
     margin: 0;
