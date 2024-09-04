@@ -232,4 +232,8 @@
     font-size: 17px;
     border-radius: 60px;
   }
+
+  .collection-grid-and-filter {
+    width: 870px;
+  }
 }
