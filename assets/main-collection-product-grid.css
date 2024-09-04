@@ -219,6 +219,6 @@
   .selected-filters-desktop {
     display: flex;
     gap: 10px;
-    margin-b
+    margin-bottom: 20px;
   }
 }
