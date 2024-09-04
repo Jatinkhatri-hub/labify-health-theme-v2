@@ -1,3 +1,11 @@
+.page-width {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
+}
+
 .main-grid__filter-wrapper {
   display: flex;
   justify-content: start;
