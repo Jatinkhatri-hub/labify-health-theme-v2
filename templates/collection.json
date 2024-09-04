@@ -94,10 +94,74 @@
             "logo_image": "shopify:\/\/shop_images\/LOGO.png",
             "logo_alt_text": "Logo"
           }
+        },
+        "logo_EMBd4Q": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_bAacbf": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_paMzbH": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_7xxjBz": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_KRexqE": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_PHC9yG": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_PLyAkz": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_LBJ9zz": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
         }
       },
       "block_order": [
-        "logo_ehacGW"
+        "logo_ehacGW",
+        "logo_EMBd4Q",
+        "logo_bAacbf",
+        "logo_paMzbH",
+        "logo_7xxjBz",
+        "logo_KRexqE",
+        "logo_PHC9yG",
+        "logo_PLyAkz",
+        "logo_LBJ9zz"
       ],
       "settings": {
         "logos_text_mobile": "AS SEEN ON",
