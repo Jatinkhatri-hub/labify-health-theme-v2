@@ -152,9 +152,9 @@
                   {%- endfor -%}
                 </ul>
 
-                <div>
+                {% comment %} <div>
                   <input type="submit" value="Apply">
-                </div>
+                </div> {% endcomment %}
               {%- when 'price_range' -%}
                 <div class="filter-group-display__price-range">
                   <div class="filter-group-display__price-range-from">
@@ -230,8 +230,7 @@
       </details>  {% endcomment %}
     </form>
      <div class="selected-filters-dropdown">
-      <button class="dropdown-toggle">Selected Filters 
-        </button>
+      <button class="dropdown-toggle">Selected Filters </button>
         {% render 'icon-dropdown-arrow' %} 
         <div class="dropdown-menu">
 
