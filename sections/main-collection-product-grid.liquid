@@ -291,60 +291,64 @@
         .catch(error => console.error('Error applying filters:', error));
     }
 
-   
-  // Function to update the selected filters in the dropdown menu
-  function updateSelectedFilters() {
+    function updateSelectedFilters() {
     const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
-    dropdownMenu.innerHTML = ''; // Clear previous options
-    desktopButtonsGroup.innerHTML = '';
+    
+    dropdownMenu.innerHTML = ''; // Clear previous options in dropdown
+    desktopButtonsGroup.innerHTML = ''; // Clear previous options in desktop view
 
     selectedOptions.forEach(option => {
-      // Retrieve label text associated with the selected option
-      const labelElement = option.closest('label'); // Gets the closest label element
-      const optionLabel = labelElement ? labelElement.textContent.trim() : option.value; // Get the label text or value
-      
-      // Create button-like option
-      const button = document.createElement('button');
-      button.className = 'button-like';
-      button.textContent = optionLabel;
-      button.dataset.name = option.name;
-      button.dataset.value = option.value;
+      const labelElement = option.closest('label');
+      const optionLabel = labelElement ? labelElement.textContent.trim() : option.value;
 
-      // Add event listener to filter products when clicked
-      button.addEventListener('click', function () {
-        applySelectedFilter(button.dataset.name, button.dataset.value);
-        dropdownToggle.textContent = optionLabel; // Update toggle button text with the selected option
-        // Highlight the active button
-        dropdownMenu.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+      // Create button-like option for dropdown menu
+      const dropdownButton = document.createElement('button');
+      dropdownButton.className = 'button-like';
+      dropdownButton.textContent = optionLabel;
+      dropdownButton.dataset.name = option.name;
+      dropdownButton.dataset.value = option.value;
+
+      // Create button-like option for desktop view
+      const desktopButton = document.createElement('button');
+      desktopButton.className = 'button-like';
+      desktopButton.textContent = optionLabel;
+      desktopButton.dataset.name = option.name;
+      desktopButton.dataset.value = option.value;
+
+      // Event listener for dropdown buttons
+      dropdownButton.addEventListener('click', function () {
+        applySelectedFilter(dropdownButton.dataset.name, dropdownButton.dataset.value);
+        updateToggleText(optionLabel); // Update the toggle button text
+        setActiveButton(dropdownButton, dropdownMenu);
         dropdownMenu.style.display = 'none'; // Hide the dropdown after selection
       });
 
-      dropdownMenu.appendChild(button); // Add the button to the dropdown menu
+      // Event listener for desktop buttons
+      desktopButton.addEventListener('click', function () {
+        applySelectedFilter(desktopButton.dataset.name, desktopButton.dataset.value);
+        setActiveButton(desktopButton, desktopButtonsGroup);
+      });
 
-      desktopButtonsGroup.appendChild(button);
-      
-
+      dropdownMenu.appendChild(dropdownButton); // Add to dropdown menu
+      desktopButtonsGroup.appendChild(desktopButton); // Add to desktop view
     });
 
-    // Set the toggle button text based on the first selected option (or a default message)
+    // Update toggle button text with the first selected option
     if (selectedOptions.length > 0) {
-      const firstLabelElement = selectedOptions[0].closest('label');
-      const firstOptionLabel = firstLabelElement ? firstLabelElement.textContent.trim() : selectedOptions[0].value;
-      dropdownToggle.textContent = firstOptionLabel;
+      const firstOptionLabel = selectedOptions[0].closest('label').textContent.trim();
+      updateToggleText(firstOptionLabel);
     } else {
-      dropdownToggle.textContent = 'Selected Filters'; // Default text if no option is selected
+      updateToggleText('Selected Filters'); // Default text if no option is selected
     }
   }
 
-  // Function to apply the selected filter from the dropdown
   function applySelectedFilter(filterName, filterValue) {
     const formData = new FormData();
-    formData.append(filterName, filterValue); // Append the selected filter name and value
+    formData.append(filterName, filterValue); // Append selected filter
 
-    // Include all other currently selected filters in the request
+    // Include all other selected filters
     filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked').forEach(input => {
-      if (input.name !== filterName) { // Skip the already selected filter from the dropdown
+      if (input.name !== filterName) {
         formData.append(input.name, input.value);
       }
     });
@@ -356,21 +360,32 @@
         'X-Requested-With': 'XMLHttpRequest',
       },
     })
-      .then(response => response.text())
-      .then(html => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const newContent = doc.querySelector('.main-collection-product-grid');
-        const currentContent = document.querySelector('.main-collection-product-grid');
+    .then(response => response.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const newContent = doc.querySelector('.main-collection-product-grid');
+      const currentContent = document.querySelector('.main-collection-product-grid');
 
-        if (newContent && currentContent) {
-          currentContent.innerHTML = newContent.innerHTML;
-        }
-      })
-      .catch(error => console.error('Error applying filter:', error));
+      if (newContent && currentContent) {
+        currentContent.innerHTML = newContent.innerHTML;
+      }
+    })
+    .catch(error => console.error('Error applying filter:', error));
   }
 
-  // Initialize dropdown with any preselected filters on page load
+  function updateToggleText(text) {
+    dropdownToggle.textContent = text;
+  }
+
+  function setActiveButton(activeButton, buttonGroup) {
+    // Remove active class from all buttons in the group
+    buttonGroup.querySelectorAll('.button-like').forEach(button => button.classList.remove('active'));
+    // Add active class to the clicked button
+    activeButton.classList.add('active');
+  }
+
+  // Initialize with any preselected filters
   updateSelectedFilters();
 
   // Listen for changes in the filter form
@@ -380,6 +395,96 @@
   dropdownToggle.addEventListener('click', function () {
     dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
   });
+
+   
+  // Function to update the selected filters in the dropdown menu
+  // function updateSelectedFilters() {
+  //   const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
+  //   dropdownMenu.innerHTML = ''; // Clear previous options
+  //   desktopButtonsGroup.innerHTML = '';
+
+  //   selectedOptions.forEach(option => {
+  //     // Retrieve label text associated with the selected option
+  //     const labelElement = option.closest('label'); // Gets the closest label element
+  //     const optionLabel = labelElement ? labelElement.textContent.trim() : option.value; // Get the label text or value
+      
+  //     // Create button-like option
+  //     const button = document.createElement('button');
+  //     button.className = 'button-like';
+  //     button.textContent = optionLabel;
+  //     button.dataset.name = option.name;
+  //     button.dataset.value = option.value;
+
+  //     // Add event listener to filter products when clicked
+  //     button.addEventListener('click', function () {
+  //       applySelectedFilter(button.dataset.name, button.dataset.value);
+  //       dropdownToggle.textContent = optionLabel; // Update toggle button text with the selected option
+  //       // Highlight the active button
+  //       dropdownMenu.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
+  //       button.classList.add('active');
+  //       dropdownMenu.style.display = 'none'; // Hide the dropdown after selection
+  //     });
+
+  //     dropdownMenu.appendChild(button); // Add the button to the dropdown menu
+
+  //     desktopButtonsGroup.appendChild(button);
+      
+
+  //   });
+
+  //   // Set the toggle button text based on the first selected option (or a default message)
+  //   if (selectedOptions.length > 0) {
+  //     const firstLabelElement = selectedOptions[0].closest('label');
+  //     const firstOptionLabel = firstLabelElement ? firstLabelElement.textContent.trim() : selectedOptions[0].value;
+  //     dropdownToggle.textContent = firstOptionLabel;
+  //   } else {
+  //     dropdownToggle.textContent = 'Selected Filters'; // Default text if no option is selected
+  //   }
+  // }
+
+  // // Function to apply the selected filter from the dropdown
+  // function applySelectedFilter(filterName, filterValue) {
+  //   const formData = new FormData();
+  //   formData.append(filterName, filterValue); // Append the selected filter name and value
+
+  //   // Include all other currently selected filters in the request
+  //   filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked').forEach(input => {
+  //     if (input.name !== filterName) { // Skip the already selected filter from the dropdown
+  //       formData.append(input.name, input.value);
+  //     }
+  //   });
+
+  //   // Fetch filtered results using AJAX
+  //   fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+  //     method: 'GET',
+  //     headers: {
+  //       'X-Requested-With': 'XMLHttpRequest',
+  //     },
+  //   })
+  //     .then(response => response.text())
+  //     .then(html => {
+  //       const parser = new DOMParser();
+  //       const doc = parser.parseFromString(html, 'text/html');
+  //       const newContent = doc.querySelector('.main-collection-product-grid');
+  //       const currentContent = document.querySelector('.main-collection-product-grid');
+
+  //       if (newContent && currentContent) {
+  //         currentContent.innerHTML = newContent.innerHTML;
+  //       }
+  //     })
+  //     .catch(error => console.error('Error applying filter:', error));
+  // }
+
+  // // Initialize dropdown with any preselected filters on page load
+  // updateSelectedFilters();
+
+  // // Listen for changes in the filter form
+  // filterForm.addEventListener('change', updateSelectedFilters);
+
+  // // Toggle dropdown menu visibility
+  // dropdownToggle.addEventListener('click', function () {
+  //   dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+  // });
   });
 </script>
 
