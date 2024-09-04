@@ -170,11 +170,11 @@
   }
 
   .main-grid__filter-wrapper {
-    
+    width: 380px;
   }
   
   .main-grid__filter-box {
-    width: 100%;
+    width: 380px;
   }
 
   .selected-filters-dropdown {
