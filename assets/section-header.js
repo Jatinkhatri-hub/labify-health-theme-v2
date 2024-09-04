@@ -29,7 +29,7 @@ addEventListener('DOMContentLoaded', () => {
       if (scrollTop > lastScrollTop) {
         navBar.style.top = '-95px';
       }
-       
+      else if () 
       else {
         navBar.style.top = '0';
       }
