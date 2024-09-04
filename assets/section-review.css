@@ -76,6 +76,7 @@
     width: 385px;
     height: 385px;
     gap: 25px;
+    padding: 30px;
   }
 
   .review__card-header {
