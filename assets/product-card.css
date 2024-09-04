@@ -137,6 +137,7 @@
   .product-card__info {
     width: 280px;
     height: 260px;
+    justify-content: space-between;
   }
   .product-card__star-wrapper svg {
     width: 15px;
