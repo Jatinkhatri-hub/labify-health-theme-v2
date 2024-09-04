@@ -290,76 +290,7 @@
         .catch(error => console.error('Error applying filters:', error));
     }
 
-      // Update dropdown with selected filter options
-  // function updateSelectedFilters() {
-  //   const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
-  //   dropdownMenu.innerHTML = '';
-
-  //   selectedOptions.forEach(option => {
-  //     const label = option.nextElementSibling ? option.nextElementSibling.textContent : option.value;
-
-  //     const button = document.createElement('button');
-  //     button.className = 'button-like';
-  //     button.textContent = label;
-  //     button.dataset.name = option.name; // Capture the name of the filter
-  //     button.dataset.value = option.value; // Capture the value of the selected option
-
-  //     // Add event listener to filter products when clicked
-  //     button.addEventListener('click', function () {
-  //       applySelectedFilter(button.dataset.name, button.dataset.value);
-  //       // Highlight the active button
-  //       dropdownMenu.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
-  //       button.classList.add('active');
-  //       dropdownMenu.style.display = 'none'; // Hide the dropdown after selection
-  //     });
-
-  //     dropdownMenu.appendChild(button);
-  //   });
-  // }
-
-  // // Function to apply the selected filter from the dropdown
-  // function applySelectedFilter(filterName, filterValue) {
-  //   const formData = new FormData();
-  //   formData.append(filterName, filterValue); // Append the filter name and value
-
-  //   // Include all other currently selected filters in the request
-  //   filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked').forEach(input => {
-  //     if (input.name !== filterName) { // Skip the already selected filter from the dropdown
-  //       formData.append(input.name, input.value);
-  //     }
-  //   });
-
-  //   // Fetch filtered results using AJAX
-  //   fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
-  //     method: 'GET',
-  //     headers: {
-  //       'X-Requested-With': 'XMLHttpRequest',
-  //     },
-  //   })
-  //     .then(response => response.text())
-  //     .then(html => {
-  //       const parser = new DOMParser();
-  //       const doc = parser.parseFromString(html, 'text/html');
-  //       const newContent = doc.querySelector('.main-collection-product-grid');
-  //       const currentContent = document.querySelector('.main-collection-product-grid');
-
-  //       if (newContent && currentContent) {
-  //         currentContent.innerHTML = newContent.innerHTML;
-  //       }
-  //     })
-  //     .catch(error => console.error('Error applying filter:', error));
-  // }
-
-  // // Initialize dropdown with any preselected filters on page load
-  // updateSelectedFilters();
-
-  // // Listen for changes in the filter form
-  // filterForm.addEventListener('change', updateSelectedFilters);
-
-  // // Toggle dropdown menu visibility
-  // dropdownToggle.addEventListener('click', function () {
-  //   dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-  // });
+   
   // Function to update the selected filters in the dropdown menu
   function updateSelectedFilters() {
     const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
