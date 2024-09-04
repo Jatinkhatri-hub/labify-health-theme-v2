@@ -190,4 +190,8 @@
   .selected-filters-dropdown {
     display: none;
   }
+
+  .filter-box__dropdown-menu-wrapper {
+    position: relative;
+  }
 }
