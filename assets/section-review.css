@@ -83,4 +83,8 @@
   .review__card-name-and-star {
     flex-direction: column;
   }
+
+  .review__card-user-name {
+    font-size: 19px;
+  }
 }
