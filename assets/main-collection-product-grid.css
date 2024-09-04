@@ -194,7 +194,7 @@
     display: none;
   }
 
-  .selected-filters-dropdown {
+  .selected-filters-dropdown.mobile {
     display: none;
   }
 
