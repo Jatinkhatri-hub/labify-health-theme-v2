@@ -7,6 +7,24 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+
+  .swiper-btn {
+    display: flex !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #008780;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    position: initial;
+  }
+
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: 900;
+  }
+
   .swiper-wrapper {
     padding-bottom: 50px;
 
