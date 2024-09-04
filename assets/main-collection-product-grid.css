@@ -171,7 +171,8 @@
 
   #filter-form {
     background-color: #F5F5F5;
-    border-radius: 0 ;
+    border-radius: 0 20px 20px 0;
+    
   }
 
   .main-grid__filter-wrapper {
