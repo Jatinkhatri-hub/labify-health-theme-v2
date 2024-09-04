@@ -43,7 +43,7 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when "review_card" %}
-          <div class="review__card-wrapper ">
+          <div class="review__card-wrapper swiper-slide">
             <div class="review__card-header">
               <div class="review__card-name-and-star">
                 <h1 class="review__card-user-name">{{ block.settings.name }}</h1>
