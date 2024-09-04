@@ -181,6 +181,7 @@
   .main-grid__filter-box {
     width: 380px;
     border: none;
+    padding-inline-start: 50px;
   }
 
   .main-grid__filter-box svg {
