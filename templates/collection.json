@@ -91,63 +91,42 @@
         "logo_ehacGW": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_image": "shopify:\/\/shop_images\/labcorp_logo_horizontal_color_rgb_720.jpg",
             "logo_alt_text": "Logo"
           }
         },
         "logo_EMBd4Q": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_image": "shopify:\/\/shop_images\/63f7d356d2307256b2f76dae_624d06437a2c7650e5d4fa57_5e910320c0e4bb0a607f7d90_5dd0be0fc5a7ed1bf4586e72_dutch-p-800-p-500_1.png",
             "logo_alt_text": "Logo"
           }
         },
         "logo_bAacbf": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_image": "shopify:\/\/shop_images\/63f7d35577279fcd1aa7b4d6_63f7d2b99148f1b3bb2ed090_5f270498a3b299347be99890_accessmedlab.png",
             "logo_alt_text": "Logo"
           }
         },
         "logo_paMzbH": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_image": "shopify:\/\/shop_images\/643d588133ef0cfff9950139_MDX-FormerlyGPL_Horiz-Color-p-500.png",
             "logo_alt_text": "Logo"
           }
         },
         "logo_7xxjBz": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_image": "shopify:\/\/shop_images\/images-1.png",
             "logo_alt_text": "Logo"
           }
         },
         "logo_KRexqE": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_PHC9yG": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_PLyAkz": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_LBJ9zz": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_image": "shopify:\/\/shop_images\/images.png",
             "logo_alt_text": "Logo"
           }
         }
@@ -158,10 +137,7 @@
         "logo_bAacbf",
         "logo_paMzbH",
         "logo_7xxjBz",
-        "logo_KRexqE",
-        "logo_PHC9yG",
-        "logo_PLyAkz",
-        "logo_LBJ9zz"
+        "logo_KRexqE"
       ],
       "settings": {
         "logos_text_mobile": "AS SEEN ON",
