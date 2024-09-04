@@ -73,6 +73,10 @@
 
 @media screen and (min-width: 789px) {
 
+  .review-section {
+    background-color: rgb(var(--color-foreground));
+  }
+
   .review__heading {
     font-size: 42px;
   }
