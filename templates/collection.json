@@ -32,6 +32,7 @@
       "block_order": [
         "template--21458261836088__2a7933a7-f53b-40f7-b982-308201a70cc1-heading-1"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -41,9 +42,55 @@
         "padding_bottom": 0
       }
     },
+    "hero_banner_RzTNXR": {
+      "type": "hero-banner",
+      "blocks": {
+        "heading_TLcBPB": {
+          "type": "heading",
+          "settings": {
+            "line1_text": "TRUE HEALTH,",
+            "line1_color": "#a8d58e",
+            "line2_text": "SIMPLIFIED",
+            "line2_color": "#ffffff"
+          }
+        },
+        "paragraph_VWXVz3": {
+          "type": "paragraph",
+          "settings": {
+            "para_text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "para_color": "#ffffff"
+          }
+        },
+        "button_DaYxVx": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP NOW",
+            "button_text_color": "#296108",
+            "button_bg_color": "#a8d58e",
+            "button_link": "",
+            "button_border_color": "#a8d58e",
+            "point_1": "Flexible Subscription Model",
+            "point_2": "Personalised Results",
+            "point_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TLcBPB",
+        "paragraph_VWXVz3",
+        "button_DaYxVx"
+      ],
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/fabify1_720.png",
+        "background_image_mobile": "shopify:\/\/shop_images\/labify-banner-mobile.png"
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
+        "product": "",
+        "section_color_scheme": "",
+        "color_scheme": "",
         "padding_top": 72,
         "padding_bottom": 84
       }
@@ -52,6 +99,7 @@
   "order": [
     "banner",
     "2a7933a7-f53b-40f7-b982-308201a70cc1",
+    "hero_banner_RzTNXR",
     "product-grid"
   ]
 }
