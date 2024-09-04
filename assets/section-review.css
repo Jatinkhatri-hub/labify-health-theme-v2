@@ -72,6 +72,9 @@
 }
 
 @media screen and (min-width: 789px) {
+
+  .rev
+
   .review__card-wrapper {
     width: 325px;
     height: 325px;
