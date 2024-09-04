@@ -178,7 +178,9 @@
     border: none;
   }
 
-  
+  .main-grid__filter-box svg {
+    display: none;
+  }
 
   .selected-filters-dropdown {
     display: none;
