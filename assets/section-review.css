@@ -80,6 +80,7 @@
   .review__card-header {
     flex-direction: row;
     width: 100%;
+    justify-content: space-between;
   }
   .review__card-name-and-star {
     flex-direction: column;
