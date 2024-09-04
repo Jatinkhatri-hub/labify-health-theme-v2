@@ -221,4 +221,9 @@
     gap: 10px;
     margin-bottom: 20px;
   }
+
+  .button-like {
+    padding: 20px 25px;
+    
+  }
 }
