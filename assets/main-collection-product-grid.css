@@ -211,5 +211,7 @@
     padding: 0 0 0 100px;
   }
 
-  .filter-box__dropdown-menu > 
+  .filter-box__dropdown-menu > :first-child {
+    border-top: ;
+  }
 }
