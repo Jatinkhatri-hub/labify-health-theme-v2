@@ -175,7 +175,10 @@
   
   .main-grid__filter-box {
     width: 380px;
+    border: none;
   }
+
+  
 
   .selected-filters-dropdown {
     display: none;
