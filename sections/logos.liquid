@@ -3,7 +3,7 @@
 <div class="logos-div swiper-container mySwiper mySwiper-{{ section.id }}">
   <div class="swiper-wrapper">
     
-    <div class="swiper-slide logos-div-text">{{ section.settings.logos_text }}</div>
+    <div class="swiper-slide swiper-slide-{{ section.id }} logos-div-text">{{ section.settings.logos_text }}</div>
     {% for block in section.blocks %}
     <div class="swiper-slide logo">
       <img src="{{ block.settings.logo_image | img_url: 'medium' }}" alt="{{ block.settings.logo_alt_text }}">
