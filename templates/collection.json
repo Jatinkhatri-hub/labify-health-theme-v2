@@ -85,6 +85,25 @@
         "background_image_mobile": "shopify:\/\/shop_images\/labify-banner-mobile.png"
       }
     },
+    "logos_DCaHqt": {
+      "type": "logos",
+      "blocks": {
+        "logo_ehacGW": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        }
+      },
+      "block_order": [
+        "logo_ehacGW"
+      ],
+      "settings": {
+        "logos_text_mobile": "AS SEEN ON",
+        "logos_text": "AS SEEN ON"
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -178,6 +197,7 @@
     "banner",
     "2a7933a7-f53b-40f7-b982-308201a70cc1",
     "hero_banner_RzTNXR",
+    "logos_DCaHqt",
     "product-grid",
     "section_review_mNUi3c"
   ]
