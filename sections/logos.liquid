@@ -150,6 +150,11 @@
       },
       speed: 10000,
       initialSlide: 0,
+      on: {
+      click(e) {
+        swiper.slideTo(this.clickedIndex);
+      },
+    },
 
       pagination: {
         el: ".swiper-pagination",
