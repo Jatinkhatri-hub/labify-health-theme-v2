@@ -165,6 +165,6 @@
 
 @media screen and (min-width: 789px) {
   .filter-page-width {
-    width: 
+    flex-direction: row;
   }
 }
