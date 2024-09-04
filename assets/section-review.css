@@ -104,5 +104,7 @@
     height: 13px;
   }
 
-  .review__card-verified-badge svg 
+  .review__card-verified-badge svg path {
+    fill : 
+  }
 }
