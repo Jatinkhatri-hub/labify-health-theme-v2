@@ -105,7 +105,9 @@
   }
 
   .review__card-verified-badge svg {
-    width: ;
+    font-size: 15px;
   }
+
+  
 
 }
