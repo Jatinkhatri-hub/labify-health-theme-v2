@@ -238,12 +238,8 @@
       </div> 
   </div>
     <div class="collection-grid-and-filter">
-      <div class="selected-filters-dropdown desktop">
-        <button class="dropdown-toggle">Selected Filters </button>
-          {% render 'icon-dropdown-arrow' %} 
-          <div class="dropdown-menu">
-
-          </div>
+      <div class="selected-filters-desktop">
+        
       </div> 
       <div class="main-collection-product-grid"> 
         {% for product in collection.products %} 
@@ -261,6 +257,7 @@
     const filterForm = document.getElementById('filter-form');
     const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
   const dropdownToggle = document.querySelector('.selected-filters-dropdown .dropdown-toggle');
+  const desktopContainer = document.querySelector('.selected-filters-dropdown');
 
 
     // Attach event listeners to all filter inputs
@@ -369,6 +366,7 @@
   function updateSelectedFilters() {
     const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
     dropdownMenu.innerHTML = ''; // Clear previous options
+    desktopContainer.innerHTML = ''
 
     selectedOptions.forEach(option => {
       // Retrieve label text associated with the selected option
@@ -393,6 +391,21 @@
       });
 
       dropdownMenu.appendChild(button); // Add the button to the dropdown menu
+      
+      // Create button for desktop view
+      const desktopButton = document.createElement('button');
+      desktopButton.className = 'desktop-button';
+      desktopButton.textContent = label;
+      desktopButton.dataset.value = option.value;
+
+      // Add event listener to filter products when clicked
+      desktopButton.addEventListener('click', function () {
+        applySelectedFilter(desktopButton.dataset.value);
+        updateToggleText(label);
+      });
+
+      // Add to desktop container
+      desktopContainer.appendChild(desktopButton);
     });
 
     // Set the toggle button text based on the first selected option (or a default message)
