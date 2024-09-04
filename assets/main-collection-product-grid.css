@@ -216,5 +216,9 @@
     padding-top: 10px;
   }
 
-  .selected-f
+  .selected-filters-desktop {
+    display: flex;
+    gap: 10px;
+    margin-b
+  }
 }
