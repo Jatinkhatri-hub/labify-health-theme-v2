@@ -30,7 +30,7 @@ addEventListener('DOMContentLoaded', () => {
         navBar.style.top = '-95px';
       }
       else if (scrollTop === 0) {
-       navBar.classList.add() 
+       navBar.classList.add('relative-position'); 
       } 
       else {
         navBar.style.top = '0';
