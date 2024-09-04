@@ -195,6 +195,8 @@
 
   .filter-box__dropdown-menu-wrapper {
     position: relative;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .filter-box__dropdown-menu {
