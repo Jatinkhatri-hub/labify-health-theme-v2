@@ -84,6 +84,7 @@
   }
   .review__card-name-and-star {
     flex-direction: column;
+    gap: 0;
   }
 
   .review__card-star-wrapper svg {
