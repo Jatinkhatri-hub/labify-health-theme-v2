@@ -168,4 +168,8 @@
     flex-direction: row;
     align-items: flex-start;
   }
+
+  .selected-filters-dropdown {
+    display: none;
+  }
 }
