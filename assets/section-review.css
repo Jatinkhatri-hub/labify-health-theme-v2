@@ -74,7 +74,7 @@
 @media screen and (min-width: 789px) {
 
   .review-section {
-    background-color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
   }
 
   .review__heading {
