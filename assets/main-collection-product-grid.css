@@ -225,5 +225,6 @@
   .button-like {
     padding: 20px 25px;
     font-size: 17px;
+    border-radius: 60px;
   }
 }
