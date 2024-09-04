@@ -14,7 +14,7 @@
         <span class="product-card__review-text">+1000 Happy Costumers</span>
       </div>
       <h6 class="product-card__title">{{ product.title }}</h6>
-      <p class="product-card__description">{{ product.metafields.custom.short_description |  truncate:  }}</p>
+      <p class="product-card__description">{{ product.metafields.custom.short_description |  truncate: 100 }}</p>
       <h6 class="product-card__price">{{ product.price |  money_with_currency }}</h6>
       <button class="product-card__btn">Shop Now</button>
     </div>
