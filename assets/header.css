@@ -1,7 +1,7 @@
 
 .nav-bar__container {
   font-family: 'Avenir Regular';
-  position: fixed;
+  position: relative;
   background-color: rgb(var(--color-background));
   left: 0;
   right: 0;
