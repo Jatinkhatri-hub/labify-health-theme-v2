@@ -364,7 +364,7 @@
   function updateSelectedFilters() {
     const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
     dropdownMenu.innerHTML = ''; // Clear previous options
-    desktopContainer.innerHTML = ''
+    desktopContainer.innerHTML = '';
 
     selectedOptions.forEach(option => {
       // Retrieve label text associated with the selected option
