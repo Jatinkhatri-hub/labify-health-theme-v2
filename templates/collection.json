@@ -105,20 +105,6 @@
             "logo_image": "shopify:\/\/shop_images\/63f7d356d2307256b2f76dae_624d06437a2c7650e5d4fa57_5e910320c0e4bb0a607f7d90_5dd0be0fc5a7ed1bf4586e72_dutch-p-800-p-500_1.png",
             "logo_alt_text": "Logo"
           }
-        },
-        "logo_XbfqQJ": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_akMyWw": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
-            "logo_alt_text": "Logo"
-          }
         }
       },
       "block_order": [
@@ -127,9 +113,7 @@
         "logo_ciVRTC",
         "logo_brQQPW",
         "logo_P3zPWA",
-        "logo_ne6YdM",
-        "logo_XbfqQJ",
-        "logo_akMyWw"
+        "logo_ne6YdM"
       ],
       "settings": {
         "logos_text_mobile": "AS SEEN ON",
