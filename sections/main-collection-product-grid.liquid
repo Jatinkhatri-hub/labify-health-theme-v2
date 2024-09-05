@@ -426,7 +426,7 @@
         console.log("Products fetched successfully!"); // Log success
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
-        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card');
+        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
 
         // Append new products to the product grid
         newProducts.forEach(product => {
