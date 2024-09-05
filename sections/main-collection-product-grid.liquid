@@ -401,7 +401,7 @@
     .then(html => {
       let parser = new DOMParser();
       let doc = parser.parseFromString(html, 'text/html');
-      let newProducts = doc.querySelectorAll('.main-collection-product-grid .product'); // Select new products
+      let newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper'); // Select new products
 
       // Append new products to the main-collection-product-grid
       newProducts.forEach(product => {
