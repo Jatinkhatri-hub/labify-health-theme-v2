@@ -268,7 +268,7 @@
   // Attach event listeners to all filter inputs
   filterForm.querySelectorAll('input').forEach(function (input) {
     input.addEventListener('change', function () {
-      page = 1; // Reset pagination to 1 when filters are applied
+     // page = 1; // Reset pagination to 1 when filters are applied
       applyFilters();
     });
   });
