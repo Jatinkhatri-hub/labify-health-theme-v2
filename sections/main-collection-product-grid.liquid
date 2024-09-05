@@ -256,96 +256,6 @@
 </div>
 
 <script>
-
-document.addEventListener('DOMContentLoaded', function () {
-  const filterForm = document.getElementById('filter-form');
-  const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
-  const dropdownToggle = document.querySelector('.selected-filters-dropdown .dropdown-toggle');
-  const desktopButtonsGroup = document.querySelector('.selected-filters-desktop');
-  const showMoreBtn = document.getElementById('show-more-btn');
-
-  // Attach event listeners to all filter inputs
-  filterForm.querySelectorAll('input').forEach(function (input) {
-    input.addEventListener('change', function () {
-      applyFilters();
-    });
-  });
-
-  function applyFilters() {
-    const formData = new FormData(filterForm);
-
-    // Fetch the collection with the applied filters using AJAX
-    fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
-      method: 'GET',
-      headers: {
-        'X-Requested-With': 'XMLHttpRequest',
-      },
-    })
-      .then(response => response.text())
-      .then(html => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const newContent = doc.querySelector('.main-collection-product-grid');
-        const currentContent = document.querySelector('.main-collection-product-grid');
-
-        if (newContent && currentContent) {
-          currentContent.innerHTML = newContent.innerHTML;
-
-          // Check if there are more than 6 products after filtering
-          const filteredProducts = currentContent.querySelectorAll('.product-card__wrapper');
-          if (filteredProducts.length <= 6) {
-            showMoreBtn.style.display = 'none'; // Hide if there are 6 or fewer products
-          } else {
-            showMoreBtn.style.display = 'block'; // Show the button if there are more than 6
-          }
-        }
-      })
-      .catch(error => console.error('Error applying filters:', error));
-  }
-
-  // Handle the "Show More" button
-  document.getElementById('show-more-btn').addEventListener('click', function () {
-    let button = this;
-    let page = parseInt(button.getAttribute('data-page'));
-    let url = `${window.location.pathname}?page=${page + 1}`;
-
-    fetch(url)
-      .then(response => response.text())
-      .then(html => {
-        let parser = new DOMParser();
-        let doc = parser.parseFromString(html, 'text/html');
-        let newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
-
-        // Append new products to the main-collection-product-grid
-        newProducts.forEach(product => {
-          document.querySelector('.main-collection-product-grid').appendChild(product);
-        });
-
-        // Hide the "Show More" button if fewer products are available
-        if (newProducts.length < 6) {
-          button.style.display = 'none';
-        }
-
-        // Update the data-page attribute for the next set of products
-        button.setAttribute('data-page', page + 1);
-      });
-  });
-
-  // Initialize static filters (this part can stay as-is)
-  updateStaticFilters();
-
-  // Toggle dropdown menu visibility
-  dropdownToggle.addEventListener('click', function () {
-    dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
-  });
-});
-
-
-</script>
-
-
-{% comment %} 
-<script>
   document.addEventListener('DOMContentLoaded', function () {
     const filterForm = document.getElementById('filter-form');
     const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
@@ -740,7 +650,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // });
   });
 </script>
- {% endcomment %}
+
 
 
 {% schema %}
