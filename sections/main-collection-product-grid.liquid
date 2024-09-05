@@ -398,13 +398,12 @@
     dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
   });
 
+  
   if (showMoreBtn) {
     showMoreBtn.addEventListener('click', function () {
       let page = parseInt(showMoreBtn.getAttribute('data-page')) + 1; // Increment the page number
       const url = new URL(window.location.href);
       url.searchParams.set('page', page); // Add the page parameter to the URL
-
-      console.log('Fetching products from URL: ', url.toString()); // Log the URL to verify pagination
 
       // Fetch the next set of products using AJAX
       fetch(url, {
@@ -420,14 +419,12 @@
         return response.text();
       })
       .then(html => {
-        console.log("Products fetched successfully!");
-
         // Parse the fetched HTML
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         
         // Select the new products from the fetched HTML
-        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card'); // Update selector if needed
+        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card'); // Adjust selector as per your product grid
         console.log("New products fetched: ", newProducts);
 
         if (newProducts.length > 0) {
