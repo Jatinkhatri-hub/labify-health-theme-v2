@@ -249,7 +249,7 @@
         {% endfor %}
       </div>
     
-      {% if collection.products.size > 6 %}
+      {% if paginate.pages > 1 %}
         <div class="show-more-container">
           <button id="show-more-btn" data-page="2" class="show-more-btn">Show More</button>
         </div>
