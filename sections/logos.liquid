@@ -127,56 +127,7 @@
 
 {{ 'https://unpkg.com/swiper/swiper-bundle.min.js' | script_tag }}
 
-<script>
 
-document.addEventListener('DOMContentLoaded', function () {
-  const swiperId = "{{ section.id }}"
-
-  var swiper = new Swiper(`.mySwiper-${swiperId}`, {
-    loop: true,
-    spaceBetween: 30,
-    slidesPerView: 'auto',
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-    },
-    grabCursor: true,
-    // Commented out freeMode to test if it's causing the issue
-    // freeMode: {
-    //   enabled: true,
-    //   momentum: false,
-    //   momentumBounce: false,
-    //   momentumRation: 0,
-    //   momentumVelocityRatio: 0,
-    //   sticky: false,
-    // },
-    speed: 5000, // Reduced speed to see if it helps
-    initialSlide: 0,
-    on: {
-      click(e) {
-        swiper.slideTo(this.clickedIndex);
-      },
-      // Add this to check if loop is working
-      loopFix: function() {
-        console.log('Loop fixed');
-      },
-      // Add this to check when autoplay stops
-      autoplayStop: function() {
-        console.log('Autoplay stopped');
-      }
-    },
-    breakpoints: {
-      789: {
-        spaceBetween: 300,
-      }
-    }
-  });
-
-  // Force update after initialization
-  swiper.update();
-});
-
-</script>
 
 {% comment %} <script>
   document.addEventListener('DOMContentLoaded', function () {
