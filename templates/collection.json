@@ -153,6 +153,68 @@
         "padding_top": 72,
         "padding_bottom": 84
       }
+    },
+    "section_review_yV7DDE": {
+      "type": "section-review",
+      "blocks": {
+        "review_card_fi6EVE": {
+          "type": "review_card",
+          "settings": {
+            "name": "Name",
+            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
+          }
+        },
+        "review_card_aXWF3B": {
+          "type": "review_card",
+          "settings": {
+            "name": "Name",
+            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
+          }
+        },
+        "review_card_MJQR9h": {
+          "type": "review_card",
+          "settings": {
+            "name": "Name",
+            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
+          }
+        },
+        "review_card_Ut4xF6": {
+          "type": "review_card",
+          "settings": {
+            "name": "Name",
+            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
+          }
+        },
+        "review_card_hWLwJc": {
+          "type": "review_card",
+          "settings": {
+            "name": "Name",
+            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
+          }
+        },
+        "review_card_nCxYzP": {
+          "type": "review_card",
+          "settings": {
+            "name": "Name",
+            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
+          }
+        }
+      },
+      "block_order": [
+        "review_card_fi6EVE",
+        "review_card_aXWF3B",
+        "review_card_MJQR9h",
+        "review_card_Ut4xF6",
+        "review_card_hWLwJc",
+        "review_card_nCxYzP"
+      ],
+      "settings": {
+        "heading": "DON'T TAKE OUR WORD FOR IT...",
+        "section_color_scheme": "scheme-5f1076b5-3480-4b74-9d48-c1d59cfe8030",
+        "color_scheme": "scheme-5f1076b5-3480-4b74-9d48-c1d59cfe8030",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -160,6 +222,7 @@
     "hero_banner_U3CURM",
     "logos_zxUq8x",
     "2a7933a7-f53b-40f7-b982-308201a70cc1",
-    "product-grid"
+    "product-grid",
+    "section_review_yV7DDE"
   ]
 }
