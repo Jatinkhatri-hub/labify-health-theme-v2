@@ -292,7 +292,8 @@
     }
 
     // Function to update the filters in the dropdown menu and desktop view
-  function updateStaticFilters() {
+    // Function to update the filters in the dropdown menu and desktop view
+    function updateStaticFilters() {
     // Clear previous buttons
     dropdownMenu.innerHTML = '';
     desktopButtonsGroup.innerHTML = '';
@@ -306,26 +307,21 @@
       const labelElement = option.closest('label');
       const optionLabel = labelElement ? labelElement.textContent.trim() : option.value;
 
-      // Create button-like option
-      const button = document.createElement('button');
-      button.className = 'button-like';
-      button.textContent = optionLabel;
-      button.dataset.name = option.name;
-      button.dataset.value = option.value;
+      // Create button-like option for dropdown and desktop
+      const dropdownButton = createFilterButton(option.name, option.value, optionLabel);
+      const desktopButton = createFilterButton(option.name, option.value, optionLabel);
 
-      // Add event listener to filter products when clicked
-      button.addEventListener('click', function () {
-        applySelectedFilter(button.dataset.name, button.dataset.value);
-        dropdownToggle.textContent = optionLabel; // Update toggle button text with the selected option
-        // Highlight the active button
-        dropdownMenu.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        dropdownMenu.style.display = 'none'; // Hide the dropdown after selection
+      // Add event listener to both buttons to filter products when clicked
+      dropdownButton.addEventListener('click', function () {
+        applySelectedFilter(option.name, option.value, dropdownButton, dropdownMenu);
+      });
+      desktopButton.addEventListener('click', function () {
+        applySelectedFilter(option.name, option.value, desktopButton, desktopButtonsGroup);
       });
 
       // Add the button to the dropdown menu and desktop view
-      dropdownMenu.appendChild(button);
-      desktopButtonsGroup.appendChild(button.cloneNode(true)); // Clone the button for desktop view
+      dropdownMenu.appendChild(dropdownButton);
+      desktopButtonsGroup.appendChild(desktopButton);
     });
 
     // Set the toggle button text based on the first option (or a default message)
@@ -338,8 +334,18 @@
     }
   }
 
+  // Function to create a button for the filter
+  function createFilterButton(name, value, label) {
+    const button = document.createElement('button');
+    button.className = 'button-like';
+    button.textContent = label;
+    button.dataset.name = name;
+    button.dataset.value = value;
+    return button;
+  }
+
   // Function to apply the selected filter
-  function applySelectedFilter(filterName, filterValue) {
+  function applySelectedFilter(filterName, filterValue, clickedButton, buttonContainer) {
     const formData = new FormData();
     formData.append(filterName, filterValue);
 
@@ -360,6 +366,10 @@
         if (newContent && currentContent) {
           currentContent.innerHTML = newContent.innerHTML;
         }
+
+        // Update button states (remove active from others, add to clicked one)
+        buttonContainer.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
+        clickedButton.classList.add('active');
       })
       .catch(error => console.error('Error applying filter:', error));
   }
