@@ -131,93 +131,57 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    const swiperId = "{{ section.id }}"
 
-  const swiperClass = `.mySwiper-{{ section.id }}`;
-
-  let swiper = new Swiper(swiperClass, {
-    centeredSlides: true, // Set to false to avoid centering
-    loop: true,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-
-    },
-    grabCursor: true,
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    freeMode: {
-      enabled: true,
-      momentum: false,
-      momentumBounce: false,
-      momentumRatio: 0,
-      momentumVelocityRatio: 0,
-      sticky: false,
-    },
-    speed: 10000,
-    initialSlide: 0, // Ensure it starts from the first slide
-    on: {
-      click(e) {
-        swiper.slideTo(this.clickedIndex);
+    var swiper = new Swiper(`.mySwiper-${swiperId}`, {
+      loop: true,
+      spaceBetween: 30,
+      slidesPerView: 'auto',
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
       },
-    },
-    breakpoints: {
-      789: {
-        spaceBetween: 200;
+      grabCursor: true,
+      freeMode: {
+        enabled: true,
+        momentum: false,
+        momentumBounce: false,
+        momentumRation: 0,
+        momentumVelocityRatio: 0,
+        sticky: false,
+      },
+      speed: 10000,
+      initialSlide: 0,
+      on: {
+        click(e) {
+          swiper.slideTo(this.clickedIndex);
+        },
+      },
+      breakpoints: {
+        789: {
+          spaceBetween: 300,
+        }
       }
-    }
-  });
 
-    // const swiperId = "{{ section.id }}"
-
-    // var swiper = new Swiper(`.mySwiper-${swiperId}`, {
-    //   loop: true,
-    //   spaceBetween: 30,
-    //   slidesPerView: 'auto',
-    //   autoplay: {
-    //     delay: 0,
-    //     disableOnInteraction: false,
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
     //   },
-    //   grabCursor: true,
-    //   freeMode: {
-    //     enabled: true,
-    //     momentum: false,
-    //     momentumBounce: false,
-    //     momentumRation: 0,
-    //     momentumVelocityRatio: 0,
-    //     sticky: false,
-    //   },
-    //   speed: 10000,
-    //   initialSlide: 0,
-    //   on: {
-    //     click(e) {
-    //       swiper.slideTo(this.clickedIndex);
-    //     },
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
     //   },
     //   breakpoints: {
-    //     789: {
-    //       spaceBetween: 300,
-    //     }
+    //   319: { 
+    //     slidesPerView: 4,
+    //     spaceBetween: 5, 
+    //   },
+    //   701: { 
+    //     slidesPerView: 6.5,
+    //     spaceBetween: 60,
     //   }
-
-    // //   pagination: {
-    // //     el: ".swiper-pagination",
-    // //     clickable: true,
-    // //   },
-    // //   navigation: {
-    // //     nextEl: ".swiper-button-next",
-    // //     prevEl: ".swiper-button-prev",
-    // //   },
-    // //   breakpoints: {
-    // //   319: { 
-    // //     slidesPerView: 4,
-    // //     spaceBetween: 5, 
-    // //   },
-    // //   701: { 
-    // //     slidesPerView: 6.5,
-    // //     spaceBetween: 60,
-    // //   }
-    // // },
-    // });
+    // },
+    });
   });
 </script>
 
