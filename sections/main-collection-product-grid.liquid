@@ -391,6 +391,33 @@
       .catch(error => console.error('Error applying filter:', error));
   }
 
+  document.getElementById('show-more-btn').addEventListener('click', function () {
+    let button = this;
+    let page = parseInt(button.getAttribute('data-page'));
+    let url = `${window.location.pathname}?page=${page + 1}`;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, 'text/html');
+        let newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
+
+        // Append new products to the main-collection-product-grid
+        newProducts.forEach(product => {
+          document.querySelector('.main-collection-product-grid').appendChild(product);
+        });
+
+        // Hide the "Show More" button if fewer products are available
+        if (newProducts.length < 6) {
+          button.style.display = 'none';
+        }
+
+        // Update the data-page attribute for the next set of products
+        button.setAttribute('data-page', page + 1);
+      });
+  });
+
   // Initialize with the first four filters on page load
   updateStaticFilters();
 
