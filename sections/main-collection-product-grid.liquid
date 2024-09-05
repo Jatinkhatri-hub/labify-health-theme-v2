@@ -257,6 +257,163 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+
+  const filterForm = document.getElementById('filter-form');
+  const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
+  const dropdownToggle = document.querySelector('.selected-filters-dropdown .dropdown-toggle');
+  const desktopButtonsGroup = document.querySelector('.selected-filters-desktop');
+  const showMoreBtn = document.getElementById('show-more-btn');
+  let page = 1; // Track current page for pagination
+
+  // Attach event listeners to all filter inputs
+  filterForm.querySelectorAll('input').forEach(function (input) {
+    input.addEventListener('change', function () {
+      page = 1; // Reset pagination to 1 when filters are applied
+      applyFilters();
+    });
+  });
+
+  function applyFilters() {
+    const formData = new FormData(filterForm);
+
+    // Fetch the collection with the applied filters using AJAX
+    fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+      method: 'GET',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+    .then(response => response.text())
+    .then(html => {
+      // Replace the collection product grid with the new filtered content
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const newContent = doc.querySelector('.main-collection-product-grid');
+      const currentContent = document.querySelector('.main-collection-product-grid');
+
+      if (newContent && currentContent) {
+        currentContent.innerHTML = newContent.innerHTML;
+
+        // Check if there are more than 6 products after filtering
+        const filteredProducts = currentContent.querySelectorAll('.product-card__wrapper');
+        if (filteredProducts.length <= 6) {
+          showMoreBtn.style.display = 'none'; // Hide if there are 6 or fewer products
+        } else {
+          showMoreBtn.style.display = 'block'; // Show if more than 6
+        }
+      }
+    })
+    .catch(error => console.error('Error applying filters:', error));
+  }
+
+  document.getElementById('show-more-btn').addEventListener('click', function () {
+    page += 1; // Increment the page number for each "Show More" click
+    let url = `${window.location.pathname}?page=${page}`;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, 'text/html');
+        let newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
+
+        // Append new products to the main-collection-product-grid
+        newProducts.forEach(product => {
+          document.querySelector('.main-collection-product-grid').appendChild(product);
+        });
+
+        // Hide the "Show More" button if fewer products are available
+        if (newProducts.length < 6) {
+          showMoreBtn.style.display = 'none';
+        }
+      });
+  });
+
+  // Initialize with the first four filters on page load
+  function updateStaticFilters() {
+    dropdownMenu.innerHTML = '';
+    desktopButtonsGroup.innerHTML = '';
+
+    const filterOptions = filterForm.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+    const firstFourOptions = Array.from(filterOptions).slice(0, 4);
+
+    firstFourOptions.forEach(option => {
+      const labelElement = option.closest('label');
+      const optionLabel = labelElement ? labelElement.textContent.trim() : option.value;
+
+      const dropdownButton = createFilterButton(option.name, option.value, optionLabel);
+      const desktopButton = createFilterButton(option.name, option.value, optionLabel);
+
+      dropdownButton.addEventListener('click', function () {
+        applySelectedFilter(option.name, option.value, dropdownButton, dropdownMenu);
+      });
+      desktopButton.addEventListener('click', function () {
+        applySelectedFilter(option.name, option.value, desktopButton, desktopButtonsGroup);
+      });
+
+      dropdownMenu.appendChild(dropdownButton);
+      desktopButtonsGroup.appendChild(desktopButton);
+    });
+
+    if (firstFourOptions.length > 0) {
+      const firstLabelElement = firstFourOptions[0].closest('label');
+      const firstOptionLabel = firstLabelElement ? firstLabelElement.textContent.trim() : firstFourOptions[0].value;
+      dropdownToggle.textContent = firstOptionLabel;
+    } else {
+      dropdownToggle.textContent = 'Selected Filters';
+    }
+  }
+
+  function createFilterButton(name, value, label) {
+    const button = document.createElement('button');
+    button.className = 'button-like';
+    button.textContent = label;
+    button.dataset.name = name;
+    button.dataset.value = value;
+    return button;
+  }
+
+  function applySelectedFilter(filterName, filterValue, clickedButton, buttonContainer) {
+    const formData = new FormData();
+    formData.append(filterName, filterValue);
+
+    fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+      method: 'GET',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+    .then(response => response.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const newContent = doc.querySelector('.main-collection-product-grid');
+      const currentContent = document.querySelector('.main-collection-product-grid');
+
+      if (newContent && currentContent) {
+        currentContent.innerHTML = newContent.innerHTML;
+
+        const filteredProducts = currentContent.querySelectorAll('.product-card__wrapper');
+        if (filteredProducts.length <= 6) {
+          showMoreBtn.style.display = 'none';
+        } else {
+          showMoreBtn.style.display = 'block';
+        }
+      }
+
+      buttonContainer.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
+      clickedButton.classList.add('active');
+    })
+    .catch(error => console.error('Error applying filter:', error));
+  }
+
+  // Initialize static filters and dropdown behavior
+  updateStaticFilters();
+  dropdownToggle.addEventListener('click', function () {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+
   //   const filterForm = document.getElementById('filter-form');
   //   const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
   // const dropdownToggle = document.querySelector('.selected-filters-dropdown .dropdown-toggle');
