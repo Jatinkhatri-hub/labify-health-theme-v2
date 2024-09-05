@@ -295,6 +295,14 @@
           
           if (newContent && currentContent) {
             currentContent.innerHTML = newContent.innerHTML;
+
+             // Check if there are more than 6 products after filtering
+          const filteredProducts = currentContent.querySelectorAll('.product-card__wrapper');
+          if (filteredProducts.length <= 6) {
+            showMoreBtn.style.display = 'none'; // Hide if there are 6 or fewer products
+          } else {
+            showMoreBtn.style.display = 'block'; // Show the button if there are more than 6
+          }
           }
         })
         .catch(error => console.error('Error applying filters:', error));
