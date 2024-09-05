@@ -32,7 +32,6 @@
       "block_order": [
         "template--21458261836088__2a7933a7-f53b-40f7-b982-308201a70cc1-heading-1"
       ],
-      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -42,203 +41,17 @@
         "padding_bottom": 0
       }
     },
-    "hero_banner_RzTNXR": {
-      "type": "hero-banner",
-      "blocks": {
-        "heading_TLcBPB": {
-          "type": "heading",
-          "settings": {
-            "line1_text": "TRUE HEALTH,",
-            "line1_color": "#a8d58e",
-            "line2_text": "SIMPLIFIED",
-            "line2_color": "#ffffff"
-          }
-        },
-        "paragraph_VWXVz3": {
-          "type": "paragraph",
-          "settings": {
-            "para_text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            "para_color": "#ffffff"
-          }
-        },
-        "button_DaYxVx": {
-          "type": "button",
-          "settings": {
-            "button_text": "SHOP NOW",
-            "button_text_color": "#296108",
-            "button_bg_color": "#a8d58e",
-            "button_link": "",
-            "button_border_color": "#a8d58e",
-            "point_1": "Flexible Subscription Model",
-            "point_2": "Personalised Results",
-            "point_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "heading_TLcBPB",
-        "paragraph_VWXVz3",
-        "button_DaYxVx"
-      ],
-      "settings": {
-        "background_image": "shopify:\/\/shop_images\/fabify1_720.png",
-        "background_image_mobile": "shopify:\/\/shop_images\/labify-banner-mobile.png"
-      }
-    },
-    "logos_DCaHqt": {
-      "type": "logos",
-      "blocks": {
-        "logo_ehacGW": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Labcorp_Logo_Horizontal_Color_RGB_1.jpg",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_EMBd4Q": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/63f7d356d2307256b2f76dae_624d06437a2c7650e5d4fa57_5e910320c0e4bb0a607f7d90_5dd0be0fc5a7ed1bf4586e72_dutch-p-800-p-500_1.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_bAacbf": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/63f7d35577279fcd1aa7b4d6_63f7d2b99148f1b3bb2ed090_5f270498a3b299347be99890_accessmedlab.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_paMzbH": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/643d588133ef0cfff9950139_MDX-FormerlyGPL_Horiz-Color-p-500.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_7xxjBz": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/images-1.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_KRexqE": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/images.png",
-            "logo_alt_text": "Logo"
-          }
-        }
-      },
-      "block_order": [
-        "logo_ehacGW",
-        "logo_EMBd4Q",
-        "logo_bAacbf",
-        "logo_paMzbH",
-        "logo_7xxjBz",
-        "logo_KRexqE"
-      ],
-      "settings": {
-        "logos_text_mobile": "AS SEEN ON",
-        "logos_text": "AS SEEN ON"
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "product": "",
-        "section_color_scheme": "",
-        "color_scheme": "",
         "padding_top": 72,
         "padding_bottom": 84
-      }
-    },
-    "section_review_mNUi3c": {
-      "type": "section-review",
-      "blocks": {
-        "review_card_PcakwB": {
-          "type": "review_card",
-          "settings": {
-            "name": "John Luedke ",
-            "review": "“I have lost over 100 pounds and did my labs multiple times with Labify during the process, to see my biomarkers improve really helped give me the peace of my mind that what I am doing is working.”"
-          }
-        },
-        "review_card_xVKEzQ": {
-          "type": "review_card",
-          "settings": {
-            "name": "John Luedke ",
-            "review": "“I have lost over 100 pounds and did my labs multiple times with Labify during the process, to see my biomarkers improve really helped give me the peace of my mind that what I am doing is working.”"
-          }
-        },
-        "review_card_Lcwbad": {
-          "type": "review_card",
-          "settings": {
-            "name": "John Luedke ",
-            "review": "“I have lost over 100 pounds and did my labs multiple times with Labify during the process, to see my biomarkers improve really helped give me the peace of my mind that what I am doing is working.”"
-          }
-        },
-        "review_card_zE8AcE": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_amakJK": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_49ePRP": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_AbzJYY": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_LMCrW7": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        }
-      },
-      "block_order": [
-        "review_card_PcakwB",
-        "review_card_xVKEzQ",
-        "review_card_Lcwbad",
-        "review_card_zE8AcE",
-        "review_card_amakJK",
-        "review_card_49ePRP",
-        "review_card_AbzJYY",
-        "review_card_LMCrW7"
-      ],
-      "settings": {
-        "heading": "Don't take our word for it...",
-        "section_color_scheme": "scheme-4461b160-472b-46f0-96e8-93f8a7442db5",
-        "color_scheme": "scheme-4461b160-472b-46f0-96e8-93f8a7442db5",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
   "order": [
     "banner",
     "2a7933a7-f53b-40f7-b982-308201a70cc1",
-    "hero_banner_RzTNXR",
-    "logos_DCaHqt",
-    "product-grid",
-    "section_review_mNUi3c"
+    "product-grid"
   ]
 }
