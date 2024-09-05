@@ -178,7 +178,9 @@
 #show-more-btn {
   color:#174338;
   font-family: 'Avenir Medium';
-  
+  text-decoration: underline;
+  text-align: center;
+  margin-top: ;
 }
 
 
