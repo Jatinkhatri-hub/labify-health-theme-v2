@@ -239,7 +239,7 @@
   </div>
     <div class="collection-grid-and-filter">
       <div class="selected-filters-desktop"></div>
-      <div class="main-collection-product-grid"> 
+      
         {% paginate collection.products by 6 %}
           <div class="main-collection-product-grid"> 
             {% for product in collection.products %}
@@ -247,7 +247,7 @@
             {% endfor %}
           </div>
         {% endpaginate %}
-      </div>
+      
       <button id="show-more-btn" data-page="1" style="display:block;">Show More</button>
     </div>
 
