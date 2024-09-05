@@ -105,6 +105,20 @@
             "logo_image": "shopify:\/\/shop_images\/63f7d356d2307256b2f76dae_624d06437a2c7650e5d4fa57_5e910320c0e4bb0a607f7d90_5dd0be0fc5a7ed1bf4586e72_dutch-p-800-p-500_1.png",
             "logo_alt_text": "Logo"
           }
+        },
+        "logo_XbfqQJ": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_akMyWw": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/LOGO.png",
+            "logo_alt_text": "Logo"
+          }
         }
       },
       "block_order": [
@@ -113,7 +127,9 @@
         "logo_ciVRTC",
         "logo_brQQPW",
         "logo_P3zPWA",
-        "logo_ne6YdM"
+        "logo_ne6YdM",
+        "logo_XbfqQJ",
+        "logo_akMyWw"
       ],
       "settings": {
         "logos_text_mobile": "AS SEEN ON",
@@ -198,6 +214,13 @@
             "name": "Name",
             "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
           }
+        },
+        "review_card_jJJdhF": {
+          "type": "review_card",
+          "settings": {
+            "name": "Name",
+            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
+          }
         }
       },
       "block_order": [
@@ -206,7 +229,8 @@
         "review_card_MJQR9h",
         "review_card_Ut4xF6",
         "review_card_hWLwJc",
-        "review_card_nCxYzP"
+        "review_card_nCxYzP",
+        "review_card_jJJdhF"
       ],
       "settings": {
         "heading": "DON'T TAKE OUR WORD FOR IT...",
