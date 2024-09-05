@@ -240,10 +240,13 @@
     <div class="collection-grid-and-filter">
       <div class="selected-filters-desktop"></div>
       <div class="main-collection-product-grid"> 
-        {% for product in collection.products %}
-            {% render 'product-card', product: product %}
-          
-        {% endfor %}
+        {% paginate collection.products by 6 %}
+          <div class="main-collection-product-grid"> 
+            {% for product in collection.products %}
+              {% render 'product-card', product: product %}
+            {% endfor %}
+          </div>
+        {% endpaginate %}
       </div>
     </div>
 
