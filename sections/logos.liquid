@@ -124,64 +124,95 @@
       }
     }
 </style>
-
+{% comment %} 
 {{ 'https://unpkg.com/swiper/swiper-bundle.min.js' | script_tag }}
-
+ {% endcomment %}
 
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const swiperId = "{{ section.id }}"
 
-    var swiper = new Swiper(`.mySwiper-${swiperId}`, {
-      loop: true,
-      spaceBetween: 30,
-      slidesPerView: 'auto',
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-      },
-      grabCursor: true,
-      freeMode: {
-        enabled: true,
-        momentum: false,
-        momentumBounce: false,
-        momentumRation: 0,
-        momentumVelocityRatio: 0,
-        sticky: false,
-      },
-      speed: 10000,
-      initialSlide: 0,
-      on: {
-        click(e) {
-          swiper.slideTo(this.clickedIndex);
-        },
-      },
-      breakpoints: {
-        789: {
-          spaceBetween: 300,
-        }
-      }
+  const swiperClass = `.mySwiper-{{ section.id }}`;
 
-    //   pagination: {
-    //     el: ".swiper-pagination",
-    //     clickable: true,
+  let swiper = new Swiper(swiperClass, {
+    centeredSlides: true, // Set to false to avoid centering
+    loop: true,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+      reverseDirection: {% if section.settings.reverse_check %} true {% else %} false {% endif %},
+    },
+    grabCursor: true,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    freeMode: {
+      enabled: true,
+      momentum: false,
+      momentumBounce: false,
+      momentumRatio: 0,
+      momentumVelocityRatio: 0,
+      sticky: false,
+    },
+    speed: 10000,
+    initialSlide: 0, // Ensure it starts from the first slide
+    on: {
+      click(e) {
+        swiper.slideTo(this.clickedIndex);
+      },
+    },
+  });
+
+    // const swiperId = "{{ section.id }}"
+
+    // var swiper = new Swiper(`.mySwiper-${swiperId}`, {
+    //   loop: true,
+    //   spaceBetween: 30,
+    //   slidesPerView: 'auto',
+    //   autoplay: {
+    //     delay: 0,
+    //     disableOnInteraction: false,
     //   },
-    //   navigation: {
-    //     nextEl: ".swiper-button-next",
-    //     prevEl: ".swiper-button-prev",
+    //   grabCursor: true,
+    //   freeMode: {
+    //     enabled: true,
+    //     momentum: false,
+    //     momentumBounce: false,
+    //     momentumRation: 0,
+    //     momentumVelocityRatio: 0,
+    //     sticky: false,
+    //   },
+    //   speed: 10000,
+    //   initialSlide: 0,
+    //   on: {
+    //     click(e) {
+    //       swiper.slideTo(this.clickedIndex);
+    //     },
     //   },
     //   breakpoints: {
-    //   319: { 
-    //     slidesPerView: 4,
-    //     spaceBetween: 5, 
-    //   },
-    //   701: { 
-    //     slidesPerView: 6.5,
-    //     spaceBetween: 60,
+    //     789: {
+    //       spaceBetween: 300,
+    //     }
     //   }
-    // },
-    });
+
+    // //   pagination: {
+    // //     el: ".swiper-pagination",
+    // //     clickable: true,
+    // //   },
+    // //   navigation: {
+    // //     nextEl: ".swiper-button-next",
+    // //     prevEl: ".swiper-button-prev",
+    // //   },
+    // //   breakpoints: {
+    // //   319: { 
+    // //     slidesPerView: 4,
+    // //     spaceBetween: 5, 
+    // //   },
+    // //   701: { 
+    // //     slidesPerView: 6.5,
+    // //     spaceBetween: 60,
+    // //   }
+    // // },
+    // });
   });
 </script>
 
