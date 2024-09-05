@@ -61,6 +61,65 @@
         "background_image_mobile": "shopify:\/\/shop_images\/labify-banner-mobile.png"
       }
     },
+    "logos_zxUq8x": {
+      "type": "logos",
+      "blocks": {
+        "logo_aUEFFi": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Labcorp_Logo_Horizontal_Color_RGB_1.jpg",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_Xfxxza": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/63f7d35577279fcd1aa7b4d6_63f7d2b99148f1b3bb2ed090_5f270498a3b299347be99890_accessmedlab.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_ciVRTC": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/643d588133ef0cfff9950139_MDX-FormerlyGPL_Horiz-Color-p-500.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_brQQPW": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/images-1.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_P3zPWA": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/images.png",
+            "logo_alt_text": "Logo"
+          }
+        },
+        "logo_ne6YdM": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/63f7d356d2307256b2f76dae_624d06437a2c7650e5d4fa57_5e910320c0e4bb0a607f7d90_5dd0be0fc5a7ed1bf4586e72_dutch-p-800-p-500_1.png",
+            "logo_alt_text": "Logo"
+          }
+        }
+      },
+      "block_order": [
+        "logo_aUEFFi",
+        "logo_Xfxxza",
+        "logo_ciVRTC",
+        "logo_brQQPW",
+        "logo_P3zPWA",
+        "logo_ne6YdM"
+      ],
+      "settings": {
+        "logos_text_mobile": "AS SEEN ON",
+        "logos_text": "AS SEEN ON"
+      }
+    },
     "2a7933a7-f53b-40f7-b982-308201a70cc1": {
       "type": "rich-text",
       "blocks": {
@@ -99,6 +158,7 @@
   "order": [
     "banner",
     "hero_banner_U3CURM",
+    "logos_zxUq8x",
     "2a7933a7-f53b-40f7-b982-308201a70cc1",
     "product-grid"
   ]
