@@ -127,7 +127,9 @@
 
 {{ 'https://unpkg.com/swiper/swiper-bundle.min.js' | script_tag }}
 
-<script>
+
+
+{% comment %} <script>
   document.addEventListener('DOMContentLoaded', function () {
     const swiperId = "{{ section.id }}"
 
@@ -182,7 +184,7 @@
     });
   });
 </script>
-
+ {% endcomment %}
 
 
 {% schema %}
