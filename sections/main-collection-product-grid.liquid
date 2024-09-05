@@ -391,42 +391,70 @@
     dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
   });
 
-  
-  if (showMoreBtn) {
-    showMoreBtn.addEventListener('click', function () {
-      const nextPage = showMoreBtn.getAttribute('data-page');
-      const url = `${window.location.pathname}?page=${nextPage}`;
 
-      fetch(url)
-        .then(response => response.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
+  document.getElementById('show-more-btn').addEventListener('click', function() {
+  let button = this;
+  let page = parseInt(button.getAttribute('data-page'));
+  let url = `${window.location.pathname}?page=${page + 1}`;
 
-          // Get the next set of products
-          const newProducts = doc.querySelector('.main-collection-product-grid').children;
-          const productGrid = document.querySelector('.main-collection-product-grid');
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      let parser = new DOMParser();
+      let doc = parser.parseFromString(html, 'text/html');
+      let newProducts = doc.querySelectorAll('.main-collection-product-grid .product'); // Select new products
 
-          if (newProducts.length > 0) {
-            // Append the new products (only append, don't replace)
-            for (let i = 0; i < newProducts.length; i++) {
-              productGrid.appendChild(newProducts[i]);
-            }
+      // Append new products to the main-collection-product-grid
+      newProducts.forEach(product => {
+        document.querySelector('.main-collection-product-grid').appendChild(product);
+      });
 
-            // Update the page number
-            const nextPageNumber = parseInt(nextPage) + 1;
-            showMoreBtn.setAttribute('data-page', nextPageNumber);
+      // Hide the "Show More" button if no more products are available
+      if (newProducts.length < 6) {
+        button.style.display = 'none';
+      }
 
-            // Hide the button if no more products
-            const totalPages = doc.querySelector('.pagination__nav');
-            if (totalPages && nextPageNumber > parseInt(totalPages.getAttribute('data-total-pages'))) {
-              showMoreBtn.style.display = 'none';
-            }
-          }
-        })
-        .catch(error => console.error('Error fetching products:', error));
+      // Update the data-page attribute for the next set of products
+      button.setAttribute('data-page', page + 1);
     });
-  }
+});
+
+  
+  // if (showMoreBtn) {
+  //   showMoreBtn.addEventListener('click', function () {
+  //     const nextPage = showMoreBtn.getAttribute('data-page');
+  //     const url = `${window.location.pathname}?page=${nextPage}`;
+
+  //     fetch(url)
+  //       .then(response => response.text())
+  //       .then(html => {
+  //         const parser = new DOMParser();
+  //         const doc = parser.parseFromString(html, 'text/html');
+
+  //         // Get the next set of products
+  //         const newProducts = doc.querySelector('.main-collection-product-grid').children;
+  //         const productGrid = document.querySelector('.main-collection-product-grid');
+
+  //         if (newProducts.length > 0) {
+  //           // Append the new products (only append, don't replace)
+  //           for (let i = 0; i < newProducts.length; i++) {
+  //             productGrid.appendChild(newProducts[i]);
+  //           }
+
+  //           // Update the page number
+  //           const nextPageNumber = parseInt(nextPage) + 1;
+  //           showMoreBtn.setAttribute('data-page', nextPageNumber);
+
+  //           // Hide the button if no more products
+  //           const totalPages = doc.querySelector('.pagination__nav');
+  //           if (totalPages && nextPageNumber > parseInt(totalPages.getAttribute('data-total-pages'))) {
+  //             showMoreBtn.style.display = 'none';
+  //           }
+  //         }
+  //       })
+  //       .catch(error => console.error('Error fetching products:', error));
+  //   });
+  // }
 
   //   function updateSelectedFilters() {
   //   const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
