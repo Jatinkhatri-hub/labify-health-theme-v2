@@ -244,11 +244,11 @@
           {% render 'product-card', product: product %}
         {% endfor %} {% endcomment %}
         {% assign product_count = 0 %}
-    {% for product in collection.products %}
-      {% if product_count < 6 %}
-        {% render 'product-card', product: product %}
-      {% endif %}
-      {% assign product_count = product_count | plus: 1 %}
+          {% for product in collection.products %}
+            {% if product_count < 6 %}
+              {% render 'product-card', product: product %}
+            {% endif %}
+          {% assign product_count = product_count | plus: 1 %}
     {% endfor %}
       </div>
     </div>
