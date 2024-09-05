@@ -398,6 +398,44 @@
     dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
   });
 
+  if (showMoreBtn) {
+      showMoreBtn.addEventListener('click', function () {
+        const page = parseInt(showMoreBtn.getAttribute('data-page')) + 1; // Get the current page and increment it
+        const url = new URL(window.location.href);
+        url.searchParams.set('page', page); // Set the page parameter in the URL
+
+        // Fetch the next set of products using AJAX
+        fetch(url, {
+          method: 'GET',
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+          }
+        })
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card'); // Adjust selector if needed
+
+          // Append new products to the product grid
+          newProducts.forEach(product => {
+            productGrid.appendChild(product);
+          });
+
+          // Update page number for the next click
+          showMoreBtn.setAttribute('data-page', page);
+
+          // Hide the button if no more products are available
+          const totalProducts = {{ collection.products.size }};
+          const productsLoaded = productGrid.querySelectorAll('.product-card').length;
+          if (productsLoaded >= totalProducts) {
+            showMoreBtn.style.display = 'none'; // Hide the "Show More" button
+          }
+        })
+        .catch(error => console.error('Error loading more products:', error));
+      });
+    }
+
 
   //   function updateSelectedFilters() {
   //   const selectedOptions = filterForm.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked');
