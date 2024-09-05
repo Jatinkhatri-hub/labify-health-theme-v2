@@ -244,12 +244,14 @@
           {% render 'product-card', product: product %}
         {% endfor %} {% endcomment %}
         {% assign product_count = 0 %}
-        {% for product in collection.products %}
-          {% if product_count < 6 %}
-            {% render 'product-card', product: product %}
-          {% endif %}
-          {% assign product_count = product_count | plus: 1 %}
-        {% endfor %}
+    {% assign page_size = 6 %}
+    
+    {% for product in collection.products %}
+      {% if product_count < page_size %}
+        {% render 'product-card', product: product %}
+      {% endif %}
+      {% assign product_count = product_count | plus: 1 %}
+    {% endfor %}
       </div>
       {% if collection.products.size > page_size %}
         <div class="show-more-container">
