@@ -400,14 +400,11 @@
 
   if (showMoreBtn) {
     showMoreBtn.addEventListener('click', function () {
-      console.log("Show more button clicked!"); // Add this line to verify click event
-
-      const page = parseInt(showMoreBtn.getAttribute('data-page')) + 1;
+      let page = parseInt(showMoreBtn.getAttribute('data-page')) + 1; // Increment the page number
       const url = new URL(window.location.href);
-      url.searchParams.set('page', page); // Set the page parameter in the URL
+      url.searchParams.set('page', page); // Add the page parameter to the URL
 
-      // Log the URL being fetched
-      console.log("Fetching products from URL: ", url.toString());
+      console.log('Fetching products from URL: ', url.toString()); // Log the URL to verify pagination
 
       // Fetch the next set of products using AJAX
       fetch(url, {
@@ -423,27 +420,37 @@
         return response.text();
       })
       .then(html => {
-        console.log("Products fetched successfully!"); // Log success
+        console.log("Products fetched successfully!");
+
+        // Parse the fetched HTML
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
-        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
+        
+        // Select the new products from the fetched HTML
+        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card'); // Update selector if needed
+        console.log("New products fetched: ", newProducts);
 
-        // Append new products to the product grid
-        newProducts.forEach(product => {
-          productGrid.appendChild(product);
-        });
+        if (newProducts.length > 0) {
+          // Append new products to the product grid
+          newProducts.forEach(product => {
+            productGrid.appendChild(product);
+          });
+          
+          // Increment the page number for the next "Show More" click
+          showMoreBtn.setAttribute('data-page', page);
+        } else {
+          console.log("No more products available.");
+          showMoreBtn.style.display = 'none'; // Hide the button if no more products
+        }
 
-        // Update page number for the next click
-        showMoreBtn.setAttribute('data-page', page);
-
-        // Hide the button if no more products are available
-        const totalProducts = {{ collection.products.size }};
-        const productsLoaded = productGrid.querySelectorAll('.product-card').length;
+        // Check total product count and hide "Show More" button if all products are displayed
+        const totalProducts = {{ collection.products.size }}; // Total products in collection
+        const productsLoaded = productGrid.querySelectorAll('.product-card').length; // Count of currently displayed products
         if (productsLoaded >= totalProducts) {
-          showMoreBtn.style.display = 'none';
+          showMoreBtn.style.display = 'none'; // Hide the button when all products are loaded
         }
       })
-      .catch(error => console.error('Error loading more products:', error)); // Log any error
+      .catch(error => console.error('Error loading more products:', error));
     });
   }
 
