@@ -177,11 +177,11 @@
 
 #show-more-btn {
   color:#174338;
-  font-family: 'Avenir Medium';
+  font-family: 'Avenir Bold';
   text-decoration: underline;
   text-align: center;
   margin-block: 35px;
-
+  font-size: 18px;
 }
 
 
