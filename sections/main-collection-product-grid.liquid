@@ -424,7 +424,7 @@
         const doc = parser.parseFromString(html, 'text/html');
         
         // Select the new products from the fetched HTML
-        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card'); // Adjust selector as per your product grid
+        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper'); // Adjust selector as per your product grid
         console.log("New products fetched: ", newProducts);
 
         if (newProducts.length > 0) {
