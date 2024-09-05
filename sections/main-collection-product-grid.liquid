@@ -251,7 +251,7 @@
           {% assign product_count = product_count | plus: 1 %}
         {% endfor %}
       </div>
-      {% if collection.products.size > 6 %}
+      {% if collection.products.size > page_size %}
         <div class="show-more-container">
           <button id="show-more-btn" data-page="1" class="show-more-btn">Show More</button>
         </div>
