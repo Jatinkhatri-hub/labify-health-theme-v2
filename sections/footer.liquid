@@ -1,16 +1,16 @@
-{{ 'component-list-social.css' |  asset_url |  stylesheet_tag }}
-{{ 'section-footer-new.css' |  asset_url |  stylesheet_tag }}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+{{ 'section-footer-new.css' | asset_url | stylesheet_tag }}
 
 <style>
 
   @font-face {
     font-family: 'Avenir Regular';
-    src: url('{{'avenir-regular.woff2' |  asset_url}}');
+    src: url('{{'avenir-regular.woff2' | asset_url}}');
   }
 
   @font-face {
     font-family: 'Lato Regular';
-    src: url('{{'lato-medium.woff2' |  asset_url}}');
+    src: url('{{'lato-medium.woff2' | asset_url}}');
   }
 
 </style>
@@ -27,16 +27,25 @@
     endif
   -%}
   <div class="footer__container">
-    {% for block in section.blocks %} 
+    {% for block in section.blocks %}
       {% case block.type %}
         {% when 'brand_information' %}
           <div class="footer__brand-info">
             <img src="{{ block.settings.brand_logo |  img_url: 'medium' }}" class="footer__brand-logo">
             {% if block.settings.contact_no != blank %}
-            <div class="footer__contact"><span>{%  render 'icon-phone' %}</span> <h6> {{ block.settings.contact_no }}</h6> </div>
+              <div class="footer__contact">
+                <span>{% render 'icon-phone' %}</span>
+                <h6>
+                  {{ block.settings.contact_no }}</h6>
+              </div>
             {% endif %}
             {% if block.settings.email != blank %}
-              <div class="footer__email"><span>{% render 'icon-email' %}</span> <h6> {{ block.settings.email }} </h6></div>
+              <div class="footer__email">
+                <span>{% render 'icon-email' %}</span>
+                <h6>
+                  {{ block.settings.email }}
+                </h6>
+              </div>
             {% endif %}
           </div>
         {% when 'footer_menu' %}
@@ -44,16 +53,21 @@
             <ul class="footer-menu__list-container">
               {% for link in block.settings.footer_menu.links %}
                 <li class="footer-menu__link">
-                  <a href="{{ link.url }}"> {{ link.title }} </a>
+                  <a href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
                 </li>
               {% endfor %}
             </ul>
           </div>
         {% when 'terms_and_social' %}
           <div class="footer__terms_and_social__wrapper">
-            <a href="{{ block.settings.text_url }}"> {{ block.settings.text }} </a>
+            <a href="{{ block.settings.text_url }}">
+              {{ block.settings.text }}
+            </a>
             {%- if block.settings.show_social and has_social_icons -%}
-              {%- render 'social-icons', class: 'footer__list-social' -%}
+              {%- render 'social-icons'
+                , class: 'footer__list-social' -%}
             {% endif %}
           </div>
       {% endcase %}
@@ -62,7 +76,7 @@
 
 </footer>
 
-{%  schema  %} 
+{% schema %}
   {
     "name": "Footer",
     "settings": [
@@ -72,7 +86,8 @@
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
       }
-    ], "blocks": [
+    ],
+    "blocks": [
       {
         "type": "brand_information",
         "name": "Brand Information",
@@ -81,22 +96,19 @@
             "type": "image_picker",
             "id": "brand_logo",
             "label": "Brand Logo"
-          },
-          {
+          }, {
             "type": "text",
             "id": "contact_no",
             "label": "Contact No",
             "default": "000"
-          },
-          {
+          }, {
             "type": "text",
             "id": "email",
             "label": "Email",
             "default": "Email"
           }
         ]
-      },
-      {
+      }, {
         "type": "footer_menu",
         "name": "Footer Menu",
         "settings": [
@@ -106,8 +118,7 @@
             "label": "Footer Menu"
           }
         ]
-      },
-      {
+      }, {
         "type": "terms_and_social",
         "name": "T&C And Social",
         "settings": [
@@ -116,13 +127,11 @@
             "id": "text",
             "label": "Text",
             "default": "text"
-          },
-          {
+          }, {
             "type": "url",
             "id": "text_url",
             "label": "Url"
-          },
-          {
+          }, {
             "type": "checkbox",
             "id": "show_social",
             "default": true,
