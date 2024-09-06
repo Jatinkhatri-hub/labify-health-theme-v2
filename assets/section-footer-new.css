@@ -86,6 +86,32 @@
   list-style-type: none;
 }
 
+
+.nav-bar__menu-item {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.nav-bar__menu-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-bar__menu-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
 .footer-menu__link a {
   font-family: 'Avenir Regular';
   font-size: 17px;
