@@ -29,7 +29,7 @@
   color: #0087ca;
 }
 
-.hover-underline-animation::after {
+.nav-bar__menu-item::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -42,7 +42,7 @@
   transition: transform 0.25s ease-out;
 }
 
-.hover-underline-animation:hover::after {
+.nav-bar:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
