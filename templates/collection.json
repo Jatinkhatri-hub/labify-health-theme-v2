@@ -57,7 +57,8 @@
         "button_6fLdM4"
       ],
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/fabify1_720.png"
+        "background_image": "shopify:\/\/shop_images\/fabify1_720.png",
+        "background_image_mobile": "shopify:\/\/shop_images\/labify-banner-mobile.png"
       }
     },
     "2a7933a7-f53b-40f7-b982-308201a70cc1": {
