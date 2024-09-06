@@ -265,6 +265,27 @@
   const showMoreBtn = document.getElementById('show-more-btn');
   let page = 1; // Track current page for pagination
 
+
+  const detailsElement = document.querySelector('details'); // Adjust this selector to match your details element
+
+  function openDetailsIfDesktop() {
+    // Define a breakpoint for desktop view, e.g., 768px and above
+    if (window.innerWidth >= 768) {
+      // Open the details section if it is not already open
+      if (!detailsElement.hasAttribute('open')) {
+        detailsElement.setAttribute('open', 'open');
+      }
+    }
+  }
+
+  // Run the function on page load
+  openDetailsIfDesktop();
+
+  // Optionally, add a listener to open the details section when resizing to desktop view
+  window.addEventListener('resize', function () {
+    openDetailsIfDesktop();
+  });
+
   // Attach event listeners to all filter inputs
   filterForm.querySelectorAll('input').forEach(function (input) {
     input.addEventListener('change', function () {
