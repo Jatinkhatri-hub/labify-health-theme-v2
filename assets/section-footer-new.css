@@ -87,13 +87,13 @@
 }
 
 
-.nav-bar__menu-item {
+.footer-menu__link {
   display: inline-block;
   position: relative;
   color: #0087ca;
 }
 
-.nav-bar__menu-item::after {
+.footer-menu__link::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -106,7 +106,7 @@
   transition: transform 0.25s ease-out;
 }
 
-.nav-bar__menu-item:hover::after {
+.footer-menu__link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
