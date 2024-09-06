@@ -18,108 +18,6 @@
         "color_scheme": "background-1"
       }
     },
-    "hero_banner_U3CURM": {
-      "type": "hero-banner",
-      "blocks": {
-        "heading_YFHcHY": {
-          "type": "heading",
-          "settings": {
-            "line1_text": "TRUE HEALTH,",
-            "line1_color": "#a8d58e",
-            "line2_text": "SIMPLIFIED",
-            "line2_color": "#ffffff"
-          }
-        },
-        "paragraph_TBDbmP": {
-          "type": "paragraph",
-          "settings": {
-            "para_text": "No more guesswork—just actionable insights. Results are easy to understand and reference ranges are rooted in scientific research, not outdated population data.",
-            "para_color": "#ffffff"
-          }
-        },
-        "button_gGdFnP": {
-          "type": "button",
-          "settings": {
-            "button_text": "SHOP NOW",
-            "button_text_color": "#296108",
-            "button_bg_color": "#a8d58e",
-            "button_link": "",
-            "button_border_color": "#a8d58e",
-            "point_1": "Flexible Subscription Model",
-            "point_2": "Personalised Results",
-            "point_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "heading_YFHcHY",
-        "paragraph_TBDbmP",
-        "button_gGdFnP"
-      ],
-      "settings": {
-        "background_image": "shopify:\/\/shop_images\/fabify1_720.png",
-        "background_image_mobile": "shopify:\/\/shop_images\/labify-banner-mobile.png"
-      }
-    },
-    "logos_zxUq8x": {
-      "type": "logos",
-      "blocks": {
-        "logo_aUEFFi": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Labcorp_Logo_Horizontal_Color_RGB_1.jpg",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_Xfxxza": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/63f7d35577279fcd1aa7b4d6_63f7d2b99148f1b3bb2ed090_5f270498a3b299347be99890_accessmedlab.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_ciVRTC": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/643d588133ef0cfff9950139_MDX-FormerlyGPL_Horiz-Color-p-500.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_brQQPW": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/images-1.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_P3zPWA": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/images.png",
-            "logo_alt_text": "Logo"
-          }
-        },
-        "logo_ne6YdM": {
-          "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/63f7d356d2307256b2f76dae_624d06437a2c7650e5d4fa57_5e910320c0e4bb0a607f7d90_5dd0be0fc5a7ed1bf4586e72_dutch-p-800-p-500_1.png",
-            "logo_alt_text": "Logo"
-          }
-        }
-      },
-      "block_order": [
-        "logo_aUEFFi",
-        "logo_Xfxxza",
-        "logo_ciVRTC",
-        "logo_brQQPW",
-        "logo_P3zPWA",
-        "logo_ne6YdM"
-      ],
-      "settings": {
-        "logos_text_mobile": "AS SEEN ON",
-        "logos_text": "AS SEEN ON"
-      }
-    },
     "2a7933a7-f53b-40f7-b982-308201a70cc1": {
       "type": "rich-text",
       "blocks": {
@@ -134,7 +32,6 @@
       "block_order": [
         "template--21458261836088__2a7933a7-f53b-40f7-b982-308201a70cc1-heading-1"
       ],
-      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -147,90 +44,14 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "product": "",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "section_review_yV7DDE": {
-      "type": "section-review",
-      "blocks": {
-        "review_card_fi6EVE": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_aXWF3B": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_MJQR9h": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_Ut4xF6": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_hWLwJc": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_nCxYzP": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        },
-        "review_card_jJJdhF": {
-          "type": "review_card",
-          "settings": {
-            "name": "Name",
-            "review": "Lorem ipsum dolor sit amet consectetur. Aenean sit at amet id diam sit urna nunc vestibulum. Pellentesque tellus enim non neque elementum hendrerit nulla. Turpis faucibus egestas enim bibendum senectus. Donec amet tempor netus cursus. Morbi viverra sollicitudin sit enim id quam dui."
-          }
-        }
-      },
-      "block_order": [
-        "review_card_fi6EVE",
-        "review_card_aXWF3B",
-        "review_card_MJQR9h",
-        "review_card_Ut4xF6",
-        "review_card_hWLwJc",
-        "review_card_nCxYzP",
-        "review_card_jJJdhF"
-      ],
-      "settings": {
-        "heading": "DON'T TAKE OUR WORD FOR IT...",
-        "section_color_scheme": "scheme-5f1076b5-3480-4b74-9d48-c1d59cfe8030",
-        "color_scheme": "scheme-5f1076b5-3480-4b74-9d48-c1d59cfe8030",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 72,
+        "padding_bottom": 84
       }
     }
   },
   "order": [
     "banner",
-    "hero_banner_U3CURM",
-    "logos_zxUq8x",
     "2a7933a7-f53b-40f7-b982-308201a70cc1",
-    "product-grid",
-    "section_review_yV7DDE"
+    "product-grid"
   ]
 }
