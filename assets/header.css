@@ -23,7 +23,7 @@
   height: 62px;
 }
 
-.hover-underline-animation {
+.nav-bar__menu-item {
   display: inline-block;
   position: relative;
   color: #0087ca;
