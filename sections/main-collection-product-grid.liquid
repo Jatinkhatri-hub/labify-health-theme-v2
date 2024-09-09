@@ -316,7 +316,7 @@
         currentContent.innerHTML = newContent.innerHTML;
 
         // Check if there are more than 6 products after filtering
-        const filteredProducts = doc.querySelectorAll('.product-card__wrapper');
+        const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
         if (filteredProducts.length <= 6) {
           showMoreBtn.style.display = 'none'; // Hide if there are 6 or fewer products
         } else {
