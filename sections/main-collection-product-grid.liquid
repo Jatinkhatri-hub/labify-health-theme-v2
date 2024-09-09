@@ -414,7 +414,7 @@
       if (newContent && currentContent) {
         currentContent.innerHTML = newContent.innerHTML;
 
-        const filteredProducts = currentContent.querySelectorAll('.product-card__wrapper');
+        const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
         if (filteredProducts.length <= 6) {
           showMoreBtn.style.display = 'none';
         } else {
