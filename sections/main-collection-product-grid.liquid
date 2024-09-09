@@ -258,198 +258,198 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
 
-const filterForm = document.getElementById('filter-form');
-//  const formData = new FormData(filterForm);
-const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
-const dropdownToggle = document.querySelector('.selected-filters-dropdown .dropdown-toggle');
-const desktopButtonsGroup = document.querySelector('.selected-filters-desktop');
-const showMoreBtn = document.getElementById('show-more-btn');
-let page = 1; // Track current page for pagination
-
-
-const detailsElement = document.querySelector('details'); // Adjust this selector to match your details element
-
-function openDetailsIfDesktop() {
-  // Define a breakpoint for desktop view, e.g., 768px and above
-  if (window.innerWidth >= 768) {
-    // Open the details section if it is not already open
-    if (!detailsElement.hasAttribute('open')) {
-      detailsElement.setAttribute('open', 'open');
-    }
-  }
-}
-
-// Run the function on page load
-openDetailsIfDesktop();
-
-// Optionally, add a listener to open the details section when resizing to desktop view
-window.addEventListener('resize', function () {
-  openDetailsIfDesktop();
-});
-
-// Attach event listeners to all filter inputs
-filterForm.querySelectorAll('input').forEach(function (input) {
-  input.addEventListener('change', function () {
-   // page = 1; // Reset pagination to 1 when filters are applied
-    applyFilters();
-  });
-});
-
-function applyFilters() {
+  const filterForm = document.getElementById('filter-form');
   const formData = new FormData(filterForm);
-  page = 1;
+  const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
+  const dropdownToggle = document.querySelector('.selected-filters-dropdown .dropdown-toggle');
+  const desktopButtonsGroup = document.querySelector('.selected-filters-desktop');
+  const showMoreBtn = document.getElementById('show-more-btn');
+  let page = 1; // Track current page for pagination
 
-  // Fetch the collection with the applied filters using AJAX
-  fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
-    method: 'GET',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest',
-    },
-  })
-  .then(response => response.text())
-  .then(html => {
-    // Replace the collection product grid with the new filtered content
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const newContent = doc.querySelector('.main-collection-product-grid');
-    const currentContent = document.querySelector('.main-collection-product-grid');
 
-    if (newContent && currentContent) {
-      currentContent.innerHTML = newContent.innerHTML;
+  const detailsElement = document.querySelector('details'); // Adjust this selector to match your details element
 
-      // Check if there are more than 6 products after filtering
-      const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
-      if (filteredProducts.length <= 6) {
-        showMoreBtn.style.display = 'none'; // Hide if there are 6 or fewer products
-      } else {
-        showMoreBtn.style.display = 'block'; // Show if more than 6
+  function openDetailsIfDesktop() {
+    // Define a breakpoint for desktop view, e.g., 768px and above
+    if (window.innerWidth >= 768) {
+      // Open the details section if it is not already open
+      if (!detailsElement.hasAttribute('open')) {
+        detailsElement.setAttribute('open', 'open');
       }
     }
-  })
-  .catch(error => console.error('Error applying filters:', error));
-}
+  }
 
-document.getElementById('show-more-btn').addEventListener('click', function () {
-  page += 1; // Increment the page number for each "Show More" click
+  // Run the function on page load
+  openDetailsIfDesktop();
 
-  const formData = new FormData(filterForm);
+  // Optionally, add a listener to open the details section when resizing to desktop view
+  window.addEventListener('resize', function () {
+    openDetailsIfDesktop();
+  });
 
-  // If any static filter is selected, include that in the request
-const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
-if (activeStaticFilter) {
-  formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
-}
+  // Attach event listeners to all filter inputs
+  filterForm.querySelectorAll('input').forEach(function (input) {
+    input.addEventListener('change', function () {
+     // page = 1; // Reset pagination to 1 when filters are applied
+      applyFilters();
+    });
+  });
 
-  //let url = ${window.location.pathname}?page=${page};
+  function applyFilters() {
+    const formData = new FormData(filterForm);
+    page = 1;
 
-    // Construct the URL with the updated page number and form data
-let url = ${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()};
-
-  fetch(url)
+    // Fetch the collection with the applied filters using AJAX
+    fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+      method: 'GET',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
     .then(response => response.text())
     .then(html => {
-      let parser = new DOMParser();
-      let doc = parser.parseFromString(html, 'text/html');
-      let newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
+      // Replace the collection product grid with the new filtered content
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const newContent = doc.querySelector('.main-collection-product-grid');
+      const currentContent = document.querySelector('.main-collection-product-grid');
 
-      // Append new products to the main-collection-product-grid
-      newProducts.forEach(product => {
-        document.querySelector('.main-collection-product-grid').appendChild(product);
-      });
+      if (newContent && currentContent) {
+        currentContent.innerHTML = newContent.innerHTML;
 
-      // Hide the "Show More" button if fewer products are available
-      if (newProducts.length < 6) {
-        showMoreBtn.style.display = 'none';
+        // Check if there are more than 6 products after filtering
+        const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
+        if (filteredProducts.length <= 6) {
+          showMoreBtn.style.display = 'none'; // Hide if there are 6 or fewer products
+        } else {
+          showMoreBtn.style.display = 'block'; // Show if more than 6
+        }
       }
-    });
-});
+    })
+    .catch(error => console.error('Error applying filters:', error));
+  }
 
-// Initialize with the first four filters on page load
-function updateStaticFilters() {
-  dropdownMenu.innerHTML = '';
-  desktopButtonsGroup.innerHTML = '';
+  document.getElementById('show-more-btn').addEventListener('click', function () {
+    page += 1; // Increment the page number for each "Show More" click
 
-  const filterOptions = filterForm.querySelectorAll('input[type="checkbox"], input[type="radio"]');
-  const firstFourOptions = Array.from(filterOptions).slice(0, 4);
+    const formData = new FormData(filterForm);
 
-  firstFourOptions.forEach(option => {
-    const labelElement = option.closest('label');
-    const optionLabel = labelElement ? labelElement.textContent.trim() : option.value;
+    // If any static filter is selected, include that in the request
+  const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
+  if (activeStaticFilter) {
+    formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
+  }
 
-    const dropdownButton = createFilterButton(option.name, option.value, optionLabel);
-    const desktopButton = createFilterButton(option.name, option.value, optionLabel);
+    //let url = `${window.location.pathname}?page=${page}`;
 
-    dropdownButton.addEventListener('click', function () {
-      applySelectedFilter(option.name, option.value, dropdownButton, dropdownMenu);
-    });
-    desktopButton.addEventListener('click', function () {
-      applySelectedFilter(option.name, option.value, desktopButton, desktopButtonsGroup);
-    });
+      // Construct the URL with the updated page number and form data
+  let url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
 
-    dropdownMenu.appendChild(dropdownButton);
-    desktopButtonsGroup.appendChild(desktopButton);
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, 'text/html');
+        let newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
+
+        // Append new products to the main-collection-product-grid
+        newProducts.forEach(product => {
+          document.querySelector('.main-collection-product-grid').appendChild(product);
+        });
+
+        // Hide the "Show More" button if fewer products are available
+        if (newProducts.length < 6) {
+          showMoreBtn.style.display = 'none';
+        }
+      });
   });
 
-  if (firstFourOptions.length > 0) {
-    const firstLabelElement = firstFourOptions[0].closest('label');
-    const firstOptionLabel = firstLabelElement ? firstLabelElement.textContent.trim() : firstFourOptions[0].value;
-    dropdownToggle.textContent = firstOptionLabel;
-  } else {
-    dropdownToggle.textContent = 'Selected Filters';
-  }
-}
+  // Initialize with the first four filters on page load
+  function updateStaticFilters() {
+    dropdownMenu.innerHTML = '';
+    desktopButtonsGroup.innerHTML = '';
 
-function createFilterButton(name, value, label) {
-  const button = document.createElement('button');
-  button.className = 'button-like';
-  button.textContent = label;
-  button.dataset.name = name;
-  button.dataset.value = value;
-  return button;
-}
+    const filterOptions = filterForm.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+    const firstFourOptions = Array.from(filterOptions).slice(0, 4);
 
-function applySelectedFilter(filterName, filterValue, clickedButton, buttonContainer) {
-  const formData = new FormData(filterForm);
-  formData.append(filterName, filterValue);
+    firstFourOptions.forEach(option => {
+      const labelElement = option.closest('label');
+      const optionLabel = labelElement ? labelElement.textContent.trim() : option.value;
 
-  page = 1;
+      const dropdownButton = createFilterButton(option.name, option.value, optionLabel);
+      const desktopButton = createFilterButton(option.name, option.value, optionLabel);
 
-  fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
-    method: 'GET',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest',
-    },
-  })
-  .then(response => response.text())
-  .then(html => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const newContent = doc.querySelector('.main-collection-product-grid');
-    const currentContent = document.querySelector('.main-collection-product-grid');
+      dropdownButton.addEventListener('click', function () {
+        applySelectedFilter(option.name, option.value, dropdownButton, dropdownMenu);
+      });
+      desktopButton.addEventListener('click', function () {
+        applySelectedFilter(option.name, option.value, desktopButton, desktopButtonsGroup);
+      });
 
-    if (newContent && currentContent) {
-      currentContent.innerHTML = newContent.innerHTML;
+      dropdownMenu.appendChild(dropdownButton);
+      desktopButtonsGroup.appendChild(desktopButton);
+    });
 
-      const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
-      if (filteredProducts.length <= 6) {
-        showMoreBtn.style.display = 'none';
-      } else {
-        showMoreBtn.style.display = 'block';
-      }
+    if (firstFourOptions.length > 0) {
+      const firstLabelElement = firstFourOptions[0].closest('label');
+      const firstOptionLabel = firstLabelElement ? firstLabelElement.textContent.trim() : firstFourOptions[0].value;
+      dropdownToggle.textContent = firstOptionLabel;
+    } else {
+      dropdownToggle.textContent = 'Selected Filters';
     }
+  }
 
-    buttonContainer.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
-    clickedButton.classList.add('active');
-  })
-  .catch(error => console.error('Error applying filter:', error));
-}
+  function createFilterButton(name, value, label) {
+    const button = document.createElement('button');
+    button.className = 'button-like';
+    button.textContent = label;
+    button.dataset.name = name;
+    button.dataset.value = value;
+    return button;
+  }
 
-// Initialize static filters and dropdown behavior
-updateStaticFilters();
-dropdownToggle.addEventListener('click', function () {
-  dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
-});
-});
+  function applySelectedFilter(filterName, filterValue, clickedButton, buttonContainer) {
+    const formData = new FormData(filterForm);
+    formData.append(filterName, filterValue);
+
+    page = 1;
+
+    fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+      method: 'GET',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+    .then(response => response.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const newContent = doc.querySelector('.main-collection-product-grid');
+      const currentContent = document.querySelector('.main-collection-product-grid');
+
+      if (newContent && currentContent) {
+        currentContent.innerHTML = newContent.innerHTML;
+
+        const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
+        if (filteredProducts.length <= 6) {
+          showMoreBtn.style.display = 'none';
+        } else {
+          showMoreBtn.style.display = 'block';
+        }
+      }
+
+      buttonContainer.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
+      clickedButton.classList.add('active');
+    })
+    .catch(error => console.error('Error applying filter:', error));
+  }
+
+  // Initialize static filters and dropdown behavior
+  updateStaticFilters();
+  dropdownToggle.addEventListener('click', function () {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+  });
 </script>
 
 
