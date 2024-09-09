@@ -304,6 +304,14 @@
       if (newContent && currentContent) {
         currentContent.innerHTML = newContent.innerHTML;
         //toggleShowMoreButton(doc);
+        const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
+
+if (filteredProducts <= 6) {
+  showMoreBtn.style.display = 'none';
+} else {
+  showMoreBtn.style.display = 'block';
+}
+
       }
     })
     .catch(error => console.error('Error applying Shopify filters:', error));
