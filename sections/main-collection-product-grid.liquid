@@ -380,6 +380,15 @@
           showMoreBtn.style.display = 'none';
         }
 
+        const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
+
+        if (filteredProducts <= 6) {
+          showMoreBtn.style.display = 'none';
+        } else {
+          showMoreBtn.style.display = 'block';
+        }
+
+
         updateShopNowButton(newProducts.length);
       });
   });
