@@ -256,224 +256,179 @@
 </div>
 
 <script>
- document.addEventListener('DOMContentLoaded', function () {
+ const filterForm = document.getElementById('filter-form');
+  const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
+  const dropdownToggle = document.querySelector('.selected-filters-dropdown .dropdown-toggle');
+  const desktopButtonsGroup = document.querySelector('.selected-filters-desktop');
+  const showMoreBtn = document.getElementById('show-more-btn');
+  let page = 1; // Track current page for pagination
+  let activeFilterType = ''; // Track whether the static filter or Shopify filter is active
 
-const filterForm = document.getElementById('filter-form');
-const dropdownMenu = document.querySelector('.selected-filters-dropdown .dropdown-menu');
-const dropdownToggle = document.querySelector('.selected-filters-dropdown .dropdown-toggle');
-const desktopButtonsGroup = document.querySelector('.selected-filters-desktop');
-const showMoreBtn = document.getElementById('show-more-btn');
-let page = 1; // Track current page for pagination
-
-const detailsElement = document.querySelector('details'); // Adjust this selector to match your details element
-
-function openDetailsIfDesktop() {
-  // Define a breakpoint for desktop view, e.g., 768px and above
-  if (window.innerWidth >= 768) {
-    // Open the details section if it is not already open
-    if (!detailsElement.hasAttribute('open')) {
+  // Ensure details are open on desktop
+  const detailsElement = document.querySelector('details');
+  function openDetailsIfDesktop() {
+    if (window.innerWidth >= 768 && !detailsElement.hasAttribute('open')) {
       detailsElement.setAttribute('open', 'open');
     }
   }
-}
 
-// Run the function on page load
-openDetailsIfDesktop();
-
-// Optionally, add a listener to open the details section when resizing to desktop view
-window.addEventListener('resize', function () {
   openDetailsIfDesktop();
-});
+  window.addEventListener('resize', openDetailsIfDesktop);
 
-// Attach event listeners to all filter inputs
-filterForm.querySelectorAll('input').forEach(function (input) {
-  input.addEventListener('change', function () {
-    applyFilters();
+  // Handle Shopify filters
+  filterForm.querySelectorAll('input').forEach(function (input) {
+    input.addEventListener('change', function () {
+      activeFilterType = 'shopify'; // Set the active filter type to Shopify
+      applyShopifyFilters();
+    });
   });
-});
 
-function applyFilters() {
-  const formData = new FormData(filterForm);
-  page = 1;
+  // Apply Shopify Filters
+  function applyShopifyFilters() {
+    const formData = new FormData(filterForm);
+    page = 1;
 
-  // Fetch the collection with the applied filters using AJAX
-  fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
-    method: 'GET',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest',
-    },
-  })
-  .then(response => response.text())
-  .then(html => {
-    // Replace the collection product grid with the new filtered content
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const newContent = doc.querySelector('.main-collection-product-grid');
-    const currentContent = document.querySelector('.main-collection-product-grid');
-
-    if (newContent && currentContent) {
-      currentContent.innerHTML = newContent.innerHTML;
-
-      // Check if there are more than 6 products after filtering
-      const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
-      if (filteredProducts.length <= 6) {
-        showMoreBtn.style.display = 'none'; // Hide if there are 6 or fewer products
-      } else {
-        showMoreBtn.style.display = 'block'; // Show if more than 6
-      }
-
-      // Rebind event listeners for the "Shop Now" button
-      bindShopNowButtons();
-    }
-  })
-  .catch(error => console.error('Error applying filters:', error));
-}
-
-document.getElementById('show-more-btn').addEventListener('click', function () {
-  page += 1; // Increment the page number for each "Show More" click
-
-  const formData = new FormData(filterForm);
-
-  // If any static filter is selected, include that in the request
-  const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
-  if (activeStaticFilter) {
-    formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
-  }
-
-  // Construct the URL with the updated page number and form data
-  let url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
-
-  fetch(url)
+    fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+      method: 'GET',
+      headers: { 'X-Requested-With': 'XMLHttpRequest' },
+    })
     .then(response => response.text())
     .then(html => {
-      let parser = new DOMParser();
-      let doc = parser.parseFromString(html, 'text/html');
-      let newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const newContent = doc.querySelector('.main-collection-product-grid');
+      const currentContent = document.querySelector('.main-collection-product-grid');
 
-      // Append new products to the main-collection-product-grid
-      newProducts.forEach(product => {
-        document.querySelector('.main-collection-product-grid').appendChild(product);
-      });
-
-      // Hide the "Show More" button if fewer products are available
-      if (newProducts.length < 6) {
-        showMoreBtn.style.display = 'none';
+      if (newContent && currentContent) {
+        currentContent.innerHTML = newContent.innerHTML;
+        toggleShowMoreButton(doc);
       }
-
-      // Rebind event listeners for the "Shop Now" button after new products are loaded
-      bindShopNowButtons();
     })
-    .catch(error => console.error('Error loading more products:', error));
-});
-
-// Initialize with the first four filters on page load
-function updateStaticFilters() {
-  dropdownMenu.innerHTML = '';
-  desktopButtonsGroup.innerHTML = '';
-
-  const filterOptions = filterForm.querySelectorAll('input[type="checkbox"], input[type="radio"]');
-  const firstFourOptions = Array.from(filterOptions).slice(0, 4);
-
-  firstFourOptions.forEach(option => {
-    const labelElement = option.closest('label');
-    const optionLabel = labelElement ? labelElement.textContent.trim() : option.value;
-
-    const dropdownButton = createFilterButton(option.name, option.value, optionLabel);
-    const desktopButton = createFilterButton(option.name, option.value, optionLabel);
-
-    dropdownButton.addEventListener('click', function () {
-      applySelectedFilter(option.name, option.value, dropdownButton, dropdownMenu);
-    });
-    desktopButton.addEventListener('click', function () {
-      applySelectedFilter(option.name, option.value, desktopButton, desktopButtonsGroup);
-    });
-
-    dropdownMenu.appendChild(dropdownButton);
-    desktopButtonsGroup.appendChild(desktopButton);
-  });
-
-  if (firstFourOptions.length > 0) {
-    const firstLabelElement = firstFourOptions[0].closest('label');
-    const firstOptionLabel = firstLabelElement ? firstLabelElement.textContent.trim() : firstFourOptions[0].value;
-    dropdownToggle.textContent = firstOptionLabel;
-  } else {
-    dropdownToggle.textContent = 'Selected Filters';
+    .catch(error => console.error('Error applying Shopify filters:', error));
   }
-}
 
-function createFilterButton(name, value, label) {
-  const button = document.createElement('button');
-  button.className = 'button-like';
-  button.textContent = label;
-  button.dataset.name = name;
-  button.dataset.value = value;
-  return button;
-}
+  // Handle static filter logic
+  function applyStaticFilter(filterName, filterValue, clickedButton, buttonContainer) {
+    activeFilterType = 'static'; // Set the active filter type to static
+    const formData = new FormData();
+    formData.append(filterName, filterValue);
+    page = 1;
 
-function applySelectedFilter(filterName, filterValue, clickedButton, buttonContainer) {
-  const formData = new FormData(filterForm);
-  formData.append(filterName, filterValue);
+    fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+      method: 'GET',
+      headers: { 'X-Requested-With': 'XMLHttpRequest' },
+    })
+    .then(response => response.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const newContent = doc.querySelector('.main-collection-product-grid');
+      const currentContent = document.querySelector('.main-collection-product-grid');
 
-  page = 1;
+      if (newContent && currentContent) {
+        currentContent.innerHTML = newContent.innerHTML;
+        toggleShowMoreButton(doc);
 
-  fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
-    method: 'GET',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest',
-    },
-  })
-  .then(response => response.text())
-  .then(html => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const newContent = doc.querySelector('.main-collection-product-grid');
-    const currentContent = document.querySelector('.main-collection-product-grid');
-
-    if (newContent && currentContent) {
-      currentContent.innerHTML = newContent.innerHTML;
-
-      const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
-      if (filteredProducts.length <= 6) {
-        showMoreBtn.style.display = 'none';
-      } else {
-        showMoreBtn.style.display = 'block';
+        // Update the active button
+        buttonContainer.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
+        clickedButton.classList.add('active');
       }
+    })
+    .catch(error => console.error('Error applying static filter:', error));
+  }
 
-      // Rebind event listeners for the "Shop Now" button after applying the filter
-      bindShopNowButtons();
+  // Show more button logic
+  showMoreBtn.addEventListener('click', function () {
+    page += 1;
+    const formData = new FormData(filterForm);
+
+    let url;
+    if (activeFilterType === 'static') {
+      const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
+      if (activeStaticFilter) {
+        formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
+      }
+      url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
+    } else {
+      url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
     }
 
-    buttonContainer.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
-    clickedButton.classList.add('active');
-  })
-  .catch(error => console.error('Error applying filter:', error));
-}
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
 
-// Function to bind "Shop Now" buttons after loading or filtering products
-function bindShopNowButtons() {
-  const shopNowButtons = document.querySelectorAll('.shop-now-btn');
-  shopNowButtons.forEach(button => {
-    button.removeEventListener('click', handleShopNowClick); // Remove previous listener
-    button.addEventListener('click', handleShopNowClick); // Add new listener
+        newProducts.forEach(product => {
+          document.querySelector('.main-collection-product-grid').appendChild(product);
+        });
+
+        if (newProducts.length < 6) {
+          showMoreBtn.style.display = 'none';
+        }
+      });
   });
-}
 
-// Handle the "Shop Now" button click
-function handleShopNowClick(event) {
-  event.preventDefault();
-  const productId = event.currentTarget.dataset.productId;
-  // Custom logic for "Shop Now" button behavior, e.g., opening the cart drawer
-  console.log('Shop Now clicked for product ID:', productId);
-}
+  // Toggle visibility of the Show More button based on product count
+  function toggleShowMoreButton(doc) {
+    const totalProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper').length;
+    if (totalProducts <= 6) {
+      showMoreBtn.style.display = 'none';
+    } else {
+      showMoreBtn.style.display = 'block';
+    }
+  }
 
-// Initialize static filters and dropdown behavior
-updateStaticFilters();
-dropdownToggle.addEventListener('click', function () {
-  dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
-});
+  // Initialize static filters
+  function updateStaticFilters() {
+    dropdownMenu.innerHTML = '';
+    desktopButtonsGroup.innerHTML = '';
 
-// Initial binding of "Shop Now" buttons on page load
-bindShopNowButtons();
+    const filterOptions = filterForm.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+    const firstFourOptions = Array.from(filterOptions).slice(0, 4);
+
+    firstFourOptions.forEach(option => {
+      const labelElement = option.closest('label');
+      const optionLabel = labelElement ? labelElement.textContent.trim() : option.value;
+
+      const dropdownButton = createFilterButton(option.name, option.value, optionLabel);
+      const desktopButton = createFilterButton(option.name, option.value, optionLabel);
+
+      dropdownButton.addEventListener('click', function () {
+        applyStaticFilter(option.name, option.value, dropdownButton, dropdownMenu);
+      });
+      desktopButton.addEventListener('click', function () {
+        applyStaticFilter(option.name, option.value, desktopButton, desktopButtonsGroup);
+      });
+
+      dropdownMenu.appendChild(dropdownButton);
+      desktopButtonsGroup.appendChild(desktopButton);
+    });
+
+    if (firstFourOptions.length > 0) {
+      const firstLabelElement = firstFourOptions[0].closest('label');
+      const firstOptionLabel = firstLabelElement ? firstLabelElement.textContent.trim() : firstFourOptions[0].value;
+      dropdownToggle.textContent = firstOptionLabel;
+    } else {
+      dropdownToggle.textContent = 'Selected Filters';
+    }
+  }
+
+  function createFilterButton(name, value, label) {
+    const button = document.createElement('button');
+    button.className = 'button-like';
+    button.textContent = label;
+    button.dataset.name = name;
+    button.dataset.value = value;
+    return button;
+  }
+
+  // Initialize static filters and dropdown behavior
+  updateStaticFilters();
+  dropdownToggle.addEventListener('click', function () {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
 
 });
 
