@@ -337,7 +337,10 @@
     formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
   }
 
-    let url = `${window.location.pathname}?page=${page}`;
+    //let url = `${window.location.pathname}?page=${page}`;
+
+      // Construct the URL with the updated page number and form data
+  let url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
 
     fetch(url)
       .then(response => response.text())
