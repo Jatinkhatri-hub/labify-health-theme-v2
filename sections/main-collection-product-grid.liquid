@@ -312,8 +312,8 @@
         showMoreBtn.style.display = 'block';
       }
 
-      }
       updateShopNowButton(filteredProducts); // Add this function call
+      }
 
     })
     .catch(error => console.error('Error applying Shopify filters:', error));
@@ -438,9 +438,9 @@
 
   function updateShopNowButton(productCount) {
     if (productCount > 0) {
-      shopNowBtn.style.display = 'block'; // Show the button if products are present
+      shopMoreBtn.style.display = 'block'; // Show the button if products are present
     } else {
-      shopNowBtn.style.display = 'none'; // Hide the button if no products are present
+      shopMoreBtn.style.display = 'none'; // Hide the button if no products are present
     }
   }
 
