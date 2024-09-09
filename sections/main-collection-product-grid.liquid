@@ -339,7 +339,18 @@
 
       if (newContent && currentContent) {
         currentContent.innerHTML = newContent.innerHTML;
-        toggleShowMoreButton(doc);
+//toggleShowMoreButton(doc);
+
+        const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
+
+          if (filteredProducts <= 6) {
+            showMoreBtn.style.display = 'none';
+          } else {
+            showMoreBtn.style.display = 'block';
+          }
+
+          // Update Shop Now button after static filter is applied
+          updateShopNowButton(filteredProducts); 
 
         // Update the active button
         buttonContainer.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
