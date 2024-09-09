@@ -436,6 +436,14 @@
     return button;
   }
 
+  function updateShopNowButton(productCount) {
+    if (productCount > 0) {
+      shopNowBtn.style.display = 'block'; // Show the button if products are present
+    } else {
+      shopNowBtn.style.display = 'none'; // Hide the button if no products are present
+    }
+  }
+
   // Initialize static filters and dropdown behavior
   updateStaticFilters();
   dropdownToggle.addEventListener('click', function () {
