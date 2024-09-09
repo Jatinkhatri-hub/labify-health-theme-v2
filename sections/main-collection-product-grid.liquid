@@ -408,7 +408,7 @@
   }
 
   function applySelectedFilter(filterName, filterValue, clickedButton, buttonContainer) {
-    const formData = new FormData();
+    const formData = new FormData(filterForm);
     formData.append(filterName, filterValue);
 
     page = 1;
