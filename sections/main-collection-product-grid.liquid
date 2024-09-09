@@ -319,91 +319,49 @@
     .catch(error => console.error('Error applying Shopify filters:', error));
   }
 
-  // Handle static filter logic
- 
-//   function applyStaticFilter(filterName, filterValue, clickedButton, buttonContainer) {
-//     activeFilterType = 'static'; // Set the active filter type to static
-//     const formData = new FormData();
-//     formData.append(filterName, filterValue);
-//     page = 1;
+  // Function to apply the static filter
+function applyStaticFilter(filterName, filterValue, clickedButton, buttonContainer) {
+  activeFilterType = 'static'; // Set the active filter type to static
+  const formData = new FormData();
+  formData.append(filterName, filterValue);
+  page = 1; // Reset pagination
 
-//     fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
-//       method: 'GET',
-//       headers: { 'X-Requested-With': 'XMLHttpRequest' },
-//     })
-//     .then(response => response.text())
-//     .then(html => {
-//       const parser = new DOMParser();
-//       const doc = parser.parseFromString(html, 'text/html');
-//       const newContent = doc.querySelector('.main-collection-product-grid');
-//       const currentContent = document.querySelector('.main-collection-product-grid');
+  // Fetch the filtered products based on the static filter applied
+  fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+    method: 'GET',
+    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+  })
+  .then(response => response.text())
+  .then(html => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const newContent = doc.querySelector('.main-collection-product-grid');
+    const currentContent = document.querySelector('.main-collection-product-grid');
 
-//       if (newContent && currentContent) {
-//         currentContent.innerHTML = newContent.innerHTML;
-// //toggleShowMoreButton(doc);
+    if (newContent && currentContent) {
+      currentContent.innerHTML = newContent.innerHTML;
 
-//         const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
+      const filteredProducts = newContent.querySelectorAll('.product-card__wrapper').length;
 
-//           if (filteredProducts <= 6) {
-//             showMoreBtn.style.display = 'none';
-//           } else {
-//             showMoreBtn.style.display = 'block';
-//           }
+      // Check if the 'Show More' button should be visible
+      if (filteredProducts <= 6) {
+        showMoreBtn.style.display = 'none';
+      } else {
+        showMoreBtn.style.display = 'block';
+      }
 
-//           // Update Shop Now button after static filter is applied
-//           updateShopNowButton(filteredProducts); 
+      // Update the Shop Now button visibility based on filtered products
+      updateShopNowButton(filteredProducts);
+    }
 
-//         // Update the active button
-//         buttonContainer.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
-//         clickedButton.classList.add('active');
-//       }
-//     })
-//     .catch(error => console.error('Error applying static filter:', error));
-//   }
-
-  // Show more button logic
-  // showMoreBtn.addEventListener('click', function () {
-  //   page += 1;
-  //   const formData = new FormData(filterForm);
-
-  //   let url;
-  //   if (activeFilterType === 'static') {
-  //     const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
-  //     if (activeStaticFilter) {
-  //       formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
-  //     }
-  //     url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
-  //   } else {
-  //     url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
-  //   }
-
-  //   fetch(url)
-  //     .then(response => response.text())
-  //     .then(html => {
-  //       const parser = new DOMParser();
-  //       const doc = parser.parseFromString(html, 'text/html');
-  //       const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
-
-  //       newProducts.forEach(product => {
-  //         document.querySelector('.main-collection-product-grid').appendChild(product);
-  //       });
-
-  //       // if (newProducts.length < 6) {
-  //       //   showMoreBtn.style.display = 'none';
-  //       // }
-
-  //       const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
-
-  //       if (filteredProducts <= 6) {
-  //         showMoreBtn.style.display = 'none';
-  //       } else {
-  //         showMoreBtn.style.display = 'block';
-  //       }
+    // Update the active filter button visually
+    buttonContainer.querySelectorAll('.button-like').forEach(btn => btn.classList.remove('active'));
+    clickedButton.classList.add('active');
+  })
+  .catch(error => console.error('Error applying static filter:', error));
+}
 
 
-  //       updateShopNowButton(filteredProducts);
-  //     });
-  // });
 
   document.getElementById('show-more-btn').addEventListener('click', function () {
     page += 1;
