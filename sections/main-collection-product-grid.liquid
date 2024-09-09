@@ -330,6 +330,13 @@
 
   document.getElementById('show-more-btn').addEventListener('click', function () {
     page += 1; // Increment the page number for each "Show More" click
+
+    // If any static filter is selected, include that in the request
+  const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
+  if (activeStaticFilter) {
+    formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
+  }
+
     let url = `${window.location.pathname}?page=${page}`;
 
     fetch(url)
