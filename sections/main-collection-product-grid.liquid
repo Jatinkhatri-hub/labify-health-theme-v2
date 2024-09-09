@@ -296,6 +296,7 @@
 
   function applyFilters() {
     const formData = new FormData(filterForm);
+    page = 1;
 
     // Fetch the collection with the applied filters using AJAX
     fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
