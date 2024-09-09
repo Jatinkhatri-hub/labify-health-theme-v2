@@ -331,7 +331,7 @@
   document.getElementById('show-more-btn').addEventListener('click', function () {
     page += 1; // Increment the page number for each "Show More" click
 
-    const formData = new
+    const formData = new FormData(filterForm);
 
     // If any static filter is selected, include that in the request
   const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
