@@ -329,6 +329,39 @@
   //   .catch(error => console.error('Error applying filters:', error));
   // }
 
+  function applyFilters() {
+    const formData = new FormData(filterForm);
+    page = 1; // Reset pagination when filters are applied
+
+    fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+        method: 'GET',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+        },
+    })
+    .then(response => response.text())
+    .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newContent = doc.querySelector('.main-collection-product-grid');
+        const currentContent = document.querySelector('.main-collection-product-grid');
+
+        if (newContent && currentContent) {
+            currentContent.innerHTML = newContent.innerHTML;
+
+            // Check if there are more than 6 products after filtering
+            const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
+            if (filteredProducts.length <= 6) {
+                showMoreBtn.style.display = 'none'; // Hide if there are fewer than 6 products
+            } else {
+                showMoreBtn.style.display = 'block'; // Show if more products are available
+            }
+        }
+    })
+    .catch(error => console.error('Error applying filters:', error));
+}
+
+
   
 
   // document.getElementById('show-more-btn').addEventListener('click', function () {
