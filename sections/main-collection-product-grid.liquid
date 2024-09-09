@@ -329,6 +329,43 @@
   //   .catch(error => console.error('Error applying filters:', error));
   // }
 
+  
+
+  // document.getElementById('show-more-btn').addEventListener('click', function () {
+  //   page += 1; // Increment the page number for each "Show More" click
+
+  //   const formData = new FormData(filterForm);
+
+  //   // If any static filter is selected, include that in the request
+  // const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
+  // if (activeStaticFilter) {
+  //   formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
+  // }
+
+  //   //let url = `${window.location.pathname}?page=${page}`;
+
+  //     // Construct the URL with the updated page number and form data
+  // let url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
+
+  //   fetch(url)
+  //     .then(response => response.text())
+  //     .then(html => {
+  //       let parser = new DOMParser();
+  //       let doc = parser.parseFromString(html, 'text/html');
+  //       let newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
+
+  //       // Append new products to the main-collection-product-grid
+  //       newProducts.forEach(product => {
+  //         document.querySelector('.main-collection-product-grid').appendChild(product);
+  //       });
+
+  //       // Hide the "Show More" button if fewer products are available
+  //       if (newProducts.length < 6) {
+  //         showMoreBtn.style.display = 'none';
+  //       }
+  //     });
+  // });
+
   document.getElementById('show-more-btn').addEventListener('click', function () {
     page += 1; // Increment the page number for each "Show More" click
 
@@ -369,41 +406,6 @@
     .catch(error => console.error('Error loading more products:', error));
 });
 
-
-  document.getElementById('show-more-btn').addEventListener('click', function () {
-    page += 1; // Increment the page number for each "Show More" click
-
-    const formData = new FormData(filterForm);
-
-    // If any static filter is selected, include that in the request
-  const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
-  if (activeStaticFilter) {
-    formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
-  }
-
-    //let url = `${window.location.pathname}?page=${page}`;
-
-      // Construct the URL with the updated page number and form data
-  let url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
-
-    fetch(url)
-      .then(response => response.text())
-      .then(html => {
-        let parser = new DOMParser();
-        let doc = parser.parseFromString(html, 'text/html');
-        let newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
-
-        // Append new products to the main-collection-product-grid
-        newProducts.forEach(product => {
-          document.querySelector('.main-collection-product-grid').appendChild(product);
-        });
-
-        // Hide the "Show More" button if fewer products are available
-        if (newProducts.length < 6) {
-          showMoreBtn.style.display = 'none';
-        }
-      });
-  });
 
   // Initialize with the first four filters on page load
   function updateStaticFilters() {
