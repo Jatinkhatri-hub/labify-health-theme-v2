@@ -295,39 +295,80 @@
     });
   });
 
-  function applyFilters() {
-    const formData = new FormData(filterForm);
-    page = 1;
+  // function applyFilters() {
+  //   const formData = new FormData(filterForm);
+  //   page = 1;
 
-    // Fetch the collection with the applied filters using AJAX
-    fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
-      method: 'GET',
-      headers: {
-        'X-Requested-With': 'XMLHttpRequest',
-      },
+  //   // Fetch the collection with the applied filters using AJAX
+  //   fetch(window.location.href.split('?')[0] + '?' + new URLSearchParams(formData).toString(), {
+  //     method: 'GET',
+  //     headers: {
+  //       'X-Requested-With': 'XMLHttpRequest',
+  //     },
+  //   })
+  //   .then(response => response.text())
+  //   .then(html => {
+  //     // Replace the collection product grid with the new filtered content
+  //     const parser = new DOMParser();
+  //     const doc = parser.parseFromString(html, 'text/html');
+  //     const newContent = doc.querySelector('.main-collection-product-grid');
+  //     const currentContent = document.querySelector('.main-collection-product-grid');
+
+  //     if (newContent && currentContent) {
+  //       currentContent.innerHTML = newContent.innerHTML;
+
+  //       // Check if there are more than 6 products after filtering
+  //       const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
+  //       if (filteredProducts.length <= 6) {
+  //         showMoreBtn.style.display = 'none'; // Hide if there are 6 or fewer products
+  //       } else {
+  //         showMoreBtn.style.display = 'block'; // Show if more than 6
+  //       }
+  //     }
+  //   })
+  //   .catch(error => console.error('Error applying filters:', error));
+  // }
+
+  document.getElementById('show-more-btn').addEventListener('click', function () {
+    page += 1; // Increment the page number for each "Show More" click
+
+    const formData = new FormData(filterForm);
+
+    // Include any active static filters in the request
+    const activeStaticFilter = document.querySelector('.selected-filters-desktop .button-like.active');
+    if (activeStaticFilter) {
+        formData.append(activeStaticFilter.dataset.name, activeStaticFilter.dataset.value);
+    }
+
+    // Ensure both page number and form data are passed
+    const url = `${window.location.pathname}?page=${page}&${new URLSearchParams(formData).toString()}`;
+
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+        },
     })
     .then(response => response.text())
     .then(html => {
-      // Replace the collection product grid with the new filtered content
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const newContent = doc.querySelector('.main-collection-product-grid');
-      const currentContent = document.querySelector('.main-collection-product-grid');
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newProducts = doc.querySelectorAll('.main-collection-product-grid .product-card__wrapper');
+        const productGrid = document.querySelector('.main-collection-product-grid');
 
-      if (newContent && currentContent) {
-        currentContent.innerHTML = newContent.innerHTML;
+        // Append new products to the existing grid
+        newProducts.forEach(product => {
+            productGrid.appendChild(product);
+        });
 
-        // Check if there are more than 6 products after filtering
-        const filteredProducts = doc.querySelectorAll('.product-card__wrapper').length;
-        if (filteredProducts.length <= 6) {
-          showMoreBtn.style.display = 'none'; // Hide if there are 6 or fewer products
-        } else {
-          showMoreBtn.style.display = 'block'; // Show if more than 6
+        // Hide the "Show More" button if fewer products are available
+        if (newProducts.length < 6) {
+            showMoreBtn.style.display = 'none';
         }
-      }
     })
-    .catch(error => console.error('Error applying filters:', error));
-  }
+    .catch(error => console.error('Error loading more products:', error));
+});
+
 
   document.getElementById('show-more-btn').addEventListener('click', function () {
     page += 1; // Increment the page number for each "Show More" click
